@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context="com.app.armetech.ajudae.RegisterScreen">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/round_header" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:textSize="18dp"
+        android:textColor="#fff"
+        android:text="CADASTRO" />
+
+    <Button
+        android:id="@+id/btnContinuar"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp"
+        android:background="@drawable/round_button_red"
+        android:onClick="continuar"
+        android:text="CONTINUAR" />
+
+    <EditText
+        android:textSize="15dp"
+        android:id="@+id/edtTextNomeCompleto"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/round_input_background"
+        android:ems="10"
+        android:hint="Nome Completo"
+        android:inputType="textPersonName"
+        android:paddingBottom="14dp"
+        android:paddingLeft="46dp"
+        android:paddingTop="14dp"
+        android:textColor="@color/colorPrimary"
+        android:textColorLink="@color/colorPrimary"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textColorHint="@color/lightGray" />
+
+    <EditText
+        android:textSize="15dp"
+        android:id="@+id/edtTextDataNascimento"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edtTextNomeCompleto"
+        android:layout_alignStart="@+id/edtTextNomeCompleto"
+        android:layout_below="@+id/edtTextNomeCompleto"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/round_input_background"
+        android:ems="10"
+        android:hint="Data Nascimento"
+        android:inputType="date"
+        android:paddingBottom="14dp"
+        android:paddingLeft="46dp"
+        android:paddingTop="14dp"
+        android:textColor="@color/colorPrimary"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textColorHint="@color/lightGray" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Preencha os campos abaixo para efetuar
+seu registro no sistema."
+        android:layout_alignEnd="@id/edtTextNomeCompleto"
+        android:layout_alignStart="@id/edtTextNomeCompleto"
+        android:textAlignment="center"
+        android:textColor="@color/darkBlue"
+        android:layout_alignRight="@id/edtTextNomeCompleto"
+        android:layout_alignLeft="@id/edtTextNomeCompleto" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_above="@+id/edtTextDataNascimento"
+        android:layout_alignLeft="@+id/imageView9"
+        android:layout_alignStart="@+id/imageView9"
+        android:layout_marginBottom="11dp"
+        app:srcCompat="@drawable/ic_user" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_above="@+id/edtTextCep"
+        android:layout_alignLeft="@+id/imageView4"
+        android:layout_alignStart="@+id/imageView4"
+        android:layout_marginBottom="11dp"
+        app:srcCompat="@drawable/ic_calendar" />
+
+    <EditText
+        android:textSize="15dp"
+        android:hint="CEP"
+        android:background="@drawable/round_input_background"
+        android:id="@+id/edtTextCep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/edtTextDataNascimento"
+        android:layout_alignLeft="@+id/edtTextDataNascimento"
+        android:layout_alignRight="@+id/edtTextDataNascimento"
+        android:layout_alignStart="@+id/edtTextDataNascimento"
+        android:layout_below="@+id/edtTextDataNascimento"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:inputType="number"
+        android:paddingBottom="14dp"
+        android:paddingLeft="46dp"
+        android:paddingTop="14dp"
+        android:textColor="@color/colorPrimary"
+        android:textColorLink="@color/colorPrimary"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textColorHint="@color/lightGray"
+        />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_above="@+id/textView6"
+        android:layout_alignLeft="@+id/imageView6"
+        android:layout_alignStart="@+id/imageView6"
+        android:layout_marginBottom="11dp"
+        app:srcCompat="@drawable/ic_location" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edtTextCep"
+        android:layout_alignStart="@+id/edtTextCep"
+        android:layout_below="@+id/edtTextCep"
+        android:layout_marginTop="27dp"
+        android:text="GÊNERO"
+        android:textColor="@color/lightGray"/>
+
+    <RadioButton
+
+        android:id="@+id/rdBtnFem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView6"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_toLeftOf="@+id/textView2"
+        android:layout_toStartOf="@+id/textView2"
+        android:text="F"
+        android:backgroundTint="@color/colorPrimary"
+        android:shadowColor="@color/colorPrimary"
+        android:textColor="@color/colorPrimary"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
+        android:textColorLink="@color/colorPrimary" />
+
+    <RadioButton
+        android:id="@+id/rdBtnMasc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView6"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/rdBtnFem"
+        android:layout_toRightOf="@+id/rdBtnFem"
+        android:text="M"
+        android:textColor="@color/colorPrimary"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
+        android:textColorLink="@color/colorPrimary" />
+
+    <RadioButton
+        android:checked="true"
+        android:id="@+id/rdBtnNaoDefinir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/rdBtnMasc"
+        android:layout_alignBottom="@+id/rdBtnMasc"
+        android:layout_alignEnd="@+id/edtTextCep"
+        android:layout_alignRight="@+id/edtTextCep"
+        android:text="NÃO INFORMAR"
+        android:textColor="@color/colorPrimary"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
+        android:textColorLink="@color/colorPrimary" />
+
+    <EditText
+        android:textColorHighlight="@color/colorPrimary"
+        android:background="@drawable/round_input_background"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:paddingLeft="46dp"
+        android:hint="Email"
+        android:textColorHint="@color/lightGray"
+        android:id="@+id/edtTxtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/rdBtnNaoDefinir"
+        android:layout_alignLeft="@+id/textView6"
+        android:layout_alignRight="@+id/rdBtnNaoDefinir"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_below="@+id/rdBtnFem"
+        android:layout_marginTop="11dp"
+        android:ems="10"
+        android:textSize="15dp"
+        android:textColor="@color/colorPrimary"
+        android:inputType="textEmailAddress" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignBottom="@+id/edtTxtEmail"
+        android:layout_alignLeft="@+id/btnContinuar"
+        android:layout_alignStart="@+id/btnContinuar"
+        android:layout_marginBottom="11dp"
+        app:srcCompat="@drawable/ic_email" />
+
+    <EditText
+        android:textColorHint="@color/lightGray"
+        android:id="@+id/editText14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/edtTxtEmail"
+        android:layout_alignLeft="@+id/edtTxtEmail"
+        android:layout_alignRight="@+id/edtTxtEmail"
+        android:layout_alignStart="@+id/edtTxtEmail"
+        android:layout_below="@+id/edtTxtEmail"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:background="@drawable/round_input_background"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:paddingLeft="46dp"
+        android:hint="Senha"
+        android:textSize="15dp"
+        android:textColor="@color/colorPrimary"
+        android:inputType="textPassword" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignLeft="@+id/btnContinuar"
+        android:layout_alignStart="@+id/btnContinuar"
+        android:layout_alignTop="@+id/editText14"
+        android:layout_marginTop="11dp"
+        app:srcCompat="@drawable/ic_password" />
+
+
+</RelativeLayout>

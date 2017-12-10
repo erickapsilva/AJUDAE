@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context="com.app.armetech.ajudae.LoginScreen">
+
+    <ImageView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="290dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/headerlogin" />
+
+    <EditText
+        android:id="@+id/nome"
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/header"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:layout_marginTop="27dp"
+        android:ems="10"
+        android:backgroundTint="@color/lightGray"
+        android:hint="Email"
+        android:shadowColor="@color/lightGray"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/lightGray"
+        android:textColor="@color/lightGray"
+        android:textColorLink="@color/lightGray"
+        android:textColorHighlight="@color/lightGray"/>
+
+    <EditText
+        android:id="@+id/senha"
+        android:backgroundTint="@color/lightGray"
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/nome"
+        android:layout_alignStart="@+id/nome"
+        android:layout_below="@+id/nome"
+        android:layout_marginTop="19dp"
+        android:ems="10"
+        android:hint="Senha"
+        android:textColorHint="@color/lightGray"
+        android:textColor="@color/lightGray"
+        android:textColorLink="@color/lightGray"
+        android:textColorHighlight="@color/lightGray"
+        android:inputType="textPassword" />
+
+    <Button
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:background="@drawable/round_button_red"
+        android:text="ENTRAR"
+        android:textColor="#fff"
+        android:theme="@style/AppTheme.WhiteRipple" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp"
+        android:layout_toEndOf="@+id/imgViePassword"
+        android:layout_toRightOf="@+id/imgViePassword"
+        android:text="Ainda não tem conta?"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/txtViewCadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/textView"
+        android:layout_toRightOf="@+id/textView"
+        android:onClick="cadastrar"
+        android:text="CADASTRE-SE!"
+        android:textColor="@color/darkBlue" />
+
+    <ImageView
+        android:id="@+id/imgViewEmail"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/nome"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="9dp"
+        android:layout_toLeftOf="@+id/nome"
+        android:layout_toStartOf="@+id/nome"
+        app:srcCompat="@drawable/ic_email" />
+
+    <ImageView
+        android:id="@+id/imgViePassword"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/imgViewEmail"
+        android:layout_alignStart="@+id/imgViewEmail"
+        android:layout_alignTop="@+id/senha"
+        android:layout_marginTop="9dp"
+        app:srcCompat="@drawable/ic_password" />
+
+</RelativeLayout>
