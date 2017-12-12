@@ -48,10 +48,10 @@ public class LoginScreen extends AppCompatActivity {
         String email = edtemail.getText().toString();
         String senha = edtsenha.getText().toString();
         boolean valido = true;
-        if (!Validacao.validaSenha(senha)){
+        if (!Validacao.validaEmail(email)){
             edtemail.setError("Email inválido!");
             valido = false;
-        } if(!Validacao.validaEmail(email)){
+        } if(!Validacao.validaSenha(senha)){
             edtsenha.setError("Senha inválida!");
             valido = false;
         }

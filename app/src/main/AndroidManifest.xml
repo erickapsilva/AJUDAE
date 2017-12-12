@@ -20,16 +20,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginScreen"
+            android:name=".usuario.GUI.LoginScreen"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
-            android:name=".RegisterScreen"
+            android:name=".usuario.GUI.RegisterScreen"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".WelcomeScreen"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
-            android:name=".LoginAvaScreen"
+            android:name=".usuario.GUI.LoginAvaScreen"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".ScheduleAvaScreen"

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
-    tools:context="com.app.armetech.ajudae.RegisterScreen">
+    tools:context="com.app.armetech.ajudae.usuario.GUI.RegisterScreen">
 
 
     <ImageView
@@ -63,7 +63,6 @@
         android:textColorHint="@color/lightGray" />
 
     <EditText
-        android:textSize="15dp"
         android:id="@+id/edtTextDataNascimento"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -74,13 +73,14 @@
         android:background="@drawable/round_input_background"
         android:ems="10"
         android:hint="Data Nascimento"
-        android:inputType="date"
+        android:inputType="number"
         android:paddingBottom="14dp"
         android:paddingLeft="46dp"
         android:paddingTop="14dp"
         android:textColor="@color/colorPrimary"
         android:textColorHighlight="@color/colorPrimary"
-        android:textColorHint="@color/lightGray" />
+        android:textColorHint="@color/lightGray"
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/textView4"
@@ -164,7 +164,6 @@ seu registro no sistema."
         android:textColor="@color/lightGray"/>
 
     <RadioButton
-
         android:id="@+id/rdBtnFem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -197,7 +196,6 @@ seu registro no sistema."
         android:textColorLink="@color/colorPrimary" />
 
     <RadioButton
-        android:checked="true"
         android:id="@+id/rdBtnNaoDefinir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -205,6 +203,7 @@ seu registro no sistema."
         android:layout_alignBottom="@+id/rdBtnMasc"
         android:layout_alignEnd="@+id/edtTextCep"
         android:layout_alignRight="@+id/edtTextCep"
+        android:checked="false"
         android:text="NÃO INFORMAR"
         android:textColor="@color/colorPrimary"
         android:textColorHighlight="@color/colorPrimary"
@@ -219,7 +218,7 @@ seu registro no sistema."
         android:paddingLeft="46dp"
         android:hint="Email"
         android:textColorHint="@color/lightGray"
-        android:id="@+id/edtTxtEmail"
+        android:id="@+id/edtTextEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/rdBtnNaoDefinir"
@@ -237,7 +236,7 @@ seu registro no sistema."
         android:id="@+id/imageView9"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_alignBottom="@+id/edtTxtEmail"
+        android:layout_alignBottom="@+id/edtTextEmail"
         android:layout_alignLeft="@+id/btnContinuar"
         android:layout_alignStart="@+id/btnContinuar"
         android:layout_marginBottom="11dp"
@@ -245,14 +244,14 @@ seu registro no sistema."
 
     <EditText
         android:textColorHint="@color/lightGray"
-        android:id="@+id/editText14"
+        android:id="@+id/edtTextSenha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/edtTxtEmail"
-        android:layout_alignLeft="@+id/edtTxtEmail"
-        android:layout_alignRight="@+id/edtTxtEmail"
-        android:layout_alignStart="@+id/edtTxtEmail"
-        android:layout_below="@+id/edtTxtEmail"
+        android:layout_alignEnd="@+id/edtTextEmail"
+        android:layout_alignLeft="@+id/edtTextEmail"
+        android:layout_alignRight="@+id/edtTextEmail"
+        android:layout_alignStart="@+id/edtTextEmail"
+        android:layout_below="@+id/edtTextEmail"
         android:layout_marginTop="18dp"
         android:ems="10"
         android:background="@drawable/round_input_background"
@@ -270,9 +269,8 @@ seu registro no sistema."
         android:layout_height="25dp"
         android:layout_alignLeft="@+id/btnContinuar"
         android:layout_alignStart="@+id/btnContinuar"
-        android:layout_alignTop="@+id/editText14"
+        android:layout_alignTop="@+id/edtTextSenha"
         android:layout_marginTop="11dp"
         app:srcCompat="@drawable/ic_password" />
-
 
 </RelativeLayout>
