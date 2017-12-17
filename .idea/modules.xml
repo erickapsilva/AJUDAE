@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AJUDAE.iml" filepath="$PROJECT_DIR$/AJUDAE.iml" />
+      <module fileurl="file://$USER_HOME$/AndroidStudioProjects/AJUDAE-SPRINT-1.0/AJUDAE/AJUDAE.iml" filepath="$USER_HOME$/AndroidStudioProjects/AJUDAE-SPRINT-1.0/AJUDAE/AJUDAE.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
