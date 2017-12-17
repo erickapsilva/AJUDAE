@@ -31,7 +31,6 @@
         android:ems="10"
         android:backgroundTint="@color/lightGray"
         android:hint="Email"
-        android:text="psilva.ericka@gmail.com"
         android:shadowColor="@color/lightGray"
         android:inputType="textEmailAddress"
         android:textColorHint="@color/lightGray"
@@ -40,7 +39,6 @@
         android:textColorHighlight="@color/lightGray"/>
 
     <EditText
-        android:text="123456"
         android:id="@+id/senha"
         android:backgroundTint="@color/lightGray"
         android:layout_width="260dp"
