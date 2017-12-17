@@ -42,7 +42,8 @@
         app:srcCompat="@drawable/loginava" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:text="ericka.psilva"
+        android:id="@+id/edtTextLoginAva"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/btnContinuar"
@@ -58,42 +59,45 @@
         android:backgroundTint="@color/lightGray"
         android:ems="10"
         android:hint="Login do AVA"
+        android:textColor="@color/colorPrimary"
         android:inputType="textEmailAddress"
         android:textColorHint="@color/lightGray" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:text="Anatomy2795*"
+        android:id="@+id/edtTextSenhaAva"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/editText2"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_alignRight="@+id/editText2"
-        android:layout_alignStart="@+id/editText2"
-        android:layout_below="@+id/editText2"
+        android:layout_alignEnd="@+id/edtTextLoginAva"
+        android:layout_alignLeft="@+id/edtTextLoginAva"
+        android:layout_alignRight="@+id/edtTextLoginAva"
+        android:layout_alignStart="@+id/edtTextLoginAva"
+        android:layout_below="@+id/edtTextLoginAva"
         android:layout_marginTop="30dp"
         android:backgroundTint="@color/lightGray"
         android:ems="10"
         android:hint="Senha do AVA"
         android:inputType="textPassword"
+        android:textColor="@color/colorPrimary"
         android:textColorHint="@color/lightGray" />
 
     <ImageView
         android:id="@+id/icEmail"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_above="@+id/editText3"
+        android:layout_above="@+id/edtTextSenhaAva"
         android:layout_marginBottom="7dp"
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
-        android:layout_toLeftOf="@+id/editText3"
-        android:layout_toStartOf="@+id/editText3"
+        android:layout_toLeftOf="@+id/edtTextSenhaAva"
+        android:layout_toStartOf="@+id/edtTextSenhaAva"
         app:srcCompat="@drawable/ic_email" />
 
     <ImageView
         android:id="@+id/icPassword"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_alignBottom="@+id/editText3"
+        android:layout_alignBottom="@+id/edtTextSenhaAva"
         android:layout_alignLeft="@+id/icEmail"
         android:layout_alignStart="@+id/icEmail"
         android:layout_marginBottom="7dp"
@@ -106,7 +110,7 @@
         android:textSize="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText3"
+        android:layout_below="@+id/edtTextSenhaAva"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
         android:text="Conecte-se com o AVA e obtenha
