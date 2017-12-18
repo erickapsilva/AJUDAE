@@ -39,9 +39,7 @@ public class LoginScreen extends AppCompatActivity {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    public void entrar(View view) {
-        validaCampos();
-    }
+    public void entrar(View view) { validaCampos(); }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void validaCampos(){

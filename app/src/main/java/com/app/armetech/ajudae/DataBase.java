@@ -132,12 +132,12 @@ public class DataBase extends SQLiteOpenHelper {
 
         String addpessoa = "INSERT INTO " + TABELA_PESSOA + " (" + PESSOA_USER_ID + ", " + PESSOA_NOME + ", " +
                 PESSOA_GENERO + ", " + PESSOA_DATANASC + ", " + PESSOA_CEP + ") values";
-        //sqLite.execSQL(addpessoa + " ('1', 'antonio', 'M', '13/06/1996', '54090-470');");
+        sqLite.execSQL(addpessoa + " ('1', 'antonio', 'M', '13/06/1996', '54090-470');");
         //sqLite.execSQL(addpessoa+ " ('2', 'soares', 'M', '08/02/1996', '54110-112');");
 
         String addusuario = "INSERT INTO " + TABELA_USUARIO + " (" + USUARIO_EMAIL + ", " + USUARIO_SENHA + ", " +
                 USUARIO_TOKEN + ", " + USUARIO_CURSO + ") values";
-        //sqLite.execSQL(addusuario+" ('soares@gmail.com', '123456', '123456', 'BSI');");
+        sqLite.execSQL(addusuario+" ('soares@gmail.com', '123456', '123456', 'BSI');");
         //sqLite.execSQL(addusuario+" ('antonio@gmail.com', '112233', '123455', 'BSI');");
 
 

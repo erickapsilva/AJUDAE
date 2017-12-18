@@ -2,8 +2,6 @@ package com.app.armetech.ajudae.usuario.GUI;
 
 import android.content.Intent;
 import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,7 +11,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.app.armetech.ajudae.R;
-import com.app.armetech.ajudae.ScheduleAvaScreen;
 import com.app.armetech.ajudae.usuario.infra.RequestHttp;
 import com.app.armetech.ajudae.usuario.infra.ReturnRequest;
 

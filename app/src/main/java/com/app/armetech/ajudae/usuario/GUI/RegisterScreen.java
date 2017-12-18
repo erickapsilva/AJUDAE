@@ -8,19 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.app.armetech.ajudae.Criptografia;
 import com.app.armetech.ajudae.Mask;
 import com.app.armetech.ajudae.R;
-import com.app.armetech.ajudae.ScheduleAvaScreen;
 import com.app.armetech.ajudae.Validacao;
-import com.app.armetech.ajudae.usuario.dominio.Pessoa;
-import com.app.armetech.ajudae.usuario.dominio.Usuario;
 import com.app.armetech.ajudae.usuario.negocio.UsuarioNegocio;
-
-import java.util.Date;
 
 public class RegisterScreen extends AppCompatActivity {
     private EditText nome, nascimento, cep, email,senha;

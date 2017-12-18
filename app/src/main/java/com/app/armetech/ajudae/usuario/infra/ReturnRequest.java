@@ -1,9 +1,7 @@
 package com.app.armetech.ajudae.usuario.infra;
 
-/**
- * Created by erickapsilva on 16/12/2017.
- */
 
+//Interface usada pra receber as informações da requisição e entregá-las de maneira assíncrona.
 public interface ReturnRequest<T> {
     void retrieveData(T value);
 }

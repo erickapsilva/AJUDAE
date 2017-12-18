@@ -34,7 +34,7 @@
             android:name=".usuario.GUI.LoginAvaScreen"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
-            android:name=".ScheduleAvaScreen"
+            android:name=".usuario.GUI.ScheduleAvaScreen"
             android:theme="@style/AppThemeNoActionBar"/>
     </application>
 
