@@ -45,7 +45,6 @@ poderá ocorrer em erro -->
         android:layout_below="@+id/header"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:text="Olá, Ericka Pricila da Silva"
         android:textColor="@color/darkBlue"/>
 
     <TextView
@@ -56,8 +55,7 @@ poderá ocorrer em erro -->
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtViewNome"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="11dp"
-        android:text="BACHARELADO EM SISTEMAS DE INFORMAÇÃO" />
+        android:layout_marginTop="11dp" />
 
     <Button
         style="@style/Base.Widget.AppCompat.Button.Borderless"

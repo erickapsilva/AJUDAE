@@ -120,9 +120,8 @@ public class RequestHttp {
                 String result = response.body().string();
                 try {
                     JSONObject jsonObj = new JSONObject(result);
-                    String usrId = jsonObj.getString("userid");
                     //Log.i(TAG, usrId);
-                    returnRequest.retrieveData(usrId);
+                    returnRequest.retrieveData(jsonObj);
                 } catch (Exception e) {
                     Log.i(TAG, e.getMessage());
                 }
@@ -134,7 +133,7 @@ public class RequestHttp {
     //Faz a requisição final, que traz os cursos como resultado
     //É necessário que se passe o token e o ID de usuário, logo para que essa requisição seja chamada
     //é preciso que as outras duas tenham sido feitas
-    public void getCourseList(String usrToken, String usrId, final ReturnRequest returnRequest) {
+    public void getInfo(String usrToken, String usrId, final ReturnRequest returnRequest) {
 
         HttpUrl.Builder urlBuilder = HttpUrl.parse("http://ava.ufrpe.br/webservice/rest/server.php?moodlewsrestformat=json").newBuilder();
         urlBuilder.addQueryParameter("wsfunction", "core_user_get_users_by_id");
@@ -156,8 +155,8 @@ public class RequestHttp {
                 String result = response.body().string();
 
                 try {
-                    JSONArray jsonObj = new JSONArray(result);
-
+                    JSONArray jsonArr = new JSONArray(result);
+                    JSONObject jsonObj = jsonArr.getJSONObject(0);
                     returnRequest.retrieveData(jsonObj);
                 } catch (Exception e) {
                     Log.i(TAG, e.getMessage());

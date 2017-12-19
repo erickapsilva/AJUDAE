@@ -39,7 +39,11 @@ public class LoginScreen extends AppCompatActivity {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    public void entrar(View view) { validaCampos(); }
+    public void entrar(View view) {
+        Intent telaInicial = new Intent(this, LoginAvaScreen.class);
+        startActivity(telaInicial);
+        //validaCampos();
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void validaCampos(){
