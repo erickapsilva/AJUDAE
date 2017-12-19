@@ -54,7 +54,7 @@ public class LoginAvaScreen extends AppCompatActivity {
                 String loginAva = edtTextLoginAva.getText().toString();
                 String senhaAva = edtTextSenhaAva.getText().toString();
 
-                requestHttp.getToken("rodrigo.xcarvalho", "EAPD3PE42pe#", new ReturnRequest() {
+                requestHttp.getToken(loginAva, senhaAva, new ReturnRequest() {
                     @Override
                     public void retrieveData(Object value) {
 
