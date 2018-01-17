@@ -5,9 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#eeeeee"
-    tools:context="com.app.armetech.ajudae.usuario.GUI.ScheduleAvaScreen">
-<!-- o RecyclerView precisa está dentro de um layout do tipo (GridLayout ou LinearLayout) caso contrário
-poderá ocorrer em erro -->
+    tools:context="com.app.armetech.ajudae.user.gui.ScheduleAvaActivity">
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,12 +15,12 @@ poderá ocorrer em erro -->
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:background="#eeeeee"
-        tools:context="com.app.armetech.ajudae.usuario.GUI.ScheduleAvaScreen">
+        tools:context="com.app.armetech.ajudae.user.gui.ScheduleAvaActivity">
 
         <android.support.v7.widget.RecyclerView
             android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:layout_below="@+id/txtViewCurso"
+            android:layout_below="@+id/txtViewCourse"
             android:id="@+id/recyclerView"
             >
         </android.support.v7.widget.RecyclerView>
@@ -39,7 +37,7 @@ poderá ocorrer em erro -->
         tools:layout_editor_absoluteY="0dp" />
 
     <TextView
-        android:id="@+id/txtViewNome"
+        android:id="@+id/txtViewName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/header"
@@ -50,10 +48,10 @@ poderá ocorrer em erro -->
     <TextView
         android:textAlignment="center"
         android:textColor="@color/darkBlue"
-        android:id="@+id/txtViewCurso"
+        android:id="@+id/txtViewCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtViewNome"
+        android:layout_below="@+id/txtViewName"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="11dp" />
 

@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">AJUDAE</string>
+
+    //Campos invalidos
+    <string name="senha_curta">A senha deve conter ao menos 6 caracteres</string>
+    <string name="nascimento_invalido">Data de nascimento inválida</string>
+    <string name="cep_invalido">CEP inválido</string>
+    <string name="email_invalido">Email inválido</string>
+    <string name="nome_invalido">Nome inválido</string>
+
+    //Toasts
+    <string name="senhas_diferentes">A senha e a confirmação não coincidem</string>
+    <string name="email_ja_cadastrado">Email já cadastrado</string>
+    <string name="sem_genero">Selecione uma opção de gênero</string>
+    <string name="cadastrou">Você foi cadastrado com sucesso</string>
+
+    <string name="login_incorreto">Informações incorretas</string>
+
+    //
 </resources>

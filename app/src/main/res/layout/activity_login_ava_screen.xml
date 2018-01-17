@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.app.armetech.ajudae.usuario.GUI.LoginAvaScreen"
+    tools:context="com.app.armetech.ajudae.user.gui.LoginAvaActivity"
     android:background="#fff">
 
     <ImageView
@@ -26,7 +26,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="41dp"
         android:textColor="#fff"
-        android:onClick="goToSchedule"
+        android:onClick="login"
         android:foreground="?attr/selectableItemBackground"
         android:background="@drawable/round_button_red"
         android:text="CONTINUAR" />
@@ -42,13 +42,13 @@
         app:srcCompat="@drawable/loginava" />
 
     <EditText
-        android:id="@+id/edtTextLoginAva"
+        android:id="@+id/edtTextAvaLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/btnContinuar"
+        android:layout_alignLeft="@+id/btnContinue"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignStart="@+id/btnContinuar"
+        android:layout_alignStart="@+id/btnContinue"
         android:layout_below="@+id/imageView5"
         android:layout_marginEnd="36dp"
         android:layout_marginLeft="22dp"
@@ -63,14 +63,14 @@
         android:textColorHint="@color/lightGray" />
 
     <EditText
-        android:id="@+id/edtTextSenhaAva"
+        android:id="@+id/edtTextAvaPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/edtTextLoginAva"
-        android:layout_alignLeft="@+id/edtTextLoginAva"
-        android:layout_alignRight="@+id/edtTextLoginAva"
-        android:layout_alignStart="@+id/edtTextLoginAva"
-        android:layout_below="@+id/edtTextLoginAva"
+        android:layout_alignEnd="@+id/edtTextAvaLogin"
+        android:layout_alignLeft="@+id/edtTextAvaLogin"
+        android:layout_alignRight="@+id/edtTextAvaLogin"
+        android:layout_alignStart="@+id/edtTextAvaLogin"
+        android:layout_below="@+id/edtTextAvaLogin"
         android:layout_marginTop="30dp"
         android:backgroundTint="@color/lightGray"
         android:ems="10"
@@ -83,19 +83,19 @@
         android:id="@+id/icEmail"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_above="@+id/edtTextSenhaAva"
+        android:layout_above="@+id/edtTextAvaPass"
         android:layout_marginBottom="7dp"
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
-        android:layout_toLeftOf="@+id/edtTextSenhaAva"
-        android:layout_toStartOf="@+id/edtTextSenhaAva"
+        android:layout_toLeftOf="@+id/edtTextAvaPass"
+        android:layout_toStartOf="@+id/edtTextAvaPass"
         app:srcCompat="@drawable/ic_email" />
 
     <ImageView
         android:id="@+id/icPassword"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_alignBottom="@+id/edtTextSenhaAva"
+        android:layout_alignBottom="@+id/edtTextAvaPass"
         android:layout_alignLeft="@+id/icEmail"
         android:layout_alignStart="@+id/icEmail"
         android:layout_marginBottom="7dp"
@@ -108,11 +108,11 @@
         android:textSize="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edtTextSenhaAva"
+        android:layout_below="@+id/edtTextAvaPass"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
         android:text="Conecte-se com o AVA e obtenha
-suas cadeiras automaticamente!"
+suas subjects automaticamente!"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"/>
 
