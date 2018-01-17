@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.app.armetech.ajudae.R;
-import com.app.armetech.ajudae.aulas.domain.Cadeira;
+import com.app.armetech.ajudae.aulas.domain.Subject;
 
 import java.util.List;
 
@@ -31,9 +31,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         }
     }
 
-    List<Cadeira> subjects;
+    List<Subject> subjects;
 
-    RecyclerViewAdapter(List<Cadeira> subjects){
+    RecyclerViewAdapter(List<Subject> subjects){
         this.subjects = subjects;
     }
 

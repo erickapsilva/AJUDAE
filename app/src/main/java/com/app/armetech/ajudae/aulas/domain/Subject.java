@@ -4,11 +4,11 @@ package com.app.armetech.ajudae.aulas.domain;
  * Created by roxac on 17/12/17.
  */
 
-public class Cadeira {
+public class Subject {
 
     private String subjectName, courseClass;
 
-    public Cadeira(String courseClass, String subjectName) {
+    public Subject(String courseClass, String subjectName) {
         this.courseClass = courseClass;
         this.subjectName = subjectName;
     }

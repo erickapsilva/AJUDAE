@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
 import com.app.armetech.ajudae.R;
-import com.app.armetech.ajudae.aulas.domain.Cadeira;
+import com.app.armetech.ajudae.aulas.domain.Subject;
 import com.app.armetech.ajudae.infra.DataHolder;
 import com.app.armetech.ajudae.infra.StudentExternalData;
 import com.app.armetech.ajudae.infra.RequestHttp;
@@ -23,7 +23,7 @@ public class ScheduleAvaActivity extends Activity {
     private StudentExternalData studentExternalData;
     private List<String> subjects;
     private List<String> courseClass;
-    private List<Cadeira> courseSubjects;
+    private List<Subject> courseSubjects;
     private RecyclerView recyclerView;
     private TextView txtViewName;
     private TextView txtViewCourse;
@@ -48,7 +48,7 @@ public class ScheduleAvaActivity extends Activity {
         courseClass = (ArrayList)dataHolder.getData().get("course_class");
         courseSubjects = new ArrayList<>();
         for(int i = 0; i < subjects.size(); i++)
-            courseSubjects.add(new Cadeira(courseClass.get(i), subjects.get(i)));
+            courseSubjects.add(new Subject(courseClass.get(i), subjects.get(i)));
         txtViewName.append(dataHolder.getData().get("fullname").toString());
         txtViewCourse.append(dataHolder.getData().get("dpt").toString());
     }
