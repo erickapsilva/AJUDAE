@@ -27,7 +27,7 @@ public abstract class Validation {
 	}
 
 	public static boolean validateCharacters(String input){
-		if (input.length() == 0 || input == null){
+		if (input.length() == 0 || input == null || input == " "){
 			return false;
 		}
 		Pattern pattern = Pattern.compile("[^A-Za-z0-9 ]{1,1}");

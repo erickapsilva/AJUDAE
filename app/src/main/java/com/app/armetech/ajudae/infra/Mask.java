@@ -4,9 +4,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 
-/**
- * Created by user on 10/12/2017.
- */
 
 public abstract class Mask {
     public static TextWatcher insert(final String mask, final EditText et) {

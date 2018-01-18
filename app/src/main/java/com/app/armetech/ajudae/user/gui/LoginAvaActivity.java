@@ -6,24 +6,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.armetech.ajudae.R;
 import com.app.armetech.ajudae.infra.DataHolder;
+import com.app.armetech.ajudae.user.domain.Session;
 import com.app.armetech.ajudae.infra.StudentExternalData;
 import com.app.armetech.ajudae.infra.RequestHttp;
 import com.app.armetech.ajudae.infra.ReturnRequest;
+import com.app.armetech.ajudae.user.business.UserBusiness;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class LoginAvaActivity extends AppCompatActivity {
-
     private RequestHttp requestHttp;
     private DataHolder dataHolder;
     private StudentExternalData studentExternalData;
     private Button btnContinue;
     private EditText edtTextAvaLogin, edtTextAvaPass;
+    private TextView txtViewName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +38,9 @@ public class LoginAvaActivity extends AppCompatActivity {
         dataHolder = DataHolder.getInstance();
     }
 
-    public void login(View view){
+
+
+    public void loginAVA(View view){
         String avaLogin = edtTextAvaLogin.getText().toString();
         String avaPass = edtTextAvaPass.getText().toString();
 
@@ -47,13 +52,13 @@ public class LoginAvaActivity extends AppCompatActivity {
                     getLoginInfo();
                 } else {
                     String token = value.toString();
-                    RequestUserId(token);
+                    requestUserId(token);
                 }
             }
         });
     }
 
-    public void RequestUserId(final String token) {
+    public void requestUserId(final String token) {
         requestHttp.getUsrId(token, new ReturnRequest() {
             @Override
             public void retrieveData(Object value) {
@@ -67,7 +72,7 @@ public class LoginAvaActivity extends AppCompatActivity {
                         userId = jsonUser.get("userid").toString();
                         fullName = jsonUser.get("fullname").toString();
                         dataHolder.setData("fullname", fullName);
-                        RequestInfo(token, userId);
+                        requestInfo(token, userId);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -76,7 +81,7 @@ public class LoginAvaActivity extends AppCompatActivity {
         });
     }
 
-    public void RequestInfo(String token, String userId) {
+    public void requestInfo(String token, String userId) {
         requestHttp.getInfo(token, userId, new ReturnRequest() {
             @Override
             public void retrieveData(Object value) {
@@ -106,6 +111,8 @@ public class LoginAvaActivity extends AppCompatActivity {
         btnContinue = (Button) findViewById(R.id.btnContinue);
         edtTextAvaLogin = (EditText) findViewById(R.id.edtTextAvaLogin);
         edtTextAvaPass = (EditText) findViewById(R.id.edtTextAvaPass);
+        txtViewName = (TextView) findViewById(R.id.textViewName);
+        txtViewName.setText("Olá " + Session.getLoggedPerson().getName());
     }
 
     public void getLoginInfo() {
@@ -128,10 +135,17 @@ public class LoginAvaActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public void onBackPressed() {
+    public void logout(){
+        UserBusiness userBusiness = new UserBusiness(this);
+        userBusiness.logout();
         Intent login = new Intent(LoginAvaActivity.this, LoginActivity.class);
         startActivity(login);
         finish();
     }
+
+    @Override
+    public void onBackPressed() {
+        logout();
+    }
+
 }

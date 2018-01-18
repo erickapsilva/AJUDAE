@@ -4,73 +4,131 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- * Created by user on 07/12/2017.
- */
 
 public class DataBase extends SQLiteOpenHelper {
-    private static final int VERSION = 1;
     private static final String DB_NAME = "dbajudae";
+    private static final int VERSION = 1;
+    
 
     //PESSOA
-    public static final String PERSON_TABLE = "pessoa";
-    public static final String PESSOA_ID = "pessoa_id";
-    public static final String PERSON_USER_ID = "usuario_id";
-    public static final String PERSON_NAME = "nome";
-    public static final String PERSON_GENDER = "genero";
-    public static final String PERSON_BIRTHDATE = "data_nasc";
-    public static final String PERSON_CEP = "cep";
+    private static final String PERSON_TABLE = "pessoa";
+    private static final String PERSON_ID = "pessoa_id";
+    private static final String PERSON_USER_ID = "usuario_id";
+    private static final String PERSON_NAME = "nome";
+    private static final String PERSON_GENDER = "genero";
+    private static final String PERSON_BIRTHDATE = "data_nascimento";
+    private static final String PERSON_CEP = "cep";
+
+    public static String getPersonTable() {
+        return PERSON_TABLE;
+    }
+    
+    public static String getPersonId() {
+        return PERSON_ID;
+    }
+
+    public static String getPersonUserId() {
+        return PERSON_USER_ID;
+    }
+
+    public static String getPersonName() {
+        return PERSON_NAME;
+    }
+
+    public static String getPersonGender() {
+        return PERSON_GENDER;
+    }
+
+    public static String getPersonBirthdate() {
+        return PERSON_BIRTHDATE;
+    }
+
+    public static String getPersonCep() {
+        return PERSON_CEP;
+    }
 
     //USUÁRIO
-    public static final String USER_TABLE = "usuario";
-    public static final String USER_ID = "user_id";
-    public static final String USER_EMAIL = "email";
-    public static final String USER_PASS = "senha";
-    public static final String USER_TOKEN = "token";
-    public static final String USER_COURSE = "curso";
+    private static final String USER_TABLE = "usuario";
+    private static final String USER_ID = "user_id";
+    private static final String USER_EMAIL = "email";
+    private static final String USER_PASSWORD = "senha";
+    private static final String USER_TOKEN = "token";
+    private static final String USER_COURSE = "curso";
+
+    public static String getUserTable() {
+        return USER_TABLE;
+    }
+
+    public static String getUserId() {
+        return USER_ID;
+    }
+
+    public static String getUserEmail() {
+        return USER_EMAIL;
+    }
+
+    public static String getUserPassword() {
+        return USER_PASSWORD;
+    }
+
+    public static String getUserToken() {
+        return USER_TOKEN;
+    }
+
+    public static String getUserCourse() {
+        return USER_COURSE;
+    }
 
     //SESSAO DO USUARIO
-    public static final String SESSION_TABLE = "sessao";
-    public static final String LOGGED_ID = "usuario_id";
+    private static final String SESSION_TABLE = "sessao";
+    private static final String LOGGED_ID = "logado_id";
+
+    public static String getSessionTable() {
+        return SESSION_TABLE;
+    }
+
+    public static String getLoggedId() {
+        return LOGGED_ID;
+    }
 
     //CURSO
-    public static final String COURSE_TABLE = "curso";
-    public static final String COURSE_ID = "curso_id";
-    public static final String COURSE_NAME = "nome";
+    private static final String COURSE_TABLE = "curso";
+    private static final String COURSE_ID = "curso_id";
+    private static final String COURSE_NAME = "nome";
 
     //CADEIRAS
-    public static final String SUBJECT_TABLE = "cadeira";
-    public static final String SUBJECT_ID = "cadeira_id";
-    public static final String SUBJECT_NAME = "nome";
-    public static final String SUBJECT_DEPT = "dept";
+    private static final String SUBJECT_TABLE = "cadeira";
+    private static final String SUBJECT_ID = "cadeira_id";
+    private static final String SUBJECT_NAME = "nome";
+    private static final String SUBJECT_DEPT = "dept";
 
     //PRÉDIOS
-    public static final String BUILDING_TABLE = "predio";
-    public static final String BUILDING_ID = "predio_id";
-    public static final String BUILDING_NAME = "nome";
-    public static final String BUILDING_LAT = "lat";
-    public static final String BUILDING_LONG = "long";
+    private static final String BUILDING_TABLE = "predio";
+    private static final String BUILDING_ID = "predio_id";
+    private static final String BUILDING_NAME = "nome";
+    private static final String BUILDING_LAT = "lat";
+    private static final String BUILDING_LONG = "long";
 
     //TURMAS
-    public static final String COURSE_CLASS_TABLE = "turma";
-    public static final String COURSE_CLASS_ID = "turma_id";
-    public static final String COURSE_CLASS_NAME = "nome";
-    public static final String COURSE_CLASS_LOCAL = "local";
-    public static final String COURSE_CLASS_COURSE = "curso";
-    public static final String COURSE_CLASS_SUBJECT = "cadeira";
+    private static final String COURSE_CLASS_TABLE = "turma";
+    private static final String COURSE_CLASS_ID = "turma_id";
+    private static final String COURSE_CLASS_NAME = "nome";
+    private static final String COURSE_CLASS_LOCAL = "local";
+    private static final String COURSE_CLASS_COURSE = "curso";
+    private static final String COURSE_CLASS_SUBJECT = "cadeira";
 
     //HORARIOS
-    public static final String TIME_TABLE = "horario";
-    public static final String TIME_ID = "horario_id";
-    public static final String TIME_DAY = "dia";
-    public static final String TIME_START = "inicio";
-    public static final String TIME_END = "fim";
+    private static final String TIME_TABLE = "horario";
+    private static final String TIME_ID = "horario_id";
+    private static final String TIME_DAY = "dia";
+    private static final String TIME_START = "inicio";
+    private static final String TIME_END = "fim";
 
     // AULA
-    public static final String CLASS_TABLE = "aula";
-    public static final String CLASS_ID = "aula_id";
-    public static final String CLASS_COURSE_CLASS = "turma";
-    public static final String CLASS_TIME = "horario";
+    private static final String CLASS_TABLE = "aula";
+    private static final String CLASS_ID = "aula_id";
+    private static final String CLASS_COURSE_CLASS = "turma";
+    private static final String CLASS_TIME = "horario";
 
 
     public DataBase(Context context) {
@@ -82,12 +140,12 @@ public class DataBase extends SQLiteOpenHelper {
         sqLite.execSQL("CREATE TABLE " + USER_TABLE + " ("+
                 USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+
                 USER_EMAIL + " TEXT NOT NULL, " +
-                USER_PASS + " TEXT NOT NULL, " +
-                USER_TOKEN + " TEXT NOT NULL, " +
-                USER_COURSE + " TEXT NOT NULL);");
+                USER_PASSWORD + " TEXT NOT NULL, " +
+                USER_TOKEN + " TEXT, " +
+                USER_COURSE + " TEXT);");
 
         sqLite.execSQL("CREATE TABLE " + PERSON_TABLE + " ("+
-                PESSOA_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                PERSON_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+
                 PERSON_USER_ID + " INTEGER, " +
                 PERSON_NAME + " TEXT NOT NULL, " +
                 PERSON_GENDER + " TEXT NOT NULL, " +
@@ -130,11 +188,6 @@ public class DataBase extends SQLiteOpenHelper {
                 CLASS_COURSE_CLASS + " INTEGER, " +
                 CLASS_TIME + " INTEGER);");
 
-        String addpessoa = "INSERT INTO " + PERSON_TABLE + " (" + PERSON_USER_ID + ", " + PERSON_NAME + ", " +
-                PERSON_GENDER + ", " + PERSON_BIRTHDATE + ", " + PERSON_CEP + ") values";
-
-        String addusuario = "INSERT INTO " + USER_TABLE + " (" + USER_EMAIL + ", " + USER_PASS + ", " +
-                USER_TOKEN + ", " + USER_COURSE + ") values";
 
 
         String addcurso = "INSERT INTO " + COURSE_TABLE + " (" + COURSE_NAME + ") values";

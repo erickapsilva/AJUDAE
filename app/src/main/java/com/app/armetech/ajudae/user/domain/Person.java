@@ -1,9 +1,5 @@
 package com.app.armetech.ajudae.user.domain;
 
-/**
- * Created by user on 10/12/2017.
- */
-
 
 public class Person {
     private long id;

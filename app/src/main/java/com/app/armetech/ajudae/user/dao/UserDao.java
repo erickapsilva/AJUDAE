@@ -8,26 +8,46 @@ import android.database.sqlite.SQLiteDatabase;
 import com.app.armetech.ajudae.infra.DataBase;
 import com.app.armetech.ajudae.user.domain.User;
 
-/**
- * Created by user on 10/12/2017.
- */
 
 public class UserDao {
     private DataBase dbHelper;
-    private SQLiteDatabase db;
+    private SQLiteDatabase database;
+    private String userTable = DataBase.getUserTable();
+    private String userIdColumn = DataBase.getUserId();
+    private String emailColumn = DataBase.getUserEmail();
+    private String passwordColumn = DataBase.getUserPassword();
 
 
     public UserDao(Context context){
         dbHelper = new DataBase(context);
     }
 
-    public User getUserByEmail(String email) {
+    public User getUserById(long id){
+        database = dbHelper.getReadableDatabase();
 
-        db = dbHelper.getReadableDatabase();
-        String query = "SELECT * FROM " + DataBase.USER_TABLE +
-                " WHERE " + DataBase.USER_EMAIL + " LIKE ?";
-        String[] args = {email};
-        Cursor cursor = db.rawQuery(query, args);
+        String query = "SELECT * FROM " + userTable + " WHERE " + userIdColumn + " LIKE ?";
+
+        String stringId = Long.toString(id);
+        String[] arguments = {stringId};
+        Cursor cursor = database.rawQuery(query, arguments);
+
+        User user = null;
+
+        if(cursor.moveToNext()){
+            user = createUser(cursor);
+        }
+
+        cursor.close();
+        database.close();
+
+        return user;
+    }
+
+    public User getUserByEmail(String email) {
+        database = dbHelper.getReadableDatabase();
+        String query = "SELECT * FROM " + userTable + " WHERE " + emailColumn + " LIKE ?";
+        String[] arguments = {email};
+        Cursor cursor = database.rawQuery(query, arguments);
         User user = null;
         if (cursor.moveToNext()) {
             user = createUser(cursor);
@@ -35,58 +55,45 @@ public class UserDao {
         cursor.close();
         return user;
     }
+
     public User getUserLogin(String email, String password){
-        db = dbHelper.getReadableDatabase();
-        String query = "SELECT * FROM " + DataBase.USER_TABLE +
-                " WHERE " + DataBase.USER_EMAIL + " LIKE ? AND " +
-                DataBase.USER_PASS + " LIKE ?";
-        String[] args = {email,password};
-        Cursor cursor = db.rawQuery(query, args);
+        database = dbHelper.getReadableDatabase();
+        String query = "SELECT * FROM " + userTable + " WHERE " + emailColumn + " LIKE ? AND " + passwordColumn + " LIKE ?";
+        String[] arguments = {email,password};
+        Cursor cursor = database.rawQuery(query, arguments);
         User user = null;
         if (cursor.moveToNext()){
             user = createUser(cursor);
         }
         cursor.close();
-        db.close();
+        database.close();
         return user;
     }
 
     public long insertUser(User user){
-        db = dbHelper.getWritableDatabase();
+        database = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        String table = DataBase.USER_TABLE;
-        String emailCol = DataBase.USER_EMAIL;
-        String passwordCol = DataBase.USER_PASS;
-        String tokenCol = DataBase.USER_TOKEN;
-        String courseCol = DataBase.USER_COURSE;
-
-        values.put(tokenCol,"eita");
-        values.put(courseCol,"eita");
-
         String email = user.getEmail();
-        values.put(emailCol, email);
+        values.put(emailColumn, email);
 
         String password = user.getPassword();
-        values.put(passwordCol, password);
+        values.put(passwordColumn, password);
 
-        long id = db.insert(table, null, values);
-        db.close();
+        long id = database.insert(userTable, null, values);
+        database.close();
         return id;
     }
 
     public User createUser(Cursor cursor){
-        String idCol = DataBase.USER_ID;
-        int indexIdCol= cursor.getColumnIndex(idCol);
-        int id = cursor.getInt(indexIdCol);
+        int indexIdColumn= cursor.getColumnIndex(userIdColumn);
+        int id = cursor.getInt(indexIdColumn);
 
-        String emailCol = DataBase.USER_EMAIL;
-        int indexEmailCol = cursor.getColumnIndex(emailCol);
-        String email = cursor.getString(indexEmailCol);
+        int indexEmailColumn = cursor.getColumnIndex(emailColumn);
+        String email = cursor.getString(indexEmailColumn);
 
-        String passwordCol = DataBase.USER_PASS;
-        int indexPasswordCol = cursor.getColumnIndex(passwordCol);
-        String password = cursor.getString(indexPasswordCol);
+        int indexPasswordColumn = cursor.getColumnIndex(passwordColumn);
+        String password = cursor.getString(indexPasswordColumn);
 
         User user = new User();
         user.setId(id);

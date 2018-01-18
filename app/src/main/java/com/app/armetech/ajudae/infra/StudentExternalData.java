@@ -12,7 +12,6 @@ import java.util.List;
  */
 
 public class StudentExternalData {
-    private static final String TAG = StudentExternalData.class.getName();
     private DataHolder dataHolder;
 
     public void searchData(JSONObject requestData, ReturnRequest returnRequest) throws JSONException {

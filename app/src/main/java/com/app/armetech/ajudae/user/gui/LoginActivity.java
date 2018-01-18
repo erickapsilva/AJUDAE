@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.app.armetech.ajudae.R;
 import com.app.armetech.ajudae.infra.Validation;
-import com.app.armetech.ajudae.user.negocio.UserBussiness;
+import com.app.armetech.ajudae.user.business.UserBusiness;
 
 public class LoginActivity extends AppCompatActivity {
     EditText edtEmail, edtPassword;
@@ -23,12 +23,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
         createFields();
-    }
-
-    public void register(View view){
-        Intent registerScreen = new Intent(this, RegisterActivity.class);
-        startActivity(registerScreen);
-        finish();
     }
 
     public void createFields(){
@@ -55,22 +49,34 @@ public class LoginActivity extends AppCompatActivity {
             valid = false;
         }
         if (valid){
-            login(email,password);
+            verifyLogin(email,password);
         }
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    public void login(String email, String password){
-        UserBussiness userBussiness = new UserBussiness(getApplicationContext());
-        boolean verifyLogin = userBussiness.validateLogin(email,password);
+    public void verifyLogin(String email, String password){
+        UserBusiness userBusiness = new UserBusiness(this);
+        boolean verifyLogin = userBusiness.validateLogin(email,password);
         if (verifyLogin){
-            Intent startScreen = new Intent(this, LoginAvaActivity.class);
-            startActivity(startScreen);
-            finish();
+            goToLoginAva();
         } else {
             Toast.makeText(this, R.string.login_incorreto, Toast.LENGTH_SHORT).show();
         }
     }
 
+    public void register(View view){
+        goToRegisterScreen();
+    }
+
+    public void goToLoginAva(){
+        Intent startScreen = new Intent(this, LoginAvaActivity.class);
+        startActivity(startScreen);
+        finish();
+    }
+
+    public void goToRegisterScreen(){
+        Intent registerScreen = new Intent(this, RegisterActivity.class);
+        startActivity(registerScreen);
+        finish();
+    }
 }

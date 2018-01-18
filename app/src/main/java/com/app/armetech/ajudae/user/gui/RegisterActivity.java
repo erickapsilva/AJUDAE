@@ -16,7 +16,7 @@ import com.app.armetech.ajudae.R;
 import com.app.armetech.ajudae.infra.Validation;
 import com.app.armetech.ajudae.user.domain.Person;
 import com.app.armetech.ajudae.user.domain.User;
-import com.app.armetech.ajudae.user.negocio.UserBussiness;
+import com.app.armetech.ajudae.user.business.UserBusiness;
 
 public class RegisterActivity extends AppCompatActivity {
     private EditText edtNameText, edtBirthDateText, edtCepText, edtEmailText, edtPasswordText, edtConfirmPassword;
@@ -48,10 +48,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     public String getGender(){
         RadioButton tickedGender = radioGroupGender.findViewById(radioGroupGender.getCheckedRadioButtonId());
-        if (tickedGender == null){
-            Toast.makeText(this, R.string.sem_genero, Toast.LENGTH_SHORT).show();
-            return null;
-        }
         if(tickedGender.getId() == R.id.rdBtnFemale){
             return "feminino";
         } else if (tickedGender.getId() == R.id.rdBtnMale){
@@ -99,12 +95,12 @@ public class RegisterActivity extends AppCompatActivity {
             isValid = false;
         }
         if (isValid){
-            register(name, gender, birthDate, cep, email, password);
+            verifyRegister(name, gender, birthDate, cep, email, password);
         }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    public void register(String name, String gender, String birthDate, String cep, String email, String password){
+    public void verifyRegister(String name, String gender, String birthDate, String cep, String email, String password){
 
         User user = new User();
         user.setEmail(email);
@@ -116,22 +112,24 @@ public class RegisterActivity extends AppCompatActivity {
         person.setGender(gender);
         person.setBirthDate(birthDate);
 
-        UserBussiness userBussiness = new UserBussiness(getApplicationContext());
-        boolean register = userBussiness.register(user,person);
-
-        if(register){
+        UserBusiness userBusiness = new UserBusiness(getApplicationContext());
+        boolean isRegister = userBusiness.register(user,person);
+        if(isRegister){
             Toast.makeText(this, R.string.cadastrou , Toast.LENGTH_LONG).show();
-            Intent Login = new Intent(this, LoginActivity.class);
-            startActivity(Login);
+            backToLoginScreen();
         }else{
             Toast.makeText(this, R.string.email_ja_cadastrado, Toast.LENGTH_LONG).show();
         }
     }
 
-    @Override
-    public void onBackPressed() {
+    public void backToLoginScreen(){
         Intent login = new Intent(RegisterActivity.this, LoginActivity.class);
         startActivity(login);
         finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        backToLoginScreen();
     }
 }
