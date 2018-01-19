@@ -19,8 +19,7 @@ public final class Cryptography {
             MessageDigest md = MessageDigest.getInstance("MD5");
             md.update(password.getBytes(StandardCharsets.UTF_8));
             byte[] encryptPassword = md.digest();
-            System.out.print(encryptPassword[0]);
-            System.out.println(" " + encryptPassword[1]);
+            
             StringBuilder sb = new StringBuilder();
             for (byte caractere : encryptPassword) {
                 sb.append(String.format("%02X", caractere));
@@ -32,12 +31,6 @@ public final class Cryptography {
             return null;
         }
     }
-
-    public static boolean validatePassword(String password1, String password2){
-        return password1.equals(password2);
-    }
-
-
 
 
 }
