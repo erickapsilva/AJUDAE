@@ -52,7 +52,7 @@ public class SessionDao {
     public void finishSession(){
         database = dbHelper.getWritableDatabase();
         database.delete(sessionTable,null, null);
-        database.close();;
+        database.close();
     }
 
 
