@@ -39,7 +39,7 @@ public class RequestHttp {
         okHttpClient = new OkHttpClient();
     }
 
-    //Faz a requisição pra obter o token do AVA, necessita de ter login e senha
+    //Faz a requisição pra obter o token do AVA, necessita de ter loginClick e senha
     public void getToken(String usrAVA, String passwdAVA, final ReturnRequest returnRequest) {
 
         //Constrói o URL com os parâmetros necessários
@@ -80,7 +80,7 @@ public class RequestHttp {
                 } catch (Exception e) {
                     Log.i(TAG, e.getMessage());
                     Log.i(TAG, "LOGIN INVÁLIDO!" );
-                    //Passa nulo caso essa informação esteja com algum erro (ou não exista o login)
+                    //Passa nulo caso essa informação esteja com algum erro (ou não exista o loginClick)
                     returnRequest.retrieveData(null);
                 }
             }

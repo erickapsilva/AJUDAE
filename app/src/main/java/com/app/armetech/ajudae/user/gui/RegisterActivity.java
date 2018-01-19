@@ -30,7 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    public void register(View view){
+    public void registerClick(View view){
         validateFields();
     }
 

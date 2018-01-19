@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    public void login(View view) {
+    public void loginClick(View view) {
         validateFields();
     }
 
