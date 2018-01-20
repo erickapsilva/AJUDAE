@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
-    tools:context="com.app.armetech.ajudae.usuario.GUI.LoginScreen">
+    tools:context="com.app.armetech.ajudae.user.gui.LoginActivity">
 
     <ImageView
         android:id="@+id/header"
@@ -31,7 +31,6 @@
         android:ems="10"
         android:backgroundTint="@color/lightGray"
         android:hint="Email"
-        android:text="psilva.ericka@gmail.com"
         android:shadowColor="@color/lightGray"
         android:inputType="textEmailAddress"
         android:textColorHint="@color/lightGray"
@@ -40,8 +39,7 @@
         android:textColorHighlight="@color/lightGray"/>
 
     <EditText
-        android:text="123456"
-        android:id="@+id/senha"
+        android:id="@+id/password"
         android:backgroundTint="@color/lightGray"
         android:layout_width="260dp"
         android:layout_height="50dp"
@@ -58,7 +56,7 @@
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/btnEntrar"
+        android:id="@+id/btnEnter"
         style="@style/Base.Widget.AppCompat.Button.Borderless"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
@@ -66,7 +64,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="22dp"
         android:background="@drawable/round_button_red"
-        android:onClick= "entrar"
+        android:onClick= "login"
         android:text="ENTRAR"
         android:textColor="#fff"
         android:theme="@style/AppTheme.WhiteRipple" />
@@ -92,7 +90,7 @@
         android:layout_marginStart="8dp"
         android:layout_toEndOf="@+id/textView"
         android:layout_toRightOf="@+id/textView"
-        android:onClick="cadastrar"
+        android:onClick="register"
         android:text="CADASTRE-SE!"
         android:textColor="@color/darkBlue" />
 
@@ -114,7 +112,7 @@
         android:layout_height="30dp"
         android:layout_alignLeft="@+id/imgViewEmail"
         android:layout_alignStart="@+id/imgViewEmail"
-        android:layout_alignTop="@+id/senha"
+        android:layout_alignTop="@+id/password"
         android:layout_marginTop="9dp"
         app:srcCompat="@drawable/ic_password" />
 

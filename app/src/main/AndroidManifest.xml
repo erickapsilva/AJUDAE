@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashScreen"
+            android:name=".user.gui.SplashActivity"
             android:theme="@style/AppThemeNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,19 +22,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".usuario.GUI.LoginScreen"
+            android:name=".user.gui.LoginActivity"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
-            android:name=".usuario.GUI.RegisterScreen"
+            android:name=".user.gui.RegisterActivity"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
-            android:name=".WelcomeScreen"
+            android:name=".user.gui.WelcomeActivity"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
-            android:name=".usuario.GUI.LoginAvaScreen"
+            android:name=".user.gui.LoginAvaActivity"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
-            android:name=".ScheduleAvaScreen"
+            android:name=".user.gui.ScheduleAvaActivity"
             android:theme="@style/AppThemeNoActionBar"/>
     </application>
 
