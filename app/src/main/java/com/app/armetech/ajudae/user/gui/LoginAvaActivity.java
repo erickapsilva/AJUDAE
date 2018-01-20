@@ -40,7 +40,7 @@ public class LoginAvaActivity extends AppCompatActivity {
 
 
 
-    public void loginAVA(View view){
+    public void loginAVA(View view) {
         String avaLogin = edtTextAvaLogin.getText().toString();
         String avaPass = edtTextAvaPass.getText().toString();
 

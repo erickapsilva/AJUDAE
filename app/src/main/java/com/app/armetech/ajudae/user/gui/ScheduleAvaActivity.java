@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.app.armetech.ajudae.R;
@@ -27,6 +29,7 @@ public class ScheduleAvaActivity extends Activity {
     private RecyclerView recyclerView;
     private TextView txtViewName;
     private TextView txtViewCourse;
+    private Button btnRemover;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +38,13 @@ public class ScheduleAvaActivity extends Activity {
         txtViewName = (TextView)findViewById(R.id.txtViewName);
         txtViewCourse = (TextView)findViewById(R.id.txtViewCourse);
         recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+        btnRemover = (Button)findViewById(R.id.btnContinuar);
         dataHolder = DataHolder.getInstance();
         requestHttp = RequestHttp.getInstance();
         GridLayoutManager glm = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(glm);
         initializeData();
-        initializeAdapter();
+        initializeUpdateAdapter();
     }
 
     public void initializeData() {
@@ -53,7 +57,12 @@ public class ScheduleAvaActivity extends Activity {
         txtViewCourse.append(dataHolder.getData().get("dpt").toString());
     }
 
-    private void initializeAdapter() {
+    public void removeSubjects(View view) {
+        courseSubjects.remove(0);
+        initializeUpdateAdapter();
+    }
+
+    private void initializeUpdateAdapter() {
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(courseSubjects);
         recyclerView.setAdapter(adapter);
     }

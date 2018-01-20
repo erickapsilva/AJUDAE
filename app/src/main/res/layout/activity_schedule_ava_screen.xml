@@ -64,7 +64,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="41dp"
         android:textColor="#fff"
+        android:onClick="removeSubjects"
         android:foreground="?attr/selectableItemBackground"
         android:background="@drawable/round_button_red"
         android:text="CONTINUAR" />
+
 </RelativeLayout>
