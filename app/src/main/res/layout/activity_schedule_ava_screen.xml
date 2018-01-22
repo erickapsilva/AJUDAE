@@ -56,10 +56,11 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
         android:textColor="#fff"
-        android:onClick="removeSubjects"
+        android:onClick="goToHelpSubjectsScreen"
         android:foreground="?attr/selectableItemBackground"
         android:background="@drawable/round_button_red"
-        android:text="CONTINUAR" />
+        android:text="CONTINUAR"
+        tools:ignore="OnClick" />
 
     <ImageView
         android:id="@+id/imageView12"

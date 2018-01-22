@@ -35,7 +35,12 @@
             android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".user.gui.ScheduleAvaActivity"
-            android:theme="@style/AppThemeNoActionBar"/>
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".user.gui.SelectHelpSubjectActivity"
+            android:theme="@style/AppThemeNoActionBar">
+
+        </activity>
     </application>
 
 </manifest>

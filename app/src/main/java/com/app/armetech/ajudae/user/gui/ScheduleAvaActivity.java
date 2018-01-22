@@ -1,6 +1,7 @@
 package com.app.armetech.ajudae.user.gui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -56,6 +57,13 @@ public class ScheduleAvaActivity extends Activity {
         txtViewName.append(dataHolder.getData().get("fullname").toString());
         txtViewCourse.append(dataHolder.getData().get("dpt").toString());
     }
+
+    public void goToHelpSubjectsScreen(View view){
+        Intent helpSubject = new Intent(this, SelectHelpSubjectActivity.class);
+        startActivity(helpSubject);
+        finish();
+    }
+
 
     public void removeSubjects(View view) {
         courseSubjects.remove(0);
