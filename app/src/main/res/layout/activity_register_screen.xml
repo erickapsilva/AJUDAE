@@ -16,15 +16,11 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="512dp"
 
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.277"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/round_header" />
+        android:scaleType="matrix"
+        app:srcCompat="@drawable/round_header"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -33,13 +29,14 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
 
+        android:layout_marginBottom="8dp"
         android:layout_marginTop="16dp"
         android:text="CADASTRO"
         android:textColor="#fff"
         android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btnContinue"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.015" />

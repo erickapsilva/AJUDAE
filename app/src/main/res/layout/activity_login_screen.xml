@@ -19,6 +19,7 @@
         app:srcCompat="@drawable/headerlogin" />
 
     <EditText
+        android:text="t@g.com"
         android:id="@+id/email"
         android:layout_width="260dp"
         android:layout_height="50dp"
@@ -39,6 +40,7 @@
         android:textColorHighlight="@color/lightGray"/>
 
     <EditText
+        android:text="123456"
         android:id="@+id/password"
         android:backgroundTint="@color/lightGray"
         android:layout_width="260dp"
