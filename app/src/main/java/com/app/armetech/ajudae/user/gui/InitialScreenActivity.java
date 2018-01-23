@@ -3,13 +3,16 @@ package com.app.armetech.ajudae.user.gui;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import com.app.armetech.ajudae.FaltasFragment;
 import com.app.armetech.ajudae.FeedFragment;
+import com.app.armetech.ajudae.NotificationsFragment;
+import com.app.armetech.ajudae.ProfileFragment;
 import com.app.armetech.ajudae.R;
+import com.app.armetech.ajudae.SearchFragment;
 
 public class InitialScreenActivity extends AppCompatActivity {
 
@@ -33,7 +36,7 @@ public class InitialScreenActivity extends AppCompatActivity {
 
                 case R.id.navigation_faltas:
                     setTitle("@string/faltas");//seta o título da ActionBar
-                    FeedFragment fragmentFaltas = new FeedFragment();
+                    FaltasFragment fragmentFaltas = new FaltasFragment();
                     FragmentTransaction fragmentTransactionFaltas = getSupportFragmentManager().beginTransaction();
                     fragmentTransactionFaltas.replace(R.id.frame_layout, fragmentFaltas, "@string/fragment_text_faltas");
                     fragmentTransactionFaltas.commit();
@@ -41,7 +44,7 @@ public class InitialScreenActivity extends AppCompatActivity {
 
                 case R.id.navigation_search:
                     setTitle("@string/buscar");//seta o título da ActionBar
-                    FeedFragment fragmentSearch = new FeedFragment();
+                    SearchFragment fragmentSearch = new SearchFragment();
                     FragmentTransaction fragmentTransactionSearch = getSupportFragmentManager().beginTransaction();
                     fragmentTransactionSearch.replace(R.id.frame_layout, fragmentSearch, "@string/fragment_text_search");
                     fragmentTransactionSearch.commit();
@@ -49,7 +52,7 @@ public class InitialScreenActivity extends AppCompatActivity {
 
                 case R.id.navigation_notifications:
                     setTitle("@string/notificacoes");//seta o título da ActionBar
-                    FeedFragment fragmentNotifications = new FeedFragment();
+                    NotificationsFragment fragmentNotifications = new NotificationsFragment();
                     FragmentTransaction fragmentTransactionNotifications = getSupportFragmentManager().beginTransaction();
                     fragmentTransactionNotifications.replace(R.id.frame_layout, fragmentNotifications, "@string/fragment_text_notifications");
                     fragmentTransactionNotifications.commit();
@@ -57,7 +60,7 @@ public class InitialScreenActivity extends AppCompatActivity {
 
                 case R.id.navigation_profile:
                     setTitle("@string/feed");//seta o título da ActionBar
-                    FeedFragment fragmentProfile = new FeedFragment();
+                    ProfileFragment fragmentProfile = new ProfileFragment();
                     FragmentTransaction fragmentTransactionProfile = getSupportFragmentManager().beginTransaction();
                     fragmentTransactionProfile.replace(R.id.frame_layout, fragmentProfile, "@string/fragment_text_profile");
                     fragmentTransactionProfile.commit();

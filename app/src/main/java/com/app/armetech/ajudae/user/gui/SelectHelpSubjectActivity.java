@@ -40,7 +40,7 @@ public class SelectHelpSubjectActivity extends AppCompatActivity implements Adap
     }
 
     //Função para testar o NewsFeed ButtomNavigation
-    public void goToNewsFeed(View view){
+    public void goToNewsFeedScreen(View view){
         Intent intent = new Intent(this, NewsFeed.class);
         startActivity(intent);
         finish();
