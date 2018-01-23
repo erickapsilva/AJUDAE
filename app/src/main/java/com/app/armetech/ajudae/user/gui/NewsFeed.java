@@ -1,10 +1,12 @@
 package com.app.armetech.ajudae.user.gui;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.app.armetech.ajudae.R;
@@ -23,14 +25,10 @@ public class NewsFeed extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.tab_feed:
-                        //ação a ser tomada ao clicar na aba feed
-                        //#teste
                         Toast.makeText(NewsFeed.this, "Clicou na aba Feed", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.tab_faltas:
-                        //ação a ser tomada ao clicar na aba faltas
-                        //#teste
                         Toast.makeText(NewsFeed.this, "Clicou na aba Faltas", Toast.LENGTH_SHORT).show();
                         break;
 
@@ -56,4 +54,6 @@ public class NewsFeed extends AppCompatActivity {
             }
         });
     }
+
+
 }

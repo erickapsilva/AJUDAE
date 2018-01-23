@@ -22,4 +22,13 @@
     <string name="buscar">Buscar</string>
     <string name="notificacoes">Notificações</string>
     <string name="perfil">Perfil</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_initial_screen">InitialScreenActivity</string>
+    <string name="title_feed">Home</string>
+    <string name="title_faltas">Dashboard</string>
+    <string name="title_search">Notifications</string>
+    <string name="title_profile">Perfil</string>
+    <string name="title_notifications">Notificações</string>
 </resources>
