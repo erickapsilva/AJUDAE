@@ -1,5 +1,6 @@
 package com.app.armetech.ajudae.user.gui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,5 +37,12 @@ public class SelectHelpSubjectActivity extends AppCompatActivity implements Adap
     @Override
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
+    }
+
+    //Função para testar o NewsFeed ButtomNavigation
+    public void goToNewsFeed(View view){
+        Intent intent = new Intent(this, NewsFeed.class);
+        startActivity(intent);
+        finish();
     }
 }

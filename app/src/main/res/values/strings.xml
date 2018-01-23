@@ -16,5 +16,10 @@
 
     <string name="login_incorreto">Informações incorretas</string>
 
-    //
+    //BottomNavigationBar
+    <string name="feed">Feed</string>
+    <string name="faltas">Faltas</string>
+    <string name="buscar">Buscar</string>
+    <string name="notificacoes">Notificações</string>
+    <string name="perfil">Perfil</string>
 </resources>

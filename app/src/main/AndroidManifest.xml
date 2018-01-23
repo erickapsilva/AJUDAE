@@ -38,9 +38,8 @@
             android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".user.gui.SelectHelpSubjectActivity"
-            android:theme="@style/AppThemeNoActionBar">
-
-        </activity>
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity android:name=".user.gui.NewsFeed"></activity>
     </application>
 
 </manifest>
