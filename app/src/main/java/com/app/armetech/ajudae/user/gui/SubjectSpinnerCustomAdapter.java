@@ -11,25 +11,23 @@ import android.widget.TextView;
 import com.app.armetech.ajudae.R;
 
 /**
- * Created by aicsb on 22/01/2018.
+ * Created by user1 on 24/01/2018.
  */
 
-public class CustomAdapter extends BaseAdapter {
+public class SubjectSpinnerCustomAdapter extends BaseAdapter {
     Context context;
-    int flags[];
-    String[] countryNames;
+    String[] info;
     LayoutInflater inflter;
 
-    public CustomAdapter(Context applicationContext, int[] flags, String[] countryNames) {
+    public SubjectSpinnerCustomAdapter(Context applicationContext, String[] info) {
         this.context = applicationContext;
-        this.flags = flags;
-        this.countryNames = countryNames;
+        this.info = info;
         inflter = (LayoutInflater.from(applicationContext));
     }
 
     @Override
     public int getCount() {
-        return flags.length;
+        return info.length;
     }
 
     @Override
@@ -47,8 +45,8 @@ public class CustomAdapter extends BaseAdapter {
         view = inflter.inflate(R.layout.custom_spinner_items, null);
         ImageView icon = (ImageView) view.findViewById(R.id.imageView);
         TextView names = (TextView) view.findViewById(R.id.textView);
-        icon.setImageResource(flags[i]);
-        names.setText(countryNames[i]);
+        icon.setImageResource(R.drawable.ic_academic_cap);
+        names.setText(info[i]);
         return view;
     }
 }

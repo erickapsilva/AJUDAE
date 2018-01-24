@@ -23,9 +23,12 @@ public class SelectHelpSubjectActivity extends AppCompatActivity implements Adap
     private RecyclerView recyclerView;
 
 
-    String[] countryNames={"MATEMÁTICA DISCRETA","ÁLGEBRA","FÍSICA","ECONOMIA","ENGENHARIA DE SOFTWARE"};
-    int flags[] = {R.drawable.ic_academic_cap, R.drawable.ic_academic_cap,
-            R.drawable.ic_academic_cap, R.drawable.ic_academic_cap, R.drawable.ic_academic_cap};
+    String[] departaments ={"DADM", "DEINFO", "DM", "DF", "DE"};
+    String[] subjects = {"MATEMÁTICA DISCRETA","ÁLGEBRA","FÍSICA","ECONOMIA","ENGENHARIA DE SOFTWARE"};
+
+
+    //int flags[] = {R.drawable.ic_academic_cap, R.drawable.ic_academic_cap,
+     //       R.drawable.ic_academic_cap, R.drawable.ic_academic_cap, R.drawable.ic_academic_cap};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +36,21 @@ public class SelectHelpSubjectActivity extends AppCompatActivity implements Adap
         setContentView(R.layout.activity_select_help_subject);
         recyclerView = (RecyclerView)findViewById(R.id.recyclerViewHelp);
 
-        //Getting the instance of Spinner and applying OnItemSelectedListener on it
-        Spinner spin = (Spinner) findViewById(R.id.simpleSpinner);
-        spin.setOnItemSelectedListener(this);
+        //Pegando os spinners tanto de departamento quanto de cadeira
+        Spinner departamentSpinner = (Spinner) findViewById(R.id.departamentsSpinner);
+        Spinner subjectSpinner = (Spinner) findViewById(R.id.subjectSpinner);
 
-        CustomAdapter customAdapter=new CustomAdapter(getApplicationContext(),flags,countryNames);
-        spin.setAdapter(customAdapter);
+        //aplicando esse método pra poder pega o item selecionado
+        departamentSpinner.setOnItemSelectedListener(this);
+        subjectSpinner.setOnItemSelectedListener(this);
+
+        DepartmentSpinnerCustomAdapter departmentSpinnerCustomAdapter =
+                new DepartmentSpinnerCustomAdapter(getApplicationContext(), departaments);
+        SubjectSpinnerCustomAdapter subjectSpinnerCustomAdapter =
+                new SubjectSpinnerCustomAdapter(getApplicationContext(),subjects);
+
+        departamentSpinner.setAdapter(departmentSpinnerCustomAdapter);
+        subjectSpinner.setAdapter(subjectSpinnerCustomAdapter);
 
         GridLayoutManager glm = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(glm);
@@ -58,7 +70,8 @@ public class SelectHelpSubjectActivity extends AppCompatActivity implements Adap
     //Performing action onItemSelected and onNothing selected
     @Override
     public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
-        Toast.makeText(getApplicationContext(), countryNames[position], Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), departaments[position], Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), subjects[position], Toast.LENGTH_LONG).show();
     }
 
     @Override
