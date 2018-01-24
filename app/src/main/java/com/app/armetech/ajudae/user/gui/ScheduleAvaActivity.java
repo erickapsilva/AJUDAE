@@ -71,7 +71,7 @@ public class ScheduleAvaActivity extends Activity {
     }
 
     private void initializeUpdateAdapter() {
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(courseSubjects);
+        RVSubjects adapter = new RVSubjects(courseSubjects);
         recyclerView.setAdapter(adapter);
     }
 }

@@ -6,109 +6,27 @@
     android:background="#eee"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.app.armetech.ajudae.user.gui.NewsFeed">
+    tools:context="com.app.armetech.ajudae.perguntas.gui.NewsFeed">
 
-    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/card_view"
-        android:layout_width="match_parent"
-        android:layout_height="260dp"
-        android:layout_margin="8dp">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="#eeeeee"
+        android:paddingBottom="50dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        tools:context="com.app.armetech.ajudae.user.gui.SelectHelpSubjectActivity">
 
-        <RelativeLayout
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewFeed"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/news_feed">
 
+        </android.support.v7.widget.RecyclerView>
 
-            <ImageView
-                android:scaleType="centerCrop"
-                android:id="@+id/imageView13"
-                android:layout_width="wrap_content"
-                android:layout_height="54dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginEnd="299dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="299dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
-                app:srcCompat="@drawable/redroundmortar" />
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/imageView13"
-                android:layout_alignStart="@+id/imageView13"
-                android:layout_alignTop="@+id/imageView13"
-                android:layout_marginLeft="73dp"
-                android:layout_marginStart="73dp"
-                android:layout_marginTop="5dp"
-                android:text="ERICKA PRICILA DA SILVA"
-                android:textColor="@color/darkBlue"
-                android:textSize="16dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/textView14"
-                android:layout_alignStart="@+id/textView14"
-                android:layout_below="@+id/textView14"
-                android:layout_marginTop="7dp"
-                android:text="Bacharelado em Sistemas de Informação" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_alignLeft="@+id/textView20"
-                android:layout_alignStart="@+id/textView20"
-                android:layout_below="@+id/textView20"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/round_button_red"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="#MATRIZES"
-                android:textColor="#fff" />
-
-            <TextView
-                android:textSize="15dp"
-                android:textStyle="bold"
-                android:layout_marginRight="8dp"
-                android:textColor="@color/darkBlue"
-                android:id="@+id/textView18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignEnd="@+id/textView15"
-                android:layout_alignLeft="@+id/imageView13"
-                android:layout_alignRight="@+id/textView15"
-                android:layout_alignStart="@+id/imageView13"
-                android:layout_below="@+id/textView15"
-                android:layout_marginTop="16dp"
-                android:text="Text view responsável por mostrar a pergunta
-do usuário x?" />
-
-            <TextView
-                android:id="@+id/textView20"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignEnd="@+id/textView18"
-                android:layout_alignLeft="@+id/textView18"
-                android:layout_alignRight="@+id/textView18"
-                android:layout_alignStart="@+id/textView18"
-                android:layout_below="@+id/textView18"
-                android:layout_marginTop="12dp"
-                android:layout_marginRight="8dp"
-                android:text="TextView responsável por mostrar a resposta da pergunta acima..." />
-
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
-
-
+    </LinearLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation"

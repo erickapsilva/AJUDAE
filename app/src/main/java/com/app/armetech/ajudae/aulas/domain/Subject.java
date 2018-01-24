@@ -6,7 +6,8 @@ package com.app.armetech.ajudae.aulas.domain;
 
 public class Subject {
 
-    private String subjectName, courseClass;
+    private String subjectName,
+                   courseClass;
 
     public Subject(String courseClass, String subjectName) {
         this.courseClass = courseClass;
