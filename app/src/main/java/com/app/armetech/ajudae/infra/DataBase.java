@@ -102,6 +102,18 @@ public class DataBase extends SQLiteOpenHelper {
     private static final String SUBJECT_NAME = "nome";
     private static final String SUBJECT_DEPT = "dept";
 
+    public static String getSubjectTable(){
+        return SUBJECT_TABLE;
+    }
+    public static String getSubjectName(){
+        return SUBJECT_NAME;
+    }
+    public static String getSubjectId(){
+        return SUBJECT_ID;
+    }
+    public static String getSubjectDept(){
+        return SUBJECT_DEPT;
+    }
     //PRÉDIOS
     private static final String BUILDING_TABLE = "predio";
     private static final String BUILDING_ID = "predio_id";
