@@ -58,7 +58,7 @@ public class SelectHelpSubjectActivity extends AppCompatActivity {
 
     //Função para testar o NewsFeed ButtomNavigation
     public void goToNewsFeedScreen(View view){
-        Intent intent = new Intent(this, NewsFeed.class);
+        Intent intent = new Intent(this, BottomTabActivity.class);
         startActivity(intent);
         finish();
     }

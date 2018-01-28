@@ -24,11 +24,11 @@
     <string name="perfil">Perfil</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="fragment_text_feed">Fragment do feed</string>
-    <string name="fragment_text_faltas">Fragment das faltas</string>
-    <string name="fragment_text_search">Fragment da busca</string>
-    <string name="fragment_text_notifications">Fragment das notificações</string>
-    <string name="fragment_text_profile">Fragment do perfil</string>
+    <string name="fragment_text_feed">PERGUNTAS</string>
+    <string name="fragment_text_faltas">FALTAS</string>
+    <string name="fragment_text_search">BUSCAR</string>
+    <string name="fragment_text_notifications">NOTIFICAÇÕES</string>
+    <string name="fragment_text_profile">PERFIL</string>
     <string name="title_activity_initial_screen">InitialScreenActivity</string>
     <string name="title_feed">Home</string>
     <string name="title_faltas">Dashboard</string>

@@ -7,12 +7,12 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.app.armetech.ajudae.FaltasFragment;
-import com.app.armetech.ajudae.FeedFragment;
-import com.app.armetech.ajudae.NotificationsFragment;
-import com.app.armetech.ajudae.ProfileFragment;
+import com.app.armetech.ajudae.user.gui.fragments.FaltasFragment;
+import com.app.armetech.ajudae.user.gui.fragments.FeedFragment;
+import com.app.armetech.ajudae.user.gui.fragments.NotificationsFragment;
+import com.app.armetech.ajudae.user.gui.fragments.ProfileFragment;
 import com.app.armetech.ajudae.R;
-import com.app.armetech.ajudae.SearchFragment;
+import com.app.armetech.ajudae.user.gui.fragments.SearchFragment;
 
 public class InitialScreenActivity extends AppCompatActivity {
 

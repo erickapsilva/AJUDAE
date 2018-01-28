@@ -18,12 +18,14 @@
         app:srcCompat="@drawable/headerloginava" />
 
     <Button
+
         android:id="@+id/btnContinuar"
         style="@style/Base.Widget.AppCompat.Button.Borderless"
         android:layout_width="270dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/edtTextAvaPass"
+        android:layout_below="@+id/textViewAVA"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
         android:background="@drawable/round_button_red"
         android:foreground="?attr/selectableItemBackground"
         android:onClick="loginAVA"
@@ -106,22 +108,22 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/edtTextAvaPass"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="35dp"
         android:text="name"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="16dp" />
 
     <TextView
-        android:layout_marginTop="12dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:id="@+id/textViewAVA"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/btnContinuar"
-        android:layout_alignLeft="@+id/btnContinuar"
-        android:layout_alignRight="@+id/btnContinuar"
-        android:layout_alignStart="@+id/btnContinuar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/textViewName"
+        android:layout_marginTop="22dp"
         android:text="Conecte-se com o AVA e obtenha
 suas cadeiras automaticamente!"
         android:textAlignment="center"

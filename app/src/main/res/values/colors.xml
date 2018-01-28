@@ -5,4 +5,7 @@
     <color name="colorAccent">#E35354</color>
     <color name="darkBlue">#2C3E50</color>
     <color name="lightGray">#BCBCBD</color>
+    <color name="white">#ffffff</color>
+
+    <color name="backgroundFragment">#e4e4e4</color>
 </resources>
