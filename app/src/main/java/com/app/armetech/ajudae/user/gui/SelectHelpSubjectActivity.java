@@ -7,6 +7,8 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -39,12 +41,14 @@ public class SelectHelpSubjectActivity extends AppCompatActivity {
         GridLayoutManager glm = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(glm);
         takenSubjects = new ArrayList<>();
+        addAutocompleteData();
     }
 
     //Performing action onItemSelected and onNothing selected
 
     public void pressButton(View view) {
         addNewSubject();
+        editGetSubject.setText("");
     }
 
     public void addNewSubject() {
@@ -62,5 +66,27 @@ public class SelectHelpSubjectActivity extends AppCompatActivity {
     private void initializeUpdateAdapter() {
         RVSubjects adapter = new RVSubjects(takenSubjects);
         recyclerView.setAdapter(adapter);
+    }
+
+    private void addAutocompleteData(){
+        // substituir esse array por informações do banco
+        String[] subjects = {"Modelagem de Programação Orientada a Objetos",
+                "Cálculo A Uma Variável",
+                "Introdução a Programação",
+                "Teoria da Computação",
+                "Álgebra",
+                "Matemática Discreta",
+                "Fundamentos de Egenharia de Software",
+                "Algoritmos e Estrutura de Dados"};
+        ArrayAdapter<String> subjectAdapter = new ArrayAdapter<String>
+                (this, android.R.layout.select_dialog_item, subjects);
+
+        AutoCompleteTextView actv =
+                (AutoCompleteTextView) findViewById(R.id.editText001);
+
+
+        actv.setThreshold(2);
+        actv.setAdapter(subjectAdapter);
+
     }
 }

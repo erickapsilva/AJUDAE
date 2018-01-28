@@ -5,48 +5,38 @@ colocar o CardView junto (no mesmo XML) ao RecyclerView irá resultar em erro-->
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardViewFeed"
+    app:cardBackgroundColor="#fff"
     android:layout_width="match_parent"
-    android:layout_height="260dp"
-    android:layout_margin="8dp">
+    android:layout_height="230dp"
+    android:layout_marginTop="8dp">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
-        <ImageView
-            android:scaleType="centerCrop"
-            android:id="@+id/imageView13"
-            android:layout_width="60dp"
-            android:layout_height="54dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginEnd="299dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="299dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/redroundmortar" />
-
         <TextView
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
             android:id="@+id/textView14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/imageView13"
-            android:layout_alignStart="@+id/imageView13"
-            android:layout_alignTop="@+id/imageView13"
-            android:layout_marginLeft="73dp"
-            android:layout_marginStart="73dp"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/darkBlue"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="13dp"
             android:maxLines="3"
+            android:text="Ericka Pricila da Silva"
+            android:textColor="@color/darkBlue"
             android:textSize="16dp"
             android:textStyle="bold" />
 
         <TextView
+            android:text="BSI"
+            android:layout_marginEnd="8dp"
             android:id="@+id/textView15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -54,9 +44,11 @@ colocar o CardView junto (no mesmo XML) ao RecyclerView irá resultar em erro-->
             android:layout_alignStart="@+id/textView14"
             android:layout_below="@+id/textView14"
             android:maxLines="3"
-            android:layout_marginTop="7dp" />
+            android:layout_marginTop="7dp"
+            android:layout_marginRight="8dp" />
 
         <Button
+            android:text="#matriz"
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
@@ -70,22 +62,27 @@ colocar o CardView junto (no mesmo XML) ao RecyclerView irá resultar em erro-->
             android:textColor="#fff" />
 
         <TextView
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:layout_marginRight="8dp"
-            android:textColor="@color/darkBlue"
             android:id="@+id/textView18"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignEnd="@+id/textView15"
-            android:layout_alignLeft="@+id/imageView13"
             android:layout_alignRight="@+id/textView15"
-            android:layout_alignStart="@+id/imageView13"
             android:layout_below="@+id/textView15"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:maxLines="3"
-            android:layout_marginTop="16dp" />
+            android:text="Posso lavar minha placa mãe com
+detergente?"
+            android:textColor="@color/darkBlue"
+            android:textSize="15dp"
+            android:textStyle="bold" />
 
         <TextView
+            android:text="Minha placa mãe está suja, será que posso
+lavar ela sem ter danos?"
             android:id="@+id/textView20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

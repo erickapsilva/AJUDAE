@@ -108,7 +108,7 @@ public class LoginAvaActivity extends AppCompatActivity {
     }
 
     public void createFields(){
-        btnContinue = (Button) findViewById(R.id.btnContinue);
+        btnContinue = (Button) findViewById(R.id.btnContinuar);
         edtTextAvaLogin = (EditText) findViewById(R.id.edtTextAvaLogin);
         edtTextAvaPass = (EditText) findViewById(R.id.edtTextAvaPass);
         txtViewName = (TextView) findViewById(R.id.textViewName);

@@ -37,7 +37,7 @@ public class RVFeed extends RecyclerView.Adapter<RVFeed.QuestionViewHolder> {
             title = (TextView)itemView.findViewById(R.id.textView18);
             question = (TextView)itemView.findViewById(R.id.textView20);
             tag = (Button)itemView.findViewById(R.id.button2);
-            userPicture = (ImageView)itemView.findViewById(R.id.imageView13);
+
 
         }
     }
