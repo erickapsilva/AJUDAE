@@ -2,7 +2,6 @@ package com.app.armetech.ajudae.aulas.domain;
 
 import com.app.armetech.ajudae.aulas.domain.Subject;
 
-import java.util.Collection;
 import java.util.List;
 
 /**

@@ -1,11 +1,9 @@
 package com.app.armetech.ajudae.user.gui;
 
 import android.graphics.Color;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 
 import com.app.armetech.ajudae.R;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;

@@ -6,17 +6,12 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
-import android.widget.Spinner;
 
 import com.app.armetech.ajudae.R;
-import com.app.armetech.ajudae.aulas.dao.SubjectDao;
 import com.app.armetech.ajudae.aulas.domain.Subject;
-import com.app.armetech.ajudae.perguntas.domain.Question;
-import com.app.armetech.ajudae.perguntas.gui.NewsFeed;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +73,7 @@ public class SelectHelpSubjectActivity extends AppCompatActivity {
                 "Matemática Discreta",
                 "Fundamentos de Egenharia de Software",
                 "Algoritmos e Estrutura de Dados"};
-        ArrayAdapter<String> subjectAdapter = new ArrayAdapter<String>
+        ArrayAdapter<String> subjectAdapter = new ArrayAdapter<>
                 (this, android.R.layout.select_dialog_item, subjects);
 
         AutoCompleteTextView actv =

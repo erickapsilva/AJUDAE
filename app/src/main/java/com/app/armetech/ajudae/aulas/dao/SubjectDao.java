@@ -26,7 +26,7 @@ public class SubjectDao{
         String query = "SELECT * FROM " + DataBase.getSubjectTable();
         Cursor cursor = db.rawQuery(query, null);
         Subject subject = new Subject("SI1","Escolha uma cadeira");
-        ArrayList<Subject> subjects = new ArrayList<Subject>();
+        ArrayList<Subject> subjects = new ArrayList<>();
         subjects.add(subject);
         while(cursor.moveToNext()){
             subject = createSubject(cursor);
@@ -45,7 +45,7 @@ public class SubjectDao{
         String[] args = {Department};
         Cursor cursor = db.rawQuery(query, args);
         Subject subject = new Subject("SI1","Escolha uma cadeira");
-        ArrayList<Subject> subjects = new ArrayList<Subject>();
+        ArrayList<Subject> subjects = new ArrayList<>();
         subjects.add(subject);
         while(cursor.moveToNext()){
             subject = createSubject(cursor);
@@ -60,7 +60,7 @@ public class SubjectDao{
         String query = "SELECT DISTINCT DEPT FROM " + DataBase.getSubjectTable();
         Cursor cursor = db.rawQuery(query,null);
         String department = "Escolha um Departamento";
-        ArrayList<String> departments = new ArrayList<String>();
+        ArrayList<String> departments = new ArrayList<>();
         departments.add(department);
         while(cursor.moveToNext()){
             department = cursor.getString(0);
