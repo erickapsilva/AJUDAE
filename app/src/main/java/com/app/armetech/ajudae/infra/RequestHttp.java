@@ -3,6 +3,7 @@ package com.app.armetech.ajudae.infra;
 //Classe de requisição de informações do AVA
 //É um singleton
 
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -57,7 +58,7 @@ public class RequestHttp {
 
             //Caso falhe
             @Override
-            public void onFailure(Call call, IOException e) {
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 //Chama a interface e passa nulo pra mostrar que houve alguma falha
                 returnRequest.retrieveData(null);
                 Log.i(TAG, e.getMessage());
@@ -65,7 +66,7 @@ public class RequestHttp {
 
             //Caso funcione
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                 //Pega as informações do body()
                 //O body() pode ser usado APENAS UMA VEZ, após transformar em String, não poderá
                 //ser usado novamente, caso se tente, ocorrerá em erro.
@@ -104,13 +105,13 @@ public class RequestHttp {
         okHttpClient.newCall(request).enqueue(new Callback() {
 
             @Override
-            public void onFailure(Call call, IOException e) {
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 returnRequest.retrieveData(null);
                 Log.i(TAG, e.getMessage());
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                 String result = response.body().string();
                 try {
                     JSONObject jsonObj = new JSONObject(result);
@@ -139,13 +140,13 @@ public class RequestHttp {
 
         okHttpClient.newCall(request).enqueue(new Callback() {
             @Override
-            public void onFailure(Call call, IOException e) {
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 returnRequest.retrieveData(null);
                 Log.i(TAG, e.getMessage());
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                 String result = response.body().string();
 
                 try {

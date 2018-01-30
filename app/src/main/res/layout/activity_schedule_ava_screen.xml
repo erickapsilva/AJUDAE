@@ -59,7 +59,7 @@
         android:onClick="goToHelpSubjectsScreen"
         android:foreground="?attr/selectableItemBackground"
         android:background="@drawable/round_button_red"
-        android:text="CONTINUAR"
+        android:text="@string/continuar"
         tools:ignore="OnClick" />
 
     <ImageView

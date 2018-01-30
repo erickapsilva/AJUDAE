@@ -25,7 +25,7 @@
         android:layout_marginBottom="65dp"
         android:layout_marginEnd="103dp"
         android:layout_marginRight="103dp"
-        android:text="Você está Logado!"
+        android:text="@string/voc_est_logado"
         android:textColor="@android:color/background_light"
         android:textSize="18sp" />
 </RelativeLayout>

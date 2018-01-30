@@ -1,9 +1,5 @@
 package com.app.armetech.ajudae.infra;
 
-/**
- * Created by user on 10/12/2017.
- */
-
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 

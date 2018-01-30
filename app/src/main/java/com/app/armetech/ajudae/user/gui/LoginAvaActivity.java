@@ -112,7 +112,7 @@ public class LoginAvaActivity extends AppCompatActivity {
         edtTextAvaLogin = (EditText) findViewById(R.id.edtTextAvaLogin);
         edtTextAvaPass = (EditText) findViewById(R.id.edtTextAvaPass);
         txtViewName = (TextView) findViewById(R.id.textViewName);
-        txtViewName.setText("Olá " + Session.getLoggedPerson().getName());
+        txtViewName.setText(String.format("Olá %s", Session.getLoggedPerson().getName()));
     }
 
     public void getLoginInfo() {

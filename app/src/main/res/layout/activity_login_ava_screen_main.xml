@@ -28,7 +28,7 @@
         android:background="@drawable/round_button_red"
         android:foreground="?attr/selectableItemBackground"
         android:onClick="loginAVA"
-        android:text="CONTINUAR"
+        android:text="@string/continuar"
         android:textColor="#fff" />
 
     <ImageView
@@ -56,7 +56,7 @@
         android:layout_toRightOf="@+id/icEmail"
         android:backgroundTint="@color/lightGray"
         android:ems="10"
-        android:hint="Login do AVA"
+        android:hint="@string/login_do_ava"
         android:inputType="textEmailAddress"
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/lightGray" />
@@ -74,7 +74,7 @@
         android:layout_marginTop="30dp"
         android:backgroundTint="@color/lightGray"
         android:ems="10"
-        android:hint="Senha do AVA"
+        android:hint="@string/senha_do_ava"
         android:inputType="textPassword"
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/lightGray" />
@@ -108,7 +108,7 @@
         android:layout_below="@+id/edtTextAvaPass"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
-        android:text="name"
+        android:text="@string/name"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="16dp" />
@@ -123,11 +123,10 @@
         android:layout_alignRight="@+id/btnContinuar"
         android:layout_alignStart="@+id/btnContinuar"
         android:layout_below="@+id/textViewName"
-        android:text="Conecte-se com o AVA e obtenha
-suas cadeiras automaticamente!"
+        android:text="@string/conecte_se_com_o_ava_e_obtenha_suas_cadeiras_automaticamente"
         android:textAlignment="center"
         android:textColor="@color/darkBlue"
-        android:textSize="16dp" />
+        android:textSize="16sp" />
 
 
 
