@@ -12,6 +12,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.app.armetech.ajudae.user.gui.BottomTabActivity"
     android:id="@+id/content_id"
+    style="@style/AppThemeNoActionBar"
     tools:showIn="@layout/activity_bottom_tab">
 
     <TextView

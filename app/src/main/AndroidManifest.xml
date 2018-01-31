@@ -47,6 +47,7 @@
             android:name=".user.gui.BottomTabActivity"
             android:theme="@style/AppThemeNoActionBar">
 
+
         </activity>
     </application>
 
