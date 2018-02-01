@@ -11,6 +11,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 
 import com.app.armetech.ajudae.R;
+import com.app.armetech.ajudae.aulas.dao.SubjectDao;
 import com.app.armetech.ajudae.aulas.domain.Subject;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class SelectHelpSubjectActivity extends AppCompatActivity {
     private List<Subject> takenSubjects;
     private RecyclerView recyclerView;
     private EditText editGetSubject;
+    private SubjectDao subjectDao;
 
     //int flags[] = {R.drawable.ic_academic_cap, R.drawable.ic_academic_cap,
      //       R.drawable.ic_academic_cap, R.drawable.ic_academic_cap, R.drawable.ic_academic_cap};
@@ -31,6 +33,7 @@ public class SelectHelpSubjectActivity extends AppCompatActivity {
         setContentView(R.layout.activity_select_help_subject);
         recyclerView = (RecyclerView)findViewById(R.id.recyclerViewHelp);
         editGetSubject = (EditText)findViewById(R.id.editText001);
+        subjectDao = new SubjectDao(getApplicationContext());
 
 
         GridLayoutManager glm = new GridLayoutManager(this, 2);
@@ -64,17 +67,13 @@ public class SelectHelpSubjectActivity extends AppCompatActivity {
     }
 
     private void addAutocompleteData(){
-        // substituir esse array por informações do banco
-        String[] subjects = {"Modelagem de Programação Orientada a Objetos",
-                "Cálculo A Uma Variável",
-                "Introdução a Programação",
-                "Teoria da Computação",
-                "Álgebra",
-                "Matemática Discreta",
-                "Fundamentos de Egenharia de Software",
-                "Algoritmos e Estrutura de Dados"};
+        ArrayList<Subject> listSubjects = subjectDao.getSubjects();
+        ArrayList<String> listSubjectsName = new ArrayList<String>();
+        for(Subject subject: listSubjects){
+            listSubjectsName.add(subject.getSubjectName());
+        }//
         ArrayAdapter<String> subjectAdapter = new ArrayAdapter<>
-                (this, android.R.layout.select_dialog_item, subjects);
+                (this, android.R.layout.select_dialog_item, listSubjectsName);
 
         AutoCompleteTextView actv =
                 (AutoCompleteTextView) findViewById(R.id.editText001);
