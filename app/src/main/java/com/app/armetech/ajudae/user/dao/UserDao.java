@@ -102,7 +102,7 @@ public class UserDao {
         return user;
     }
 
-    public void updateUserSubjects() {
+    /*public void updateUserSubjects() {
         database = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
 
@@ -112,7 +112,7 @@ public class UserDao {
         values.put(subjectsColumn, subjects);
 
         database.update(userTable, values, userIdColumn + "=" + user.getId(), null);
-    }
+    }*/
 
 
 

@@ -78,8 +78,8 @@ public class NewsFeed extends AppCompatActivity {
     }
 
     private void initializeUpdateAdapter() {
-        RVFeed adapter = new RVFeed(questions);
-        recyclerViewFeed.setAdapter(adapter);
+//        RVFeed adapter = new RVFeed(questions);
+//        recyclerViewFeed.setAdapter(adapter);
     }
 
 }

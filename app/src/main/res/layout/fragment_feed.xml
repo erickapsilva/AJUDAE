@@ -8,16 +8,7 @@
     tools:context="com.app.armetech.ajudae.user.gui.fragments.FeedFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:textAlignment="center"
-        android:textSize="25dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:textColor="@color/colorPrimary"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/fragment_text_feed"
-        android:id="@+id/textView8" />
+
 
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/material_design_android_floating_action_menu"
@@ -83,7 +74,7 @@
         android:layout_height="280dp"
         android:layout_below="@+id/editText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#fff"
         app:cardCornerRadius="2dp"
         app:cardElevation="5dp"

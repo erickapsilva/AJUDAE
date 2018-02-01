@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="AppThemeToolbar" parent="Base.ThemeOverlay.AppCompat.Light">
+        <item name="android:fontFamily">@font/nunito_regular</item>
+    </style>
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Tema utlizado quando precisarmos da Navigation Bar -->
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -21,5 +25,7 @@
         <item name="colorControlHighlight">@color/lightGray</item>
         <item name="android:fontFamily">@font/nunito_regular</item>q
     </style>
+
+
 
 </resources>

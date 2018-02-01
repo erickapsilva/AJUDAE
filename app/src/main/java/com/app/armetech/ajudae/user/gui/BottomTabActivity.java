@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
 
 import com.app.armetech.ajudae.R;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
@@ -15,16 +16,24 @@ import com.app.armetech.ajudae.user.gui.fragments.SearchFragment;
 import com.app.armetech.ajudae.user.gui.fragments.NotificationsFragment;
 import com.app.armetech.ajudae.user.gui.fragments.ProfileFragment;
 
+import org.w3c.dom.Text;
+
 public class BottomTabActivity extends AppCompatActivity implements AHBottomNavigation.OnTabSelectedListener{
 
     AHBottomNavigation bottomNavigation;
+    TextView mTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_bottom_tab);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
+
         setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         bottomNavigation= (AHBottomNavigation) findViewById(R.id.myBottomNavigation_ID);
         bottomNavigation.setOnTabSelectedListener(this);
@@ -68,27 +77,32 @@ public class BottomTabActivity extends AppCompatActivity implements AHBottomNavi
         {
             FeedFragment feedFragment=new FeedFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id,feedFragment).commit();
+            mTitle.setText("Feed");
 
 
         }else  if (position==1)
         {
             FaltasFragment faltasFragment = new FaltasFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id,faltasFragment).commit();
+            mTitle.setText("Faltas");
 
         }else  if (position==2)
         {
             SearchFragment searchFragment = new SearchFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id,searchFragment).commit();
+            mTitle.setText("Buscar");
 
         }else  if (position==3)
         {
             NotificationsFragment notificationsFragment = new NotificationsFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id,notificationsFragment).commit();
+            mTitle.setText("Alertas");
 
         }else  if (position==4)
         {
             ProfileFragment profileFragment = new ProfileFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id,profileFragment).commit();
+            mTitle.setText("Perfil");
 
         }
         return true;

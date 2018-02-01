@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="AppThemeToolbar" parent="Base.ThemeOverlay.AppCompat.Light">
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_regular</item>
+    </style>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Tema utlizado quando precisarmos da Navigation Bar -->
