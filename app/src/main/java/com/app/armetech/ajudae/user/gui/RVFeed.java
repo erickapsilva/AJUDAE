@@ -44,7 +44,7 @@ public class RVFeed extends RecyclerView.Adapter<RVFeed.QuestionViewHolder> {
 
     List<Question> questions;
 
-    RVFeed(List<Question> questions){
+    public RVFeed(List<Question> questions){
         this.questions = questions;
     }
 
