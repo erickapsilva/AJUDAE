@@ -14,6 +14,9 @@ import com.app.armetech.ajudae.aulas.domain.Subject;
 import com.app.armetech.ajudae.infra.DataHolder;
 import com.app.armetech.ajudae.infra.StudentExternalData;
 import com.app.armetech.ajudae.infra.RequestHttp;
+import com.app.armetech.ajudae.user.dao.UserDao;
+import com.app.armetech.ajudae.user.domain.Session;
+import com.app.armetech.ajudae.user.domain.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,9 +54,13 @@ public class ScheduleAvaActivity extends Activity {
     public void initializeData() {
         subjects = (ArrayList)dataHolder.getData().get("subjects");
         courseClass = (ArrayList)dataHolder.getData().get("course_class");
+        User loggedUser = Session.getLoggedUser();
         courseSubjects = new ArrayList<>();
-        for(int i = 0; i < subjects.size(); i++)
-            courseSubjects.add(new Subject(courseClass.get(i), subjects.get(i)));
+        for(int i = 0; i < subjects.size(); i++) {
+            Subject newSubject = new Subject(courseClass.get(i), subjects.get(i));
+            courseSubjects.add(newSubject);
+            loggedUser.setSubject(newSubject);
+        }
         txtViewName.append(dataHolder.getData().get("fullname").toString());
         txtViewCourse.append(dataHolder.getData().get("dpt").toString());
     }

@@ -102,4 +102,18 @@ public class UserDao {
         return user;
     }
 
+    public void updateUserSubjects() {
+        database = dbHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        user = Session.getLoggedUser();
+
+        String subjects = user.getSubjectsAsString();
+        values.put(subjectsColumn, subjects);
+
+        database.update(userTable, values, userIdColumn + "=" + user.getId(), null);
+    }
+
+
+
 }

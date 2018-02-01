@@ -4,6 +4,12 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.app.armetech.ajudae.aulas.domain.Subject;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 
 public class DataBase extends SQLiteOpenHelper {
     private static final String DB_NAME = "dbajudae";
@@ -54,6 +60,7 @@ public class DataBase extends SQLiteOpenHelper {
     private static final String USER_PASSWORD = "senha";
     private static final String USER_TOKEN = "token";
     private static final String USER_COURSE = "curso";
+    private static final String USER_SUBJECTS = "subjects";
 
     public static String getUserTable() {
         return USER_TABLE;
@@ -78,6 +85,8 @@ public class DataBase extends SQLiteOpenHelper {
     public static String getUserCourse() {
         return USER_COURSE;
     }
+
+    public static String getUserSubjects() { return USER_SUBJECTS; }
 
     //SESSAO DO USUARIO
     private static final String SESSION_TABLE = "sessao";
@@ -114,6 +123,7 @@ public class DataBase extends SQLiteOpenHelper {
     public static String getSubjectDept(){
         return SUBJECT_DEPT;
     }
+
     //PRÉDIOS
     private static final String BUILDING_TABLE = "predio";
     private static final String BUILDING_ID = "predio_id";
@@ -153,8 +163,9 @@ public class DataBase extends SQLiteOpenHelper {
                 USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+
                 USER_EMAIL + " TEXT NOT NULL, " +
                 USER_PASSWORD + " TEXT NOT NULL, " +
-                USER_TOKEN + " TEXT, " +
-                USER_COURSE + " TEXT);");
+                USER_SUBJECTS + " TEXT, " +
+                USER_COURSE + " TEXT, " +
+                USER_TOKEN + " TEXT);");
 
         sqLite.execSQL("CREATE TABLE " + PERSON_TABLE + " ("+
                 PERSON_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+
