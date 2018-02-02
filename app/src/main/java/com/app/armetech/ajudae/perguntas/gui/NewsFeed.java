@@ -70,7 +70,7 @@ public class NewsFeed extends AppCompatActivity {
 
     private void initializeData() {
         questions = new ArrayList<>();
-        questions.add(new Question("Rodrigo Xavier", "BSI", "Onde eu baixo placa de vídeo?", "Vi que pra jogar GTA preciso de uma placa de vídeo nova, onde eu baixo?", "#PLACA DE VÍDEO"));
+        questions.add(new Question("Roooodrigo Xavier", "BSI", "Onde eu baixo placa de vídeo?", "Vi que pra jogar GTA preciso de uma placa de vídeo nova, onde eu baixo?", "#PLACA DE VÍDEO"));
         questions.add(new Question("André Arruda", "BSI", "O Godzilla Giroflex é um bom navegador?", "Veio junto com meu computador, posso entrar no Facebook com ele? Tenho que instalar o Facebook de novo?", "#NAVEGADOR"));
         questions.add(new Question("Emerson Lira", "BSI", "Quem são os inimigos da HP, empresa concorrente?", "Meu tio sempre fala dos inimigos da HP. Minha impresora é HP, é uma empresa concorrente?", "#EMPRESAS"));
         questions.add(new Question("Ericka Pricila", "BSI", "Qual a diferença de um sistema operacional e o Windows?", "Comprei um computador que veio com o sistema operacional Linux, qual diferença de um sistema operacional e do Windows?", "#SISTEMAS OPERACIONAIS"));

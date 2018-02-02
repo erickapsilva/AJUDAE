@@ -19,7 +19,7 @@
     <TextView
         android:textColor="#fff"
         android:textSize="18dp"
-        android:id="@+id/textView5"
+        android:id="@+id/txtQuestionResume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"

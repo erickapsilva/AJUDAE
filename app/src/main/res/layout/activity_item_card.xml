@@ -28,6 +28,7 @@ colocar o CardView junto (no mesmo XML) ao RecyclerView irá resultar em erro-->
                 android:src="@drawable/redroundmortar" />
 
             <TextView
+                android:fontFamily="@font/nunito_bold"
                 android:id="@+id/courseClass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -43,6 +44,7 @@ colocar o CardView junto (no mesmo XML) ao RecyclerView irá resultar em erro-->
                 android:background="@color/colorPrimary" />
 
             <TextView
+                android:fontFamily="@font/nunito_regular"
                 android:maxLines="2"
                 android:id="@+id/subjectName"
                 android:layout_width="wrap_content"

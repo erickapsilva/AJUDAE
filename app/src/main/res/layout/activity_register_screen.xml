@@ -23,7 +23,7 @@
         tools:layout_editor_absoluteY="0dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -34,7 +34,7 @@
         android:text="@string/cadastro"
         android:textColor="#fff"
         android:textSize="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintBottom_toTopOf="@+id/txtQuestionTitle"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +65,7 @@
         android:id="@+id/edtNameText"
         android:layout_width="350dp"
         android:layout_height="65dp"
-        android:layout_below="@+id/textView4"
+        android:layout_below="@+id/txtQuestionTitle"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -122,7 +122,7 @@
         app:layout_constraintVertical_bias="0.308" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/txtQuestionTitle"
         android:layout_width="222dp"
         android:layout_height="35dp"
         android:layout_alignEnd="@id/edtNameText"
@@ -226,8 +226,8 @@
             android:layout_height="match_parent"
             android:layout_alignBaseline="@+id/textView6"
             android:layout_alignBottom="@+id/textView6"
-            android:layout_toLeftOf="@+id/textView2"
-            android:layout_toStartOf="@+id/textView2"
+            android:layout_toLeftOf="@+id/txtUserName"
+            android:layout_toStartOf="@+id/txtUserName"
             android:backgroundTint="@color/colorPrimary"
             android:shadowColor="@color/colorPrimary"
             android:text="@string/f"

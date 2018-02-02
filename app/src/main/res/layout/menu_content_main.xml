@@ -15,12 +15,5 @@
     style="@style/AppThemeNoActionBar"
     tools:showIn="@layout/activity_bottom_tab">
 
-    <TextView
-        android:textColor="@color/colorPrimary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="100dp"
-        android:text="Hello World!" />
+
 </RelativeLayout>

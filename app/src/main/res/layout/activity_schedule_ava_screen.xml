@@ -29,6 +29,7 @@
     </GridLayout>
 
     <TextView
+        android:fontFamily="@font/nunito_regular"
         android:id="@+id/txtViewName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,6 +39,7 @@
         android:textColor="@color/darkBlue"/>
 
     <TextView
+        android:fontFamily="@font/nunito_bold"
         android:textAlignment="center"
         android:textColor="@color/darkBlue"
         android:id="@+id/txtViewCourse"
@@ -48,7 +50,7 @@
         android:layout_marginTop="10dp" />
 
     <Button
-        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:fontFamily="@font/nunito_regular"
         android:id="@+id/btnContinuar"
         android:layout_width="270dp"
         android:layout_height="50dp"

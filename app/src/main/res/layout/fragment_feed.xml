@@ -71,7 +71,7 @@
     <android.support.v7.widget.CardView
         android:layout_marginLeft="24dp"
         android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_height="300dp"
         android:layout_below="@+id/editText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
@@ -97,7 +97,7 @@
 
             <TextView
                 android:textStyle="bold"
-                android:id="@+id/textView2"
+                android:id="@+id/txtUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -111,22 +111,22 @@
 
             <TextView
                 android:textStyle="italic"
-                android:id="@+id/textView3"
+                android:id="@+id/txtUserGraduation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/textView2"
-                android:layout_below="@+id/textView2"
+                android:layout_alignStart="@+id/txtUserName"
+                android:layout_below="@+id/txtUserName"
                 android:layout_marginTop="2dp"
                 android:text="Bacharelado em Sistemas de Informação"
                 android:textColor="#b2b2b2"
                 android:textSize="12dp"
-                android:layout_alignLeft="@+id/textView2" />
+                android:layout_alignLeft="@+id/txtUserName" />
 
             <TextView
                 android:textSize="18dp"
                 android:textStyle="bold"
                 android:textColor="#666666"
-                android:id="@+id/textView4"
+                android:id="@+id/txtQuestionTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -136,25 +136,38 @@
                 android:layout_alignParentLeft="true" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/txtQuestionResume"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/textView4"
+                android:layout_below="@+id/txtQuestionTitle"
                 android:layout_marginTop="11dp"
                 android:text="Gostaria de visualizar as transformações que vejo na cadeira de Álgebra pq n to entendendo é nada :/"
                 android:textColor="#b2b2b2"
                 android:textStyle="italic" />
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/txtTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:text="12 horas" />
+
+            <Button
+                android:id="@+id/btnTag"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignBottom="@+id/txtTime"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/round_button_red"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="#matriz"
+                android:textColor="#fff" />
 
             <!--<ImageButton
                 android:layout_marginLeft="5dp"

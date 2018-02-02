@@ -7,93 +7,136 @@ colocar o CardView junto (no mesmo XML) ao RecyclerView irá resultar em erro-->
     android:id="@+id/cardViewFeed"
     app:cardBackgroundColor="#fff"
     android:layout_width="match_parent"
-    android:layout_height="230dp"
-    android:layout_marginTop="8dp">
+    android:layout_height="280dp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="16dp"
+    android:backgroundTint="#fff"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="8dp"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp"
+    android:layout_marginBottom="1dp"
+    app:contentPaddingBottom="24dp"
+    app:contentPaddingLeft="16dp"
+    app:contentPaddingRight="16dp"
+    app:contentPaddingTop="24dp">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/ic_launcher" />
 
         <TextView
-            android:layout_marginRight="16dp"
-            android:layout_marginEnd="16dp"
-            android:id="@+id/textView14"
-            android:layout_width="match_parent"
+            android:textStyle="bold"
+            android:id="@+id/txtUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="13dp"
+            android:layout_toEndOf="@+id/imageView"
+            android:text="Ericka Pricila da Silva"
+            android:textColor="#666666"
+            android:textSize="16dp"
+            android:layout_marginLeft="13dp"
+            android:layout_toRightOf="@+id/imageView" />
+
+        <TextView
+            android:textStyle="italic"
+            android:id="@+id/txtUserGraduation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/txtUserName"
+            android:layout_below="@+id/txtUserName"
+            android:layout_marginTop="2dp"
+            android:text="Bacharelado em Sistemas de Informação"
+            android:textColor="#b2b2b2"
+            android:textSize="12dp"
+            android:layout_alignLeft="@+id/txtUserName" />
+
+        <TextView
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#666666"
+            android:id="@+id/txtQuestionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/imageView"
+            android:layout_marginTop="19dp"
+            android:text="Alguém sabe de algum software para visualizar transformações lineares em tempo real?"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:id="@+id/txtQuestionResume"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="13dp"
-            android:maxLines="3"
-            android:text="Ericka Pricila da Silva"
-            android:textColor="@color/darkBlue"
-            android:textSize="16dp"
-            android:textStyle="bold" />
+            android:layout_below="@+id/txtQuestionTitle"
+            android:layout_marginTop="11dp"
+            android:text="Gostaria de visualizar as transformações que vejo na cadeira de Álgebra pq n to entendendo é nada :/"
+            android:textColor="#b2b2b2"
+            android:textStyle="italic" />
 
         <TextView
-            android:text="BSI"
-            android:layout_marginEnd="8dp"
-            android:id="@+id/textView15"
-            android:layout_width="match_parent"
+            android:id="@+id/txtTime"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView14"
-            android:layout_alignStart="@+id/textView14"
-            android:layout_below="@+id/textView14"
-            android:maxLines="3"
-            android:layout_marginTop="7dp"
-            android:layout_marginRight="8dp" />
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="12 horas" />
 
         <Button
-            android:text="#matriz"
-            android:id="@+id/button2"
+            android:id="@+id/btnTag"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_alignLeft="@+id/textView20"
-            android:layout_alignStart="@+id/textView20"
-            android:layout_below="@+id/textView20"
-            android:layout_marginTop="20dp"
+            android:layout_alignBottom="@+id/txtTime"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:background="@drawable/round_button_red"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
+            android:text="#matriz"
             android:textColor="#fff" />
 
-        <TextView
-            android:id="@+id/textView18"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/textView15"
-            android:layout_alignRight="@+id/textView15"
-            android:layout_below="@+id/textView15"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:maxLines="3"
-            android:text="Posso lavar minha placa mãe com
-detergente?"
-            android:textColor="@color/darkBlue"
-            android:textSize="15dp"
-            android:textStyle="bold" />
+        <!--<ImageButton
+            android:layout_marginLeft="5dp"
+            android:id="@+id/imageButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:backgroundTint="@color/white"
+            android:src="@mipmap/ic_card_comment" />
 
         <TextView
-            android:text="Minha placa mãe está suja, será que posso
-lavar ela sem ter danos?"
-            android:id="@+id/textView20"
-            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="3dp"
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/textView18"
-            android:layout_alignLeft="@+id/textView18"
-            android:layout_alignRight="@+id/textView18"
-            android:layout_alignStart="@+id/textView18"
-            android:layout_below="@+id/textView18"
-            android:maxLines="3"
-            android:layout_marginTop="12dp"
-            android:layout_marginRight="8dp"/>
+            android:layout_alignEnd="@+id/imageView"
+            android:layout_alignRight="@+id/imageView"
+            android:layout_alignTop="@+id/imageButton"
+            android:text="12" />
+
+        <ImageButton
+            android:backgroundTint="@color/white"
+            android:id="@+id/imageButton2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@+id/textView3"
+            android:layout_alignStart="@+id/textView3"
+            android:layout_alignTop="@+id/imageButton"
+            android:src="@mipmap/ic_card_like" /> -->
 
     </RelativeLayout>
 </android.support.v7.widget.CardView>

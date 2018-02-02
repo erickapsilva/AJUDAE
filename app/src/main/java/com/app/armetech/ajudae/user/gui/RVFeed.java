@@ -1,4 +1,4 @@
-package com.app.armetech.ajudae.perguntas.gui;
+package com.app.armetech.ajudae.user.gui;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.app.armetech.ajudae.R;
 import com.app.armetech.ajudae.perguntas.domain.Question;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -32,11 +34,11 @@ public class RVFeed extends RecyclerView.Adapter<RVFeed.QuestionViewHolder> {
         QuestionViewHolder(View itemView) {
             super(itemView);
             cardView = (CardView)itemView.findViewById(R.id.cardViewFeed);
-            name = (TextView)itemView.findViewById(R.id.textView14);
-            course = (TextView)itemView.findViewById(R.id.textView15);
-            title = (TextView)itemView.findViewById(R.id.textView18);
-            question = (TextView)itemView.findViewById(R.id.textView20);
-            tag = (Button)itemView.findViewById(R.id.button2);
+            name = (TextView)itemView.findViewById(R.id.txtUserName);
+            course = (TextView)itemView.findViewById(R.id.txtUserGraduation);
+            title = (TextView)itemView.findViewById(R.id.txtQuestionTitle);
+            question = (TextView)itemView.findViewById(R.id.txtQuestionResume);
+            tag = (Button)itemView.findViewById(R.id.btnTag);
 
 
         }
