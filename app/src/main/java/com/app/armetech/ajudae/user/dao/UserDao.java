@@ -4,8 +4,10 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.app.armetech.ajudae.infra.DataBase;
+import com.app.armetech.ajudae.user.domain.Session;
 import com.app.armetech.ajudae.user.domain.User;
 
 
@@ -16,7 +18,9 @@ public class UserDao {
     private String userIdColumn = DataBase.getUserId();
     private String emailColumn = DataBase.getUserEmail();
     private String passwordColumn = DataBase.getUserPassword();
-
+    private String subjectsHelpedColumn = DataBase.getUserSubjectsHelped();
+    private String subjectsHelperColumn = DataBase.getUserSubjectsHelper();
+    private User user;
 
     public UserDao(Context context){
         dbHelper = new DataBase(context);
@@ -95,24 +99,40 @@ public class UserDao {
         int indexPasswordColumn = cursor.getColumnIndex(passwordColumn);
         String password = cursor.getString(indexPasswordColumn);
 
+        int indexSubjectsHelpedColumn = cursor.getColumnIndex(subjectsHelpedColumn);
+        String subjectsHelped = cursor.getString(indexSubjectsHelpedColumn);
+
+        int indexSujectsHelperColumn = cursor.getColumnIndex(subjectsHelperColumn);
+        String subjectsHelper = cursor.getString(indexSujectsHelperColumn);
+
         User user = new User();
         user.setId(id);
         user.setEmail(email);
         user.setPassword(password);
+        if(subjectsHelped != null)
+            user.setSubjectsHelped(subjectsHelped);
+        if(subjectsHelper != null)
+            user.setSubjectsHelper(subjectsHelper);
         return user;
     }
 
-    /*public void updateUserSubjects() {
+    public void updateUserSubjects() {
         database = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
 
         user = Session.getLoggedUser();
 
-        String subjects = user.getSubjectsAsString();
-        values.put(subjectsColumn, subjects);
+        String subjectsHelped = user.getSubjectsHelpedAsString();
+        values.put(subjectsHelpedColumn, subjectsHelped);
+
+        String subjectsHelper = user.getSubjectsHelperAsString();
+        values.put(subjectsHelperColumn, subjectsHelper);
+
+        Log.i("TAGHELPED", subjectsHelped);
+        Log.i("TAGHELPER", subjectsHelper);
 
         database.update(userTable, values, userIdColumn + "=" + user.getId(), null);
-    }*/
+    }
 
 
 

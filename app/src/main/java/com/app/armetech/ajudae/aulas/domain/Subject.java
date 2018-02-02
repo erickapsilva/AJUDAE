@@ -14,9 +14,11 @@ public class Subject {
         this.subjectName = subjectName;
     }
 
-    public String getCourseClass() {
+    public String getFormattedCourseClass() {
         return "TURMA: " + courseClass;
     }
+
+    public String getCourseClass() { return courseClass; }
 
     public void setCourseClass(String courseClass) {
         this.courseClass = courseClass;

@@ -59,7 +59,7 @@ public class ScheduleAvaActivity extends Activity {
         for(int i = 0; i < subjects.size(); i++) {
             Subject newSubject = new Subject(courseClass.get(i), subjects.get(i));
             courseSubjects.add(newSubject);
-            loggedUser.setSubject(newSubject);
+            loggedUser.setSubjectHelped(newSubject);
         }
         txtViewName.append(dataHolder.getData().get("fullname").toString());
         txtViewCourse.append(dataHolder.getData().get("dpt").toString());

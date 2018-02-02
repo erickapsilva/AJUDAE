@@ -13,6 +13,9 @@ import android.widget.EditText;
 import com.app.armetech.ajudae.R;
 import com.app.armetech.ajudae.aulas.dao.SubjectDao;
 import com.app.armetech.ajudae.aulas.domain.Subject;
+import com.app.armetech.ajudae.user.dao.UserDao;
+import com.app.armetech.ajudae.user.domain.Session;
+import com.app.armetech.ajudae.user.domain.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +26,8 @@ public class SelectHelpSubjectActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private EditText editGetSubject;
     private SubjectDao subjectDao;
+    private UserDao userDao;
+    private User user;
 
     //int flags[] = {R.drawable.ic_academic_cap, R.drawable.ic_academic_cap,
      //       R.drawable.ic_academic_cap, R.drawable.ic_academic_cap, R.drawable.ic_academic_cap};
@@ -34,6 +39,8 @@ public class SelectHelpSubjectActivity extends AppCompatActivity {
         recyclerView = (RecyclerView)findViewById(R.id.recyclerViewHelp);
         editGetSubject = (EditText)findViewById(R.id.editText001);
         subjectDao = new SubjectDao(getApplicationContext());
+        userDao = new UserDao(getApplicationContext());
+        user = Session.getLoggedUser();
 
 
         GridLayoutManager glm = new GridLayoutManager(this, 2);
@@ -50,12 +57,15 @@ public class SelectHelpSubjectActivity extends AppCompatActivity {
     }
 
     public void addNewSubject() {
-        takenSubjects.add(new Subject("SI1", editGetSubject.getText().toString()));
+        Subject newSubject = new Subject("SI1", editGetSubject.getText().toString().toUpperCase());
+        takenSubjects.add(newSubject);
+        user.setSubjectHelper(newSubject);
         initializeUpdateAdapter();
     }
 
     //Função para testar o NewsFeed ButtomNavigation
     public void goToNewsFeedScreen(View view){
+        userDao.updateUserSubjects();
         Intent intent = new Intent(this, BottomTabActivity.class);
         startActivity(intent);
         finish();
