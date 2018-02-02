@@ -48,6 +48,6 @@ public class FeedFragment extends Fragment {
         List<Question> questionsDb = questionDao.getQuestions();
         questions = new ArrayList<>();
         questions = questionsDb;
-    }
+   }
 
 }

@@ -34,6 +34,8 @@ public class ScheduleAvaActivity extends Activity {
     private TextView txtViewName;
     private TextView txtViewCourse;
     private Button btnRemover;
+    private String dept;
+    private String fullname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,8 @@ public class ScheduleAvaActivity extends Activity {
     public void initializeData() {
         subjects = (ArrayList)dataHolder.getData().get("subjects");
         courseClass = (ArrayList)dataHolder.getData().get("course_class");
+        dept = dataHolder.getData().get("dpt").toString();
+        fullname = dataHolder.getData().get("fullname").toString();
         User loggedUser = Session.getLoggedUser();
         courseSubjects = new ArrayList<>();
         for(int i = 0; i < subjects.size(); i++) {
@@ -61,8 +65,9 @@ public class ScheduleAvaActivity extends Activity {
             courseSubjects.add(newSubject);
             loggedUser.setSubjectHelped(newSubject);
         }
-        txtViewName.append(dataHolder.getData().get("fullname").toString());
-        txtViewCourse.append(dataHolder.getData().get("dpt").toString());
+        txtViewName.append(fullname);
+        txtViewCourse.append(dept);
+        Session.getLoggedUser().setCourse(dept);
     }
 
     public void goToHelpSubjectsScreen(View view){

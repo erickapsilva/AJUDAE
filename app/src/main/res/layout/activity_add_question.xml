@@ -84,6 +84,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"
+        android:onClick="sendQuestion"
         android:background="@drawable/round_button_red"
         android:text="ENVIAR"
         android:textColor="#fff"

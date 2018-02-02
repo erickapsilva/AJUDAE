@@ -66,6 +66,8 @@ colocar o CardView junto (no mesmo XML) ao RecyclerView irá resultar em erro-->
             android:id="@+id/txtQuestionTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:minLines="1"
+            android:maxLines="2"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/imageView"
             android:layout_marginTop="19dp"
@@ -80,6 +82,8 @@ colocar o CardView junto (no mesmo XML) ao RecyclerView irá resultar em erro-->
             android:layout_alignParentStart="true"
             android:layout_below="@+id/txtQuestionTitle"
             android:layout_marginTop="11dp"
+            android:minLines="1"
+            android:maxLines="3"
             android:text="Gostaria de visualizar as transformações que vejo na cadeira de Álgebra pq n to entendendo é nada :/"
             android:textColor="#b2b2b2"
             android:textStyle="italic" />

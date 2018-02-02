@@ -158,6 +158,7 @@ public class DataBase extends SQLiteOpenHelper {
     // PERGUNTAS
     private static final String QUESTION_TABLE = "question";
     private static final String QUESTION_ID = "question_id";
+    private static final String QUESTION_OWNER_ID = "owner_id";
     private static final String QUESTION_TITLE = "title";
     private static final String QUESTION_OWNER = "owner";
     private static final String QUESTION_BODY = "body";
@@ -166,6 +167,7 @@ public class DataBase extends SQLiteOpenHelper {
     public static String getQuestionTable() { return QUESTION_TABLE; }
     public static String getQuestionId() { return QUESTION_ID; }
     public static String getQuestionTitle() { return QUESTION_TITLE; }
+    public static String getQuestionOwnerId() { return QUESTION_OWNER_ID; }
     public static String getQuestionOwner() { return QUESTION_OWNER; }
     public static String getQuestionBody() { return QUESTION_BODY; }
     public static String getQuestionTags() { return QUESTION_TAGS; }
@@ -231,6 +233,7 @@ public class DataBase extends SQLiteOpenHelper {
 
         sqLite.execSQL("CREATE TABLE " + QUESTION_TABLE + " (" +
                 QUESTION_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                QUESTION_OWNER_ID + " INTEGER, " +
                 QUESTION_OWNER + " TEXT, " +
                 QUESTION_TITLE + " TEXT, " +
                 QUESTION_BODY + " TEXT, " +

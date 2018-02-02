@@ -27,6 +27,7 @@ public class QuestionDao {
     private String questionTagsColumn = DataBase.getQuestionTags();
     private String questionOwnerColumn = DataBase.getQuestionOwner();
     private String questionTable = DataBase.getQuestionTable();
+    private String questionOwnerId = DataBase.getQuestionOwnerId();
 
 
     public QuestionDao(Context context){

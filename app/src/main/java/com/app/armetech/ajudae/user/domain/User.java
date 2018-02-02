@@ -12,6 +12,7 @@ public class User {
     private String email;
     private String password;
     private String Token;
+    private String course;
     private List<Subject> subjectsHelped;
     private List<Subject> subjectsHelper;
     private long id;
@@ -131,5 +132,13 @@ public class User {
                     subjectsHelper.add(new Subject(data[0], data[1]));
             }
         }
+    }
+
+    public String getCourse() {
+        return course;
+    }
+
+    public void setCourse(String course) {
+        this.course = course;
     }
 }
