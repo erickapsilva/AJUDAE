@@ -27,16 +27,11 @@ public class FeedFragment extends Fragment {
     private List<Question> questions;
     private QuestionDao questionDao;
 
-    FloatingActionMenu materialDesignFAM;
-    FloatingActionButton floatingActionButton2, floatingActionButton3;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_feed,container,false);
 
-        materialDesignFAM = (FloatingActionMenu) rootView.findViewById(R.id.material_design_android_floating_action_menu);
-        floatingActionButton2 =  (FloatingActionButton) rootView.findViewById(R.id.material_design_floating_action_menu_item2);
-        floatingActionButton3 = (FloatingActionButton) rootView.findViewById(R.id.material_design_floating_action_menu_item3);
 
         questionDao = new QuestionDao(getContext());
 
@@ -44,19 +39,6 @@ public class FeedFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         initializeData();
         recyclerView.setAdapter(new RVFeed(questions));
-
-
-        floatingActionButton2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //TODO something when floating action menu second item clicked
-            }
-        });
-        floatingActionButton3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //TODO something when floating action menu third item clicked
-
-            }
-        });
 
         return recyclerView;
 

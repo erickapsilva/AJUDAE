@@ -1,9 +1,11 @@
 package com.app.armetech.ajudae.user.gui;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.TextView;
 
 import com.app.armetech.ajudae.R;
@@ -15,6 +17,8 @@ import com.app.armetech.ajudae.user.gui.fragments.FaltasFragment;
 import com.app.armetech.ajudae.user.gui.fragments.SearchFragment;
 import com.app.armetech.ajudae.user.gui.fragments.NotificationsFragment;
 import com.app.armetech.ajudae.user.gui.fragments.ProfileFragment;
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 
 import org.w3c.dom.Text;
 
@@ -22,6 +26,8 @@ public class BottomTabActivity extends AppCompatActivity implements AHBottomNavi
 
     AHBottomNavigation bottomNavigation;
     TextView mTitle;
+    FloatingActionMenu materialDesignFAM;
+    FloatingActionButton floatingActionButton2, floatingActionButton3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +37,11 @@ public class BottomTabActivity extends AppCompatActivity implements AHBottomNavi
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
 
+        materialDesignFAM = (FloatingActionMenu) findViewById(R.id.material_design_android_floating_action_menu);
+        floatingActionButton2 =  (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_item2);
+        floatingActionButton3 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_item3);
+
+
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -38,6 +49,19 @@ public class BottomTabActivity extends AppCompatActivity implements AHBottomNavi
         bottomNavigation= (AHBottomNavigation) findViewById(R.id.myBottomNavigation_ID);
         bottomNavigation.setOnTabSelectedListener(this);
         this.createNavItems();
+
+        floatingActionButton2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu second item clicked
+                startActivity(new Intent(BottomTabActivity.this,AddQuestionActivity.class));
+            }
+        });
+        floatingActionButton3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //TODO something when floating action menu third item clicked
+
+            }
+        });
 
     }
 

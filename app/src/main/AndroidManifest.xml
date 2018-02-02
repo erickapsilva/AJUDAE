@@ -45,10 +45,10 @@
             android:label="@string/title_activity_initial_screen" />
         <activity
             android:name=".user.gui.BottomTabActivity"
-            android:theme="@style/AppThemeNoActionBar">
-
-
-        </activity>
+            android:theme="@style/AppThemeNoActionBar"></activity>
+        <activity
+            android:name=".user.gui.AddQuestionActivity"
+            android:theme="@style/AppThemeNoActionBar"></activity>
     </application>
 
 </manifest>
