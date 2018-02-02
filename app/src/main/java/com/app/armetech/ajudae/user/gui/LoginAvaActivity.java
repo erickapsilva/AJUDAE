@@ -3,6 +3,7 @@ package com.app.armetech.ajudae.user.gui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,6 +28,11 @@ public class LoginAvaActivity extends AppCompatActivity {
     private Button btnContinue;
     private EditText edtTextAvaLogin, edtTextAvaPass;
     private TextView txtViewName;
+    private static String TAG;
+
+    static {
+        TAG = LoginAvaActivity.class.getName();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,6 +119,10 @@ public class LoginAvaActivity extends AppCompatActivity {
         edtTextAvaPass = (EditText) findViewById(R.id.edtTextAvaPass);
         txtViewName = (TextView) findViewById(R.id.textViewName);
         txtViewName.setText(String.format("Olá %s", Session.getLoggedPerson().getName()));
+        String n = Session.getLoggedUser().getSubjectsHelpedAsString();
+        String m = Session.getLoggedUser().getSubjectsHelperAsString();
+        Log.i(TAG, n);
+        Log.i(TAG, m);
     }
 
     public void getLoginInfo() {

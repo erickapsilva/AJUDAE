@@ -11,6 +11,7 @@ public class Question {
                    title,
                    question,
                    tag;
+    private long id;
 
     public Question(String name, String course, String title, String question, String tag) {
         this.name = name;
@@ -46,4 +47,12 @@ public class Question {
     public String getQuestion() { return question; }
 
     public void setQuestion(String question) { this.question = question; }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

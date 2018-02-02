@@ -12,10 +12,14 @@ public class User {
     private String email;
     private String password;
     private String Token;
-    private List<Subject> subjects;
+    private List<Subject> subjectsHelped;
+    private List<Subject> subjectsHelper;
     private long id;
 
-    public User() { this.subjects = new ArrayList<>(); }
+    public User() {
+        this.subjectsHelped = new ArrayList<>();
+        this.subjectsHelper = new ArrayList<>();
+    }
 
     public long getId() {
         return id;
@@ -49,41 +53,82 @@ public class User {
         Token = token;
     }
 
-    public List<Subject> getSubjects() {
-        return subjects;
+    public List<Subject> getSubjectsHelped() {
+        return subjectsHelped;
     }
 
-    public String getSubjectsAsString() {
+    public List<Subject> getSubjectsHelper() {
+        return subjectsHelper;
+    }
+
+    public String getSubjectsHelpedAsString() {
         String subjectsAsStrings = "";
-        if(subjects.size() < 1)
+        if(subjectsHelped.size() < 1)
             return "";
-        for(Subject sub : subjects) {
-            subjectsAsStrings += sub.getCourseClass() + ':' + sub.getSubjectName();
+        for(Subject sub : subjectsHelped) {
+            subjectsAsStrings += sub.getCourseClass() + ':' + sub.getSubjectName() + ",";
         }
         return "'" + subjectsAsStrings + "'";
     }
 
-    public Subject getSubject(String subject) {
-        for (Subject sub : subjects)
+    public String getSubjectsHelperAsString() {
+        String subjectsAsStrings = "";
+        if(subjectsHelped.size() < 1)
+            return "";
+        for(Subject sub : subjectsHelper) {
+            subjectsAsStrings += sub.getCourseClass() + ':' + sub.getSubjectName() + ",";
+        }
+        return "'" + subjectsAsStrings + "'";
+    }
+
+    public Subject getSubjectHelped(String subject) {
+        for (Subject sub : subjectsHelped)
             if(sub.getSubjectName() == subject)
                 return sub;
         return null;
     }
 
-    public void setSubject(Subject subject) {
-        subjects.add(subject);
+    public Subject getSubjectHelper(String subject) {
+        for (Subject sub : subjectsHelper)
+            if(sub.getSubjectName() == subject)
+                return sub;
+        return null;
     }
 
-    public void setSubjects(List<Subject> subjects) {
-        this.subjects = subjects;
+    public void setSubjectHelped(Subject subject) {
+        subjectsHelped.add(subject);
     }
 
-    public void setSubjects(String subjectsString) {
+    public void setSubjectHelper(Subject subject) { subjectsHelper.add(subject); }
+
+    public void setSubjectsHelped(List<Subject> subjects) {
+        this.subjectsHelped = subjects;
+    }
+
+    public void setSubjectsHelper(List<Subject> subjects) {
+        this.subjectsHelper = subjects;
+    }
+
+    public void setSubjectsHelped(String subjectsString) {
         if(subjectsString.length() > 1) {
             List<String> items = Arrays.asList(subjectsString.split("\\s*,\\s*"));
             for (String i : items) {
+                Log.i("TAGMALDOSA", i);
                 String[] data = i.split(":");
-                subjects.add(new Subject(data[0], data[1]));
+                if(i.length() > 5)
+                    subjectsHelped.add(new Subject(data[0], data[1]));
+            }
+        }
+    }
+
+    public void setSubjectsHelper(String subjectsString) {
+        if(subjectsString.length() > 1) {
+            List<String> items = Arrays.asList(subjectsString.split("\\s*,\\s*"));
+            for (String i : items) {
+                Log.i("TAGMALDOSA", i);
+                String[] data = i.split(":");
+                if(i.length() > 5)
+                    subjectsHelper.add(new Subject(data[0], data[1]));
             }
         }
     }

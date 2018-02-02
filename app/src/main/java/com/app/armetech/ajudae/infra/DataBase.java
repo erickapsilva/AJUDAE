@@ -60,7 +60,8 @@ public class DataBase extends SQLiteOpenHelper {
     private static final String USER_PASSWORD = "senha";
     private static final String USER_TOKEN = "token";
     private static final String USER_COURSE = "curso";
-    private static final String USER_SUBJECTS = "subjects";
+    private static final String USER_SUBJECTS_HELPED = "subjects_helped";
+    private static final String USER_SUBJECTS_HELPER = "subjects_helper";
 
     public static String getUserTable() {
         return USER_TABLE;
@@ -86,7 +87,9 @@ public class DataBase extends SQLiteOpenHelper {
         return USER_COURSE;
     }
 
-    public static String getUserSubjects() { return USER_SUBJECTS; }
+    public static String getUserSubjectsHelped() { return USER_SUBJECTS_HELPED; }
+
+    public static String getUserSubjectsHelper() { return USER_SUBJECTS_HELPER; }
 
     //SESSAO DO USUARIO
     private static final String SESSION_TABLE = "sessao";
@@ -152,6 +155,20 @@ public class DataBase extends SQLiteOpenHelper {
     private static final String CLASS_COURSE_CLASS = "turma";
     private static final String CLASS_TIME = "horario";
 
+    // PERGUNTAS
+    private static final String QUESTION_TABLE = "question";
+    private static final String QUESTION_ID = "question_id";
+    private static final String QUESTION_TITLE = "title";
+    private static final String QUESTION_OWNER = "owner";
+    private static final String QUESTION_BODY = "body";
+    private static final String QUESTION_TAGS = "tags";
+
+    public static String getQuestionTable() { return QUESTION_TABLE; }
+    public static String getQuestionId() { return QUESTION_ID; }
+    public static String getQuestionTitle() { return QUESTION_TITLE; }
+    public static String getQuestionOwner() { return QUESTION_OWNER; }
+    public static String getQuestionBody() { return QUESTION_BODY; }
+    public static String getQuestionTags() { return QUESTION_TAGS; }
 
     public DataBase(Context context) {
         super(context, DB_NAME, null, VERSION);
@@ -163,7 +180,8 @@ public class DataBase extends SQLiteOpenHelper {
                 USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+
                 USER_EMAIL + " TEXT NOT NULL, " +
                 USER_PASSWORD + " TEXT NOT NULL, " +
-                USER_SUBJECTS + " TEXT, " +
+                USER_SUBJECTS_HELPED + " TEXT, " +
+                USER_SUBJECTS_HELPER + " TEXT, " +
                 USER_COURSE + " TEXT, " +
                 USER_TOKEN + " TEXT);");
 
@@ -210,6 +228,13 @@ public class DataBase extends SQLiteOpenHelper {
                 CLASS_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 CLASS_COURSE_CLASS + " INTEGER, " +
                 CLASS_TIME + " INTEGER);");
+
+        sqLite.execSQL("CREATE TABLE " + QUESTION_TABLE + " (" +
+                QUESTION_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                QUESTION_OWNER + " TEXT, " +
+                QUESTION_TITLE + " TEXT, " +
+                QUESTION_BODY + " TEXT, " +
+                QUESTION_TAGS + " TEXT);");
 
 
 
@@ -315,6 +340,19 @@ public class DataBase extends SQLiteOpenHelper {
         sqLite.execSQL(addhorario+" ('QUINTA', '10', '12');");
         sqLite.execSQL(addhorario+" ('SEXTA', '8', '10');");
         sqLite.execSQL(addhorario+" ('SEXTA', '10', '12');");
+
+        String addquestion = "INSERT INTO " + QUESTION_TABLE + " (" + QUESTION_OWNER + ", " + QUESTION_TITLE + ", " + QUESTION_BODY + ", " + QUESTION_TAGS + ") values";
+        sqLite.execSQL(addquestion + "('Rodrigo Xavier', 'Como eu crio um array 2D em Java?', 'Gostaria de saber qual comando que eu posso usar para criar um vetor de duas dimensões utilizando Java.', 'JAVA,PROGRAMAÇÃO');");
+        sqLite.execSQL(addquestion + "('Ericka Pricila', 'Como eu transformo um input em uma lista em Python?', 'Quero receber um input do usuário, separado por vírgulas e transformá-lo em uma lista para usar posteriormente, como eu faço isso?', 'PYTHON,IP');");
+        sqLite.execSQL(addquestion + "('André Arruda', 'Se eu tenho uma matriz A e B, como eu sei se elas comutam?', 'Qual é a forma correta de se calcular duas matrizes e ver se elas comutam?', 'CÁLCULO');");
+        sqLite.execSQL(addquestion + "('Rodrigo Xavier', 'Transformar string em um char array em C++?', 'Tenho uma string e gostaria de converter num char array, já tentei de tudo mas não tô conseguindo, como eu faço?', 'C/C++,IP');");
+        sqLite.execSQL(addquestion + "('João da Silva', 'Um exemplo de um diagrama de classes?', 'Não consigo entender como funcionam os diagramas de classes, alguém pode me passar um exemplo?', 'MPOO,ASTAH');");
+        sqLite.execSQL(addquestion + "('Maria Eduarda', 'Qual a diferença entre o modelo incremental e espiral?', 'Eles são muito parecidos, eu já li várias vezes mas não consegui entender quais as principais diferenças deles.', 'ENGENHARIA DE SOFTWARE');");
+        sqLite.execSQL(addquestion + "('Natália Ferreira', 'Quais são os principais métodos ágeis?', 'Além do SCRUM quais são os outros métodos ágeis mais utilizados no Brasil?', 'ENGENHARIA DE SOFTWARE');");
+        sqLite.execSQL(addquestion + "('Bruno Pereira', 'Como eu crio um construtor de uma classe usando Java?', 'Como eu declaro um construtor em Java? Em Python era com def __init__, mas em Java não tem isso...', 'JAVA,IP');");
+        sqLite.execSQL(addquestion + "('Emerson Lira', 'Alguém que paga BSI poderia me passar alguma ficha de AED?', 'Estou com problemas em cálculo de algoritmos, gostaria de alguma ficha nova para treinar um pouco', 'BSI,ALGORITMOS');");
+        sqLite.execSQL(addquestion + "('Misael Tomaz', 'Como eu cálculo a intersecção entre dois retângulos?', 'Se eu tenho dois retângulos sobrepostos, como eu consigo calcular a área da intersecção entre os dois?', 'CÁLCULO');");
+
 
         String addaula = "INSERT INTO " + CLASS_TABLE + " (" + CLASS_COURSE_CLASS + ", " + CLASS_TIME + ") values";
         //1o PERIODO
