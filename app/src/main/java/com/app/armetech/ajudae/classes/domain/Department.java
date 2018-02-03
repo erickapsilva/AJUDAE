@@ -1,6 +1,4 @@
-package com.app.armetech.ajudae.aulas.domain;
-
-import com.app.armetech.ajudae.aulas.domain.Subject;
+package com.app.armetech.ajudae.classes.domain;
 
 import java.util.List;
 

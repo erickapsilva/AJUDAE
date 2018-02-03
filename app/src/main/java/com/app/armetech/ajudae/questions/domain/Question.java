@@ -1,4 +1,4 @@
-package com.app.armetech.ajudae.perguntas.domain;
+package com.app.armetech.ajudae.questions.domain;
 
 /**
  * Created by roxac on 23/01/18.
@@ -11,15 +11,14 @@ public class Question {
                    title,
                    question,
                    tag;
-    private long id;
+    private long id, ownerId;
 
-    public Question(String name, String course, String title, String question, String tag) {
-        this.name = name;
-        this.course = course;
+    public Question(String title, String question) {
         this.title = title;
         this.question = question;
-        this.tag = tag;
     }
+
+    public Question() {}
 
 
     public String getTitle() { return title; }
@@ -54,5 +53,13 @@ public class Question {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public long getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(long ownerId) {
+        this.ownerId = ownerId;
     }
 }

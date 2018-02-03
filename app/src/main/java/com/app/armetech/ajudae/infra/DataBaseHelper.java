@@ -4,14 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.app.armetech.ajudae.aulas.domain.Subject;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-
-public class DataBase extends SQLiteOpenHelper {
+public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "dbajudae";
     private static final int VERSION = 1;
     
@@ -172,7 +166,21 @@ public class DataBase extends SQLiteOpenHelper {
     public static String getQuestionBody() { return QUESTION_BODY; }
     public static String getQuestionTags() { return QUESTION_TAGS; }
 
-    public DataBase(Context context) {
+    //CADEIRAS PAGAS/AJUDA
+    private static String USER_SUBJECT_TABLE = "user_subject_table";
+    private static String USER_SUBJECT_ID = "user_subject_id";
+    private static String USER_SUBJECT_NAME_ID = "user_subject_name_id";
+    private static String USER_SUBJECT_OWNER_ID = "user_subject_owner_id";
+    private static String USER_SUBJECT_TYPE = "user_subject_type";
+
+    public static String getUserSubjectTable() { return USER_SUBJECT_TABLE; }
+    public static String getUserSubjectId() { return USER_SUBJECT_ID; }
+    public static String getUserSubjectNameId() { return USER_SUBJECT_NAME_ID; }
+    public static String getUserSubjectOwnerId() { return USER_SUBJECT_OWNER_ID; }
+    public static String getUserSubjectType() { return USER_SUBJECT_TYPE; }
+
+
+    public DataBaseHelper(Context context) {
         super(context, DB_NAME, null, VERSION);
     }
 
@@ -239,6 +247,11 @@ public class DataBase extends SQLiteOpenHelper {
                 QUESTION_BODY + " TEXT, " +
                 QUESTION_TAGS + " TEXT);");
 
+        sqLite.execSQL("CREATE TABLE " + USER_SUBJECT_TABLE + " (" +
+                USER_SUBJECT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                USER_SUBJECT_OWNER_ID + " INTEGER, " +
+                USER_SUBJECT_NAME_ID + " INTEGER, " +
+                USER_SUBJECT_TYPE + " TEXT);");
 
 
         String addcurso = "INSERT INTO " + COURSE_TABLE + " (" + COURSE_NAME + ") values";
@@ -276,27 +289,27 @@ public class DataBase extends SQLiteOpenHelper {
         sqLite.execSQL(addcurso+" ('Zootecnia');");
 
 
-        String addcadeira = "INSERT INTO " + SUBJECT_TABLE + " (" + SUBJECT_NAME + ", " + SUBJECT_DEPT + ") values";
-        sqLite.execSQL(addcadeira+" ('Cálculo a Uma Variável','DM');");
-        sqLite.execSQL(addcadeira+" ('Matemática Discreta', 'DEINFO');");
-        sqLite.execSQL(addcadeira+" ('Introdução a Programação','DEINFO');");
-        sqLite.execSQL(addcadeira+" ('Teoria Geral da Administração', 'DADM');");
-        sqLite.execSQL(addcadeira+" ('Laboratório de Informática', 'DEINFO');");
-        sqLite.execSQL(addcadeira+" ('Introdução a Teoria da Computação', 'DEINFO');");
-        sqLite.execSQL(addcadeira+" ('Cálculo a Várias Variáveis', 'DM');");
-        sqLite.execSQL(addcadeira+" ('Algoritmo e Estrutura de Dados', 'DEINFO');");
-        sqLite.execSQL(addcadeira+" ('Fundamentos de Sistemas de Informação', 'DADM');");
-        sqLite.execSQL(addcadeira+" ('Laboratório de Programação', 'DEINFO');");
-        sqLite.execSQL(addcadeira+" ('Física para Computação', 'DF');");
-        sqLite.execSQL(addcadeira+" ('Álgebra Vetorial e Linear Para Computação', 'DM');");
-        sqLite.execSQL(addcadeira+" ('Fundamentos de Engenharia de Software', 'DEINFO');");
-        sqLite.execSQL(addcadeira+" ('Modelagem e Programação Orientada a Objetos', 'DEINFO');");
-        sqLite.execSQL(addcadeira+" ('Introdução a Economia', 'DECON');");
-        sqLite.execSQL(addcadeira+" ('Psicologia Aplicada às Organizações', 'DED');");
-        sqLite.execSQL(addcadeira+" ('Estatística e Exploratória I', 'DEINFO');");
-        sqLite.execSQL(addcadeira+" ('Processos de Desenvolvimento de Software', 'DEINFO');");
-        sqLite.execSQL(addcadeira+" ('Fundamentos de Banco de Dados', 'DEINFO');");
-        sqLite.execSQL(addcadeira+" ('Admnistração Financeira', 'DADM');");
+        String addcadeira = "INSERT INTO " + SUBJECT_TABLE + " (" + SUBJECT_ID + ", " + SUBJECT_NAME + ", " + SUBJECT_DEPT + ") values";
+        sqLite.execSQL(addcadeira+" ('0', 'Cálculo a Uma Variável','DM');");
+        sqLite.execSQL(addcadeira+" ('1', 'Matemática Discreta', 'DEINFO');");
+        sqLite.execSQL(addcadeira+" ('2', 'Introdução a Programação','DEINFO');");
+        sqLite.execSQL(addcadeira+" ('3', 'Teoria Geral da Administração', 'DADM');");
+        sqLite.execSQL(addcadeira+" ('4', 'Laboratório de Informática', 'DEINFO');");
+        sqLite.execSQL(addcadeira+" ('5', 'Introdução a Teoria da Computação', 'DEINFO');");
+        sqLite.execSQL(addcadeira+" ('6', 'Cálculo a Várias Variáveis', 'DM');");
+        sqLite.execSQL(addcadeira+" ('0', 'Algoritmo e Estrutura de Dados', 'DEINFO');");
+        sqLite.execSQL(addcadeira+" ('0', 'Fundamentos de Sistemas de Informação', 'DADM');");
+        sqLite.execSQL(addcadeira+" ('0', 'Laboratório de Programação', 'DEINFO');");
+        sqLite.execSQL(addcadeira+" ('0', 'Física para Computação', 'DF');");
+        sqLite.execSQL(addcadeira+" ('0', 'Álgebra Vetorial e Linear Para Computação', 'DM');");
+        sqLite.execSQL(addcadeira+" ('0', 'Fundamentos de Engenharia de Software', 'DEINFO');");
+        sqLite.execSQL(addcadeira+" ('0', 'Modelagem e Programação Orientada a Objetos', 'DEINFO');");
+        sqLite.execSQL(addcadeira+" ('0', 'Introdução a Economia', 'DECON');");
+        sqLite.execSQL(addcadeira+" ('0', 'Psicologia Aplicada às Organizações', 'DED');");
+        sqLite.execSQL(addcadeira+" ('0', 'Estatística e Exploratória I', 'DEINFO');");
+        sqLite.execSQL(addcadeira+" ('0', 'Processos de Desenvolvimento de Software', 'DEINFO');");
+        sqLite.execSQL(addcadeira+" ('0', 'Fundamentos de Banco de Dados', 'DEINFO');");
+        sqLite.execSQL(addcadeira+" ('0', 'Admnistração Financeira', 'DADM');");
 
 
         String addpredio = "INSERT INTO " + BUILDING_TABLE + " (" + BUILDING_NAME +", "+ BUILDING_LAT + ", " + BUILDING_LONG + ") values";

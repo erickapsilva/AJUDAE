@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.app.armetech.ajudae.R;
-import com.app.armetech.ajudae.aulas.domain.Subject;
+import com.app.armetech.ajudae.classes.domain.Subject;
 
 import java.util.List;
 

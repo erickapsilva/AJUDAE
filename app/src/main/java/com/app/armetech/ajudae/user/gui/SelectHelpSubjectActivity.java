@@ -11,8 +11,8 @@ import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 
 import com.app.armetech.ajudae.R;
-import com.app.armetech.ajudae.aulas.dao.SubjectDao;
-import com.app.armetech.ajudae.aulas.domain.Subject;
+import com.app.armetech.ajudae.classes.dao.SubjectDao;
+import com.app.armetech.ajudae.classes.domain.Subject;
 import com.app.armetech.ajudae.user.dao.UserDao;
 import com.app.armetech.ajudae.user.domain.Session;
 import com.app.armetech.ajudae.user.domain.User;
@@ -65,7 +65,7 @@ public class SelectHelpSubjectActivity extends AppCompatActivity {
 
     //Função para testar o NewsFeed ButtomNavigation
     public void goToNewsFeedScreen(View view){
-        userDao.updateUserSubjects();
+        userDao.insertUserSubjects();
         Intent intent = new Intent(this, BottomTabActivity.class);
         startActivity(intent);
         finish();
@@ -81,7 +81,7 @@ public class SelectHelpSubjectActivity extends AppCompatActivity {
         ArrayList<String> listSubjectsName = new ArrayList<String>();
         for(Subject subject: listSubjects){
             listSubjectsName.add(subject.getSubjectName());
-        }//
+        }
         ArrayAdapter<String> subjectAdapter = new ArrayAdapter<>
                 (this, android.R.layout.select_dialog_item, listSubjectsName);
 

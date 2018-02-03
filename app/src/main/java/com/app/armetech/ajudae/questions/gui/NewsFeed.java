@@ -1,4 +1,4 @@
-package com.app.armetech.ajudae.perguntas.gui;
+package com.app.armetech.ajudae.questions.gui;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.app.armetech.ajudae.R;
-import com.app.armetech.ajudae.perguntas.domain.Question;
+import com.app.armetech.ajudae.questions.domain.Question;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,25 +61,6 @@ public class NewsFeed extends AppCompatActivity {
                 return true;
             }
         });
-
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        recyclerViewFeed.setLayoutManager(llm);
-        initializeData();
-        initializeUpdateAdapter();
-    }
-
-    private void initializeData() {
-        questions = new ArrayList<>();
-        questions.add(new Question("Roooodrigo Xavier", "BSI", "Onde eu baixo placa de vídeo?", "Vi que pra jogar GTA preciso de uma placa de vídeo nova, onde eu baixo?", "#PLACA DE VÍDEO"));
-        questions.add(new Question("André Arruda", "BSI", "O Godzilla Giroflex é um bom navegador?", "Veio junto com meu computador, posso entrar no Facebook com ele? Tenho que instalar o Facebook de novo?", "#NAVEGADOR"));
-        questions.add(new Question("Emerson Lira", "BSI", "Quem são os inimigos da HP, empresa concorrente?", "Meu tio sempre fala dos inimigos da HP. Minha impresora é HP, é uma empresa concorrente?", "#EMPRESAS"));
-        questions.add(new Question("Ericka Pricila", "BSI", "Qual a diferença de um sistema operacional e o Windows?", "Comprei um computador que veio com o sistema operacional Linux, qual diferença de um sistema operacional e do Windows?", "#SISTEMAS OPERACIONAIS"));
-        questions.add(new Question("Misael Tomaz", "BSI", "Posso lavar minha placa mãe com detergente?", "Minha placa mãe está suja, será que eu posso lavar ela usando detergente ou faz mal?", "#LIMPEZA DE HARDWARE"));
-    }
-
-    private void initializeUpdateAdapter() {
-//        RVFeed adapter = new RVFeed(questions);
-//        recyclerViewFeed.setAdapter(adapter);
     }
 
 }

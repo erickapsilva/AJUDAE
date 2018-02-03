@@ -6,7 +6,7 @@
     android:background="#f1f1f1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.app.armetech.ajudae.perguntas.gui.NewsFeed">
+    tools:context="com.app.armetech.ajudae.questions.gui.NewsFeed">
 
     <LinearLayout
         android:layout_width="match_parent"

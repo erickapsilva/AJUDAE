@@ -10,9 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.app.armetech.ajudae.R;
-import com.app.armetech.ajudae.perguntas.domain.Question;
-
-import org.w3c.dom.Text;
+import com.app.armetech.ajudae.questions.domain.Question;
 
 import java.util.List;
 

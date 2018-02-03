@@ -1,4 +1,4 @@
-package com.app.armetech.ajudae.aulas.domain;
+package com.app.armetech.ajudae.classes.domain;
 
 /**
  * Created by roxac on 17/12/17.
@@ -7,12 +7,14 @@ package com.app.armetech.ajudae.aulas.domain;
 public class Subject {
 
     private String subjectName, courseClass,department;
-    private int idSubject;
+    private long id;
 
     public Subject(String courseClass, String subjectName) {
         this.courseClass = courseClass;
         this.subjectName = subjectName;
     }
+
+    public Subject() {}
 
     public String getFormattedCourseClass() {
         return "TURMA: " + courseClass;
@@ -40,11 +42,11 @@ public class Subject {
         return this.department;
     }
 
-    public void setIdSubject(int id){
-        this.idSubject = id;
+    public void setId(long id){
+        this.id = id;
     }
-    public int getIdSubject(){
-        return idSubject;
+    public long getId(){
+        return id;
     }
 }
 
