@@ -4,26 +4,34 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
-import com.app.armetech.ajudae.infra.DataBase;
+import com.app.armetech.ajudae.classes.dao.SubjectDao;
+import com.app.armetech.ajudae.classes.domain.Subject;
+import com.app.armetech.ajudae.infra.DataBaseHelper;
 import com.app.armetech.ajudae.user.domain.Session;
 import com.app.armetech.ajudae.user.domain.User;
 
+import java.util.List;
+
 
 public class UserDao {
-    private DataBase dbHelper;
+    private DataBaseHelper dbHelper;
     private SQLiteDatabase database;
-    private String userTable = DataBase.getUserTable();
-    private String userIdColumn = DataBase.getUserId();
-    private String emailColumn = DataBase.getUserEmail();
-    private String passwordColumn = DataBase.getUserPassword();
-    private String subjectsHelpedColumn = DataBase.getUserSubjectsHelped();
-    private String subjectsHelperColumn = DataBase.getUserSubjectsHelper();
+    private SubjectDao subjectDao;
+    private String userTable = DataBaseHelper.getUserTable();
+    private String userIdColumn = DataBaseHelper.getUserId();
+    private String emailColumn = DataBaseHelper.getUserEmail();
+    private String passwordColumn = DataBaseHelper.getUserPassword();
+    private String userSubjectTable = DataBaseHelper.getUserSubjectTable();
+    private String userSubjectIdColumn = DataBaseHelper.getUserSubjectId();
+    private String userSubjectOwnerIdColumn = DataBaseHelper.getUserSubjectOwnerId();
+    private String userSubjectNameIdColumn = DataBaseHelper.getUserSubjectNameId();
+    private String userSubjectTypeColumn = DataBaseHelper.getUserSubjectType();
     private User user;
 
     public UserDao(Context context){
-        dbHelper = new DataBase(context);
+        subjectDao = new SubjectDao(context);
+        dbHelper = new DataBaseHelper(context);
     }
 
     public User getUserById(long id){
@@ -91,7 +99,7 @@ public class UserDao {
 
     public User createUser(Cursor cursor){
         int indexIdColumn= cursor.getColumnIndex(userIdColumn);
-        int id = cursor.getInt(indexIdColumn);
+        long id = cursor.getInt(indexIdColumn);
 
         int indexEmailColumn = cursor.getColumnIndex(emailColumn);
         String email = cursor.getString(indexEmailColumn);
@@ -99,39 +107,44 @@ public class UserDao {
         int indexPasswordColumn = cursor.getColumnIndex(passwordColumn);
         String password = cursor.getString(indexPasswordColumn);
 
-        int indexSubjectsHelpedColumn = cursor.getColumnIndex(subjectsHelpedColumn);
-        String subjectsHelped = cursor.getString(indexSubjectsHelpedColumn);
-
-        int indexSujectsHelperColumn = cursor.getColumnIndex(subjectsHelperColumn);
-        String subjectsHelper = cursor.getString(indexSujectsHelperColumn);
+        List<Subject> subjectsHelper = subjectDao.getSubjectsHelperByUserId(id);
+        List<Subject> subjectsHelped = subjectDao.getSubjectsHelpedByUserId(id);
 
         User user = new User();
         user.setId(id);
         user.setEmail(email);
         user.setPassword(password);
-        if(subjectsHelped != null)
-            user.setSubjectsHelped(subjectsHelped);
-        if(subjectsHelper != null)
-            user.setSubjectsHelper(subjectsHelper);
+        user.setCourse("BACHARELADO EM SISTEMAS DE INFORMAÇÃO");
+        user.setSubjectsHelper(subjectsHelper);
+        user.setSubjectsHelped(subjectsHelped);
         return user;
     }
 
-    public void updateUserSubjects() {
+    public void insertUserSubjects() {
         database = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
 
         user = Session.getLoggedUser();
+        List<Subject> userSubjectsHelper = user.getSubjectsHelper();
+        List<Subject> userSubjectsHelped = user.getSubjectsHelped();
+        String userId = Long.toString(user.getId());
 
-        String subjectsHelped = user.getSubjectsHelpedAsString();
-        values.put(subjectsHelpedColumn, subjectsHelped);
+        //type = 1 (cadeiras a ajudar), type = 2 (cadeiras para ser ajudado)
 
-        String subjectsHelper = user.getSubjectsHelperAsString();
-        values.put(subjectsHelperColumn, subjectsHelper);
+        for(Subject subject : userSubjectsHelper) {
+            values.put(userSubjectOwnerIdColumn, userId);
+            values.put(userSubjectNameIdColumn, Long.toString(subject.getId()));
+            values.put(userSubjectTypeColumn, Integer.toString(1));
+            database.insert(userSubjectTable, null, values);
+        }
 
-        Log.i("TAGHELPED", subjectsHelped);
-        Log.i("TAGHELPER", subjectsHelper);
+        for(Subject subject : userSubjectsHelped) {
+            values.put(userSubjectOwnerIdColumn, userId);
+            values.put(userSubjectNameIdColumn, Long.toString(subject.getId()));
+            values.put(userSubjectTypeColumn, Integer.toString(2));
+            database.insert(userSubjectTable, null, values);
+        }
 
-        database.update(userTable, values, userIdColumn + "=" + user.getId(), null);
     }
 
 

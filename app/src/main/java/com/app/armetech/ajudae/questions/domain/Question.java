@@ -11,7 +11,8 @@ public class Question {
                    title,
                    question,
                    tag;
-    private long id, ownerId;
+    private long id,
+                 ownerId;
 
     public Question(String title, String question) {
         this.title = title;

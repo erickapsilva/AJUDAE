@@ -2,7 +2,7 @@ package com.app.armetech.ajudae.user.domain;
 
 import android.util.Log;
 
-import com.app.armetech.ajudae.aulas.domain.Subject;
+import com.app.armetech.ajudae.classes.domain.Subject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -62,26 +62,6 @@ public class User {
         return subjectsHelper;
     }
 
-    public String getSubjectsHelpedAsString() {
-        String subjectsAsStrings = "";
-        if(subjectsHelped.size() < 1)
-            return "";
-        for(Subject sub : subjectsHelped) {
-            subjectsAsStrings += sub.getCourseClass() + ':' + sub.getSubjectName() + ",";
-        }
-        return "'" + subjectsAsStrings + "'";
-    }
-
-    public String getSubjectsHelperAsString() {
-        String subjectsAsStrings = "";
-        if(subjectsHelped.size() < 1)
-            return "";
-        for(Subject sub : subjectsHelper) {
-            subjectsAsStrings += sub.getCourseClass() + ':' + sub.getSubjectName() + ",";
-        }
-        return "'" + subjectsAsStrings + "'";
-    }
-
     public Subject getSubjectHelped(String subject) {
         for (Subject sub : subjectsHelped)
             if(sub.getSubjectName() == subject)
@@ -96,11 +76,9 @@ public class User {
         return null;
     }
 
-    public void setSubjectHelped(Subject subject) {
-        subjectsHelped.add(subject);
-    }
-
     public void addSubjectHelper(Subject subject) { subjectsHelper.add(subject); }
+
+    public void addSubjectHelped(Subject subject) { subjectsHelped.add(subject); }
 
     public void delSubjectHelper(Subject subject) {
         subjectsHelper.remove(subject);
@@ -112,30 +90,6 @@ public class User {
 
     public void setSubjectsHelper(List<Subject> subjects) {
         this.subjectsHelper = subjects;
-    }
-
-    public void setSubjectsHelped(String subjectsString) {
-        if(subjectsString.length() > 1) {
-            List<String> items = Arrays.asList(subjectsString.split("\\s*,\\s*"));
-            for (String i : items) {
-                Log.i("TAGMALDOSA", i);
-                String[] data = i.split(":");
-                if(i.length() > 5)
-                    subjectsHelped.add(new Subject(data[0], data[1]));
-            }
-        }
-    }
-
-    public void setSubjectsHelper(String subjectsString) {
-        if(subjectsString.length() > 1) {
-            List<String> items = Arrays.asList(subjectsString.split("\\s*,\\s*"));
-            for (String i : items) {
-                Log.i("TAGMALDOSA", i);
-                String[] data = i.split(":");
-                if(i.length() > 5)
-                    subjectsHelper.add(new Subject(data[0], data[1]));
-            }
-        }
     }
 
     public String getCourse() {

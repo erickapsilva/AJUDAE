@@ -4,10 +4,15 @@ package com.app.armetech.ajudae.user.domain;
 public class Person {
     private long id;
     private String name;
-    private User user = new User();
+    private long userId;
     private String birthDate;
     private String gender;
     private String cep;
+    private User user;
+
+    public Person() {
+        user = new User();
+    }
 
     public void setCep(String cep){
         this.cep = cep;

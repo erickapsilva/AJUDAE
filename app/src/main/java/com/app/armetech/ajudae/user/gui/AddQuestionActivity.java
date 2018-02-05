@@ -7,9 +7,10 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.app.armetech.ajudae.R;
-import com.app.armetech.ajudae.perguntas.dao.QuestionDao;
-import com.app.armetech.ajudae.perguntas.domain.Question;
+import com.app.armetech.ajudae.questions.dao.QuestionDao;
+import com.app.armetech.ajudae.questions.domain.Question;
 import com.app.armetech.ajudae.user.domain.Session;
+import com.app.armetech.ajudae.user.domain.User;
 
 public class AddQuestionActivity extends AppCompatActivity {
 
@@ -36,8 +37,13 @@ public class AddQuestionActivity extends AppCompatActivity {
         String tags = edtTextQuestionTag.getText().toString();
         String owner = Session.getLoggedPerson().getName();
         String course = Session.getLoggedUser().getCourse();
+        long id = Session.getLoggedUser().getId();
 
-        Question question = new Question(owner, course, title, resume, tags);
+        Question question = new Question(title, resume);
+        question.setOwnerId(id);
+        question.setCourse(course);
+        question.setTag(tags);
+        question.setName(owner);
 
         questionDao.insertQuestion(question);
 

@@ -5,11 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Button;
 
 import com.app.armetech.ajudae.R;
-import com.app.armetech.ajudae.aulas.domain.Subject;
+import com.app.armetech.ajudae.classes.domain.Subject;
 
 import java.util.List;
 
@@ -31,6 +31,7 @@ public class RVSubjects extends RecyclerView.Adapter<RVSubjects.SubjectViewHolde
             courseClass = (TextView)itemView.findViewById(R.id.courseClass);
             name = (TextView)itemView.findViewById(R.id.subjectName);
             btnDelete = (Button) itemView.findViewById(R.id.btnDeleteSubject);
+
         }
     }
 
@@ -41,6 +42,7 @@ public class RVSubjects extends RecyclerView.Adapter<RVSubjects.SubjectViewHolde
         this.subjects = subjects;
         this.visibility = visibility;
     }
+
 
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
@@ -59,14 +61,16 @@ public class RVSubjects extends RecyclerView.Adapter<RVSubjects.SubjectViewHolde
     //Busca quais campos devem ser preenchidos e seta o texto a partir das informações resgatadas
     @Override
     public void onBindViewHolder(SubjectViewHolder personViewHolder, int i) {
-
         personViewHolder.courseClass.setText(subjects.get(i).getCourseClass());
         personViewHolder.name.setText(subjects.get(i).getSubjectName());
+
         if(visibility == true) {
             personViewHolder.btnDelete.setVisibility(View.VISIBLE);
         }else{
             personViewHolder.btnDelete.setVisibility(View.INVISIBLE);
         }
+
+
     }
 
     //Pega a quantidade de itens na lista local

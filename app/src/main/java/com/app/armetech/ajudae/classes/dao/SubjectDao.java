@@ -1,5 +1,6 @@
 package com.app.armetech.ajudae.classes.dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -38,9 +39,8 @@ public class SubjectDao{
         db = dbHelper.getReadableDatabase();
         String query = "SELECT * FROM " + subjectTableColumn;
         Cursor cursor = db.rawQuery(query, null);
-        Subject subject = new Subject("SI1","Escolha uma cadeira");
+        Subject subject = new Subject();
         ArrayList<Subject> subjects = new ArrayList<>();
-        subjects.add(subject);
         while(cursor.moveToNext()){
             subject = createSubject(cursor);
             subjects.add(subject);
@@ -56,9 +56,8 @@ public class SubjectDao{
         String query = "SELECT * FROM " + subjectTableColumn + " WHERE " + subjectDeptColumn + " LIKE ?";
         String[] args = {Department};
         Cursor cursor = db.rawQuery(query, args);
-        Subject subject = new Subject("SI1","Escolha uma cadeira");
+        Subject subject = new Subject();
         ArrayList<Subject> subjects = new ArrayList<>();
-        subjects.add(subject);
         while(cursor.moveToNext()){
             subject = createSubject(cursor);
             subjects.add(subject);
@@ -93,8 +92,6 @@ public class SubjectDao{
         while(cursor.moveToNext()) {
             subject = createSubject(cursor);
         }
-
-        Log.i("NOME: ", "algonovo" + subject.getId());
 
         cursor.close();
         db.close();
@@ -170,6 +167,20 @@ public class SubjectDao{
         return id;
     }
 
+    public long insertSubject(Subject subject) {
+        db = dbHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        String subjectName = subject.getSubjectName();
+        values.put(subjectNameColumn, subjectName);
+
+        String subjectDept = subject.getDepartment();
+        values.put(subjectDeptColumn, subjectDept);
+
+        long id = db.insert(subjectTableColumn, null, values);
+        return id;
+    }
+
     public Subject createSubject(Cursor cursor){
 
         String colunaId = subjectIdColumn;
@@ -183,8 +194,6 @@ public class SubjectDao{
         String colunaNome = subjectNameColumn;
         int indexColunaNome = cursor.getColumnIndex(colunaNome);
         String nome = cursor.getString(indexColunaNome);
-
-        Log.i("novoid: ", "novo" + Integer.toString(id));
 
         Subject subject = new Subject("SI1", nome);
         subject.setId(id);

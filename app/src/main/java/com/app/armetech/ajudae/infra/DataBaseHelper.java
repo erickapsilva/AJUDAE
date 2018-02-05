@@ -54,8 +54,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String USER_PASSWORD = "senha";
     private static final String USER_TOKEN = "token";
     private static final String USER_COURSE = "curso";
-    private static final String USER_SUBJECTS_HELPED = "subjects_helped";
-    private static final String USER_SUBJECTS_HELPER = "subjects_helper";
 
     public static String getUserTable() {
         return USER_TABLE;
@@ -80,10 +78,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static String getUserCourse() {
         return USER_COURSE;
     }
-
-    public static String getUserSubjectsHelped() { return USER_SUBJECTS_HELPED; }
-
-    public static String getUserSubjectsHelper() { return USER_SUBJECTS_HELPER; }
 
     //SESSAO DO USUARIO
     private static final String SESSION_TABLE = "sessao";
@@ -190,8 +184,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+
                 USER_EMAIL + " TEXT NOT NULL, " +
                 USER_PASSWORD + " TEXT NOT NULL, " +
-                USER_SUBJECTS_HELPED + " TEXT, " +
-                USER_SUBJECTS_HELPER + " TEXT, " +
                 USER_COURSE + " TEXT, " +
                 USER_TOKEN + " TEXT);");
 
@@ -289,27 +281,27 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         sqLite.execSQL(addcurso+" ('Zootecnia');");
 
 
-        String addcadeira = "INSERT INTO " + SUBJECT_TABLE + " (" + SUBJECT_ID + ", " + SUBJECT_NAME + ", " + SUBJECT_DEPT + ") values";
-        sqLite.execSQL(addcadeira+" ('0', 'Cálculo a Uma Variável','DM');");
-        sqLite.execSQL(addcadeira+" ('1', 'Matemática Discreta', 'DEINFO');");
-        sqLite.execSQL(addcadeira+" ('2', 'Introdução a Programação','DEINFO');");
-        sqLite.execSQL(addcadeira+" ('3', 'Teoria Geral da Administração', 'DADM');");
-        sqLite.execSQL(addcadeira+" ('4', 'Laboratório de Informática', 'DEINFO');");
-        sqLite.execSQL(addcadeira+" ('5', 'Introdução a Teoria da Computação', 'DEINFO');");
-        sqLite.execSQL(addcadeira+" ('6', 'Cálculo a Várias Variáveis', 'DM');");
-        sqLite.execSQL(addcadeira+" ('0', 'Algoritmo e Estrutura de Dados', 'DEINFO');");
-        sqLite.execSQL(addcadeira+" ('0', 'Fundamentos de Sistemas de Informação', 'DADM');");
-        sqLite.execSQL(addcadeira+" ('0', 'Laboratório de Programação', 'DEINFO');");
-        sqLite.execSQL(addcadeira+" ('0', 'Física para Computação', 'DF');");
-        sqLite.execSQL(addcadeira+" ('0', 'Álgebra Vetorial e Linear Para Computação', 'DM');");
-        sqLite.execSQL(addcadeira+" ('0', 'Fundamentos de Engenharia de Software', 'DEINFO');");
-        sqLite.execSQL(addcadeira+" ('0', 'Modelagem e Programação Orientada a Objetos', 'DEINFO');");
-        sqLite.execSQL(addcadeira+" ('0', 'Introdução a Economia', 'DECON');");
-        sqLite.execSQL(addcadeira+" ('0', 'Psicologia Aplicada às Organizações', 'DED');");
-        sqLite.execSQL(addcadeira+" ('0', 'Estatística e Exploratória I', 'DEINFO');");
-        sqLite.execSQL(addcadeira+" ('0', 'Processos de Desenvolvimento de Software', 'DEINFO');");
-        sqLite.execSQL(addcadeira+" ('0', 'Fundamentos de Banco de Dados', 'DEINFO');");
-        sqLite.execSQL(addcadeira+" ('0', 'Admnistração Financeira', 'DADM');");
+        String addcadeira = "INSERT INTO " + SUBJECT_TABLE + " (" + SUBJECT_NAME + ", " + SUBJECT_DEPT + ") values";
+        sqLite.execSQL(addcadeira+" ('Cálculo a Uma Variável','DM');");
+        sqLite.execSQL(addcadeira+" ('Matemática Discreta', 'DEINFO');");
+        sqLite.execSQL(addcadeira+" ('Introdução a Programação','DEINFO');");
+        sqLite.execSQL(addcadeira+" ('Teoria Geral da Administração', 'DADM');");
+        sqLite.execSQL(addcadeira+" ('Laboratório de Informática', 'DEINFO');");
+        sqLite.execSQL(addcadeira+" ('Introdução a Teoria da Computação', 'DEINFO');");
+        sqLite.execSQL(addcadeira+" ('Cálculo a Várias Variáveis', 'DM');");
+        sqLite.execSQL(addcadeira+" ('Algoritmo e Estrutura de Dados', 'DEINFO');");
+        sqLite.execSQL(addcadeira+" ('Fundamentos de Sistemas de Informação', 'DADM');");
+        sqLite.execSQL(addcadeira+" ('Laboratório de Programação', 'DEINFO');");
+        sqLite.execSQL(addcadeira+" ('Física para Computação', 'DF');");
+        sqLite.execSQL(addcadeira+" ('Álgebra Vetorial e Linear Para Computação', 'DM');");
+        sqLite.execSQL(addcadeira+" ('Fundamentos de Engenharia de Software', 'DEINFO');");
+        sqLite.execSQL(addcadeira+" ('Modelagem e Programação Orientada a Objetos', 'DEINFO');");
+        sqLite.execSQL(addcadeira+" ('Introdução a Economia', 'DECON');");
+        sqLite.execSQL(addcadeira+" ('Psicologia Aplicada às Organizações', 'DED');");
+        sqLite.execSQL(addcadeira+" ('Estatística e Exploratória I', 'DEINFO');");
+        sqLite.execSQL(addcadeira+" ('Processos de Desenvolvimento de Software', 'DEINFO');");
+        sqLite.execSQL(addcadeira+" ('Fundamentos de Banco de Dados', 'DEINFO');");
+        sqLite.execSQL(addcadeira+" ('Admnistração Financeira', 'DADM');");
 
 
         String addpredio = "INSERT INTO " + BUILDING_TABLE + " (" + BUILDING_NAME +", "+ BUILDING_LAT + ", " + BUILDING_LONG + ") values";
