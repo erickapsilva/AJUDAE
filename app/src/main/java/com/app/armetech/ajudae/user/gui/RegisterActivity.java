@@ -111,6 +111,7 @@ public class RegisterActivity extends AppCompatActivity {
         person.setCep(cep);
         person.setGender(gender);
         person.setBirthDate(birthDate);
+        person.setUser(user);
 
         UserBusiness userBusiness = new UserBusiness(getApplicationContext());
         boolean isRegister = userBusiness.register(user,person);

@@ -5,20 +5,20 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.app.armetech.ajudae.infra.DataBaseHelper;
+import com.app.armetech.ajudae.infra.DataBase;
 import com.app.armetech.ajudae.user.domain.User;
 
 
 
 public class SessionDao {
-    private DataBaseHelper dbHelper;
+    private DataBase dbHelper;
     private SQLiteDatabase database;
     private UserDao userDao;
-    private String sessionTable = DataBaseHelper.getSessionTable();
-    private String sessionLoggedId = DataBaseHelper.getLoggedId();
+    private String sessionTable = DataBase.getSessionTable();
+    private String sessionLoggedId = DataBase.getLoggedId();
 
     public SessionDao(Context context){
-        dbHelper = new DataBaseHelper(context);
+        dbHelper = new DataBase(context);
         userDao = new UserDao(context);
     }
 

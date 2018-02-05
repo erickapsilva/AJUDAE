@@ -4,23 +4,23 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import com.app.armetech.ajudae.infra.DataBaseHelper;
+import com.app.armetech.ajudae.infra.DataBase;
 import com.app.armetech.ajudae.user.domain.Person;
 
 
 public class PersonDao {
-    private DataBaseHelper dbHelper;
+    private DataBase dbHelper;
     private SQLiteDatabase database;
-    private String personTable = DataBaseHelper.getPersonTable();
-    private String personId = DataBaseHelper.getPersonId();
-    private String nameColumn = DataBaseHelper.getPersonName();
-    private String genderColumn = DataBaseHelper.getPersonGender();
-    private String birthDateColumn = DataBaseHelper.getPersonBirthdate();
-    private String cepColumn = DataBaseHelper.getPersonCep();
-    private String idUserColumn = DataBaseHelper.getPersonUserId();
+    private String personTable = DataBase.getPersonTable();
+    private String personId = DataBase.getPersonId();
+    private String nameColumn = DataBase.getPersonName();
+    private String genderColumn = DataBase.getPersonGender();
+    private String birthDateColumn = DataBase.getPersonBirthdate();
+    private String cepColumn = DataBase.getPersonCep();
+    private String idUserColumn = DataBase.getPersonUserId();
 
     public PersonDao(Context context){
-        dbHelper = new DataBaseHelper(context);
+        dbHelper = new DataBase(context);
     }
 
     public long insertPerson(Person person){

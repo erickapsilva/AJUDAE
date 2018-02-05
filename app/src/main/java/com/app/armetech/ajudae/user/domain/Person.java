@@ -4,7 +4,7 @@ package com.app.armetech.ajudae.user.domain;
 public class Person {
     private long id;
     private String name;
-    private long userId;
+    private User user = new User();
     private String birthDate;
     private String gender;
     private String cep;
@@ -34,11 +34,11 @@ public class Person {
     }
 
     public long getUserId() {
-        return userId;
+        return this.user.getId();
     }
 
     public void setUserId(long userId) {
-        this.userId = userId;
+        this.user.setId(userId);
     }
 
     public String getBirthDate() {
@@ -58,5 +58,11 @@ public class Person {
     }
 
 
+    public User getUser() {
+        return user;
+    }
 
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

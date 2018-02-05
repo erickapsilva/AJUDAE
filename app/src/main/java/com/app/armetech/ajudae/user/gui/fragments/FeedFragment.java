@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,9 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.app.armetech.ajudae.R;
-import com.app.armetech.ajudae.questions.dao.QuestionDao;
-import com.app.armetech.ajudae.questions.domain.Question;
+import com.app.armetech.ajudae.perguntas.dao.QuestionDao;
+import com.app.armetech.ajudae.perguntas.domain.Question;
 import com.app.armetech.ajudae.user.gui.RVFeed;
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 
 import java.util.ArrayList;
 import java.util.List;

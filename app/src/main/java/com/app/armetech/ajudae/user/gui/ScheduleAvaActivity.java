@@ -5,16 +5,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.app.armetech.ajudae.R;
-import com.app.armetech.ajudae.classes.domain.Subject;
+import com.app.armetech.ajudae.aulas.domain.Subject;
 import com.app.armetech.ajudae.infra.DataHolder;
 import com.app.armetech.ajudae.infra.StudentExternalData;
 import com.app.armetech.ajudae.infra.RequestHttp;
+import com.app.armetech.ajudae.user.dao.UserDao;
 import com.app.armetech.ajudae.user.domain.Session;
 import com.app.armetech.ajudae.user.domain.User;
 
@@ -49,8 +49,6 @@ public class ScheduleAvaActivity extends Activity {
         requestHttp = RequestHttp.getInstance();
         GridLayoutManager glm = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(glm);
-        String nome = Session.getLoggedUser().getSubjectsHelper().get(0).getSubjectName();
-        Log.i("TAMANHO", "algo" + nome);
         initializeData();
         initializeUpdateAdapter();
     }
@@ -69,8 +67,7 @@ public class ScheduleAvaActivity extends Activity {
         }
         txtViewName.append(fullname);
         txtViewCourse.append(dept);
-        Log.i("CURSO: ", dept);
-        loggedUser.setCourse(dept);
+        Session.getLoggedUser().setCourse(dept);
     }
 
     public void goToHelpSubjectsScreen(View view){
@@ -86,7 +83,7 @@ public class ScheduleAvaActivity extends Activity {
     }
 
     private void initializeUpdateAdapter() {
-        RVSubjects adapter = new RVSubjects(courseSubjects);
+        RVSubjects adapter = new RVSubjects(courseSubjects, false);
         recyclerView.setAdapter(adapter);
     }
 }

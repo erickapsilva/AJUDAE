@@ -39,7 +39,7 @@
         <activity
             android:name=".user.gui.SelectHelpSubjectActivity"
             android:theme="@style/AppThemeNoActionBar" />
-        <activity android:name=".questions.gui.NewsFeed" />
+        <activity android:name=".perguntas.gui.NewsFeed" />
         <activity
             android:name=".user.gui.InitialScreenActivity"
             android:label="@string/title_activity_initial_screen" />
