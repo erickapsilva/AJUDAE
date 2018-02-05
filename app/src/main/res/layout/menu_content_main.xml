@@ -66,13 +66,13 @@
             fab:fab_label="Pergunte"
             fab:fab_size="mini" />
 
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/material_design_floating_action_menu_item3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_material"
-            fab:fab_label="Adicione Material"
-            fab:fab_size="mini"/>
+        <!--<com.github.clans.fab.FloatingActionButton-->
+            <!--android:id="@+id/material_design_floating_action_menu_item3"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@mipmap/ic_material"-->
+            <!--fab:fab_label="Adicione Material"-->
+            <!--fab:fab_size="mini"/>-->
     </com.github.clans.fab.FloatingActionMenu>
 
 

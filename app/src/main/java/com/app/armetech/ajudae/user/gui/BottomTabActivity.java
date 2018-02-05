@@ -27,7 +27,7 @@ public class BottomTabActivity extends AppCompatActivity implements AHBottomNavi
     AHBottomNavigation bottomNavigation;
     TextView mTitle;
     FloatingActionMenu materialDesignFAM;
-    FloatingActionButton floatingActionButton2, floatingActionButton3;
+    FloatingActionButton floatingActionButton2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,6 @@ public class BottomTabActivity extends AppCompatActivity implements AHBottomNavi
 
         materialDesignFAM = (FloatingActionMenu) findViewById(R.id.material_design_android_floating_action_menu);
         floatingActionButton2 =  (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_item2);
-        floatingActionButton3 = (FloatingActionButton) findViewById(R.id.material_design_floating_action_menu_item3);
 
 
         setSupportActionBar(toolbar);
@@ -56,12 +55,7 @@ public class BottomTabActivity extends AppCompatActivity implements AHBottomNavi
                 startActivity(new Intent(BottomTabActivity.this,AddQuestionActivity.class));
             }
         });
-        floatingActionButton3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //TODO something when floating action menu third item clicked
 
-            }
-        });
 
     }
 
