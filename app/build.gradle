@@ -40,12 +40,9 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.2'
     //add library
     compile 'com.android.support:design:27.0.2'
-
     // pro menu tab
     compile 'com.roughike:bottom-bar:2.0'
     compile 'com.aurelhubert:ahbottomnavigation:2.1.0'
-
     //float button with submenu
     compile 'com.github.clans:fab:1.6.2'
-
 }
