@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     style="@style/AppThemeNoActionBar"
     android:fitsSystemWindows="true"
-    tools:context="com.app.armetech.ajudae.user.gui.BottomTabActivity">
+    tools:context="com.app.armetech.ajudae.navigation.BottomTabActivity">
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

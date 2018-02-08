@@ -4,9 +4,8 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
-import com.app.armetech.ajudae.infra.DataBaseHelper;
+import com.app.armetech.ajudae.utils.DataBaseHelper;
 import com.app.armetech.ajudae.classes.domain.Subject;
 
 import java.util.ArrayList;

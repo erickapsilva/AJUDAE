@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.app.armetech.ajudae.classes.dao.SubjectDao;
 import com.app.armetech.ajudae.classes.domain.Subject;
-import com.app.armetech.ajudae.infra.DataBaseHelper;
+import com.app.armetech.ajudae.utils.DataBaseHelper;
 import com.app.armetech.ajudae.user.domain.Session;
 import com.app.armetech.ajudae.user.domain.User;
 

@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.app.armetech.ajudae.R;
-import com.app.armetech.ajudae.infra.Validation;
+import com.app.armetech.ajudae.utils.Validation;
 import com.app.armetech.ajudae.user.business.UserBusiness;
 
 public class LoginActivity extends AppCompatActivity {

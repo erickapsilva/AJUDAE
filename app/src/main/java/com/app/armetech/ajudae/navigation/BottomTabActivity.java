@@ -1,4 +1,4 @@
-package com.app.armetech.ajudae.user.gui;
+package com.app.armetech.ajudae.navigation;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,18 +9,17 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.app.armetech.ajudae.R;
+import com.app.armetech.ajudae.questions.gui.AddQuestionActivity;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 
-import com.app.armetech.ajudae.user.gui.fragments.FeedFragment;
-import com.app.armetech.ajudae.user.gui.fragments.FaltasFragment;
-import com.app.armetech.ajudae.user.gui.fragments.SearchFragment;
-import com.app.armetech.ajudae.user.gui.fragments.NotificationsFragment;
-import com.app.armetech.ajudae.user.gui.fragments.ProfileFragment;
+import com.app.armetech.ajudae.navigation.fragments.FeedFragment;
+import com.app.armetech.ajudae.navigation.fragments.FaltasFragment;
+import com.app.armetech.ajudae.navigation.fragments.SearchFragment;
+import com.app.armetech.ajudae.navigation.fragments.NotificationsFragment;
+import com.app.armetech.ajudae.navigation.fragments.ProfileFragment;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
-
-import org.w3c.dom.Text;
 
 public class BottomTabActivity extends AppCompatActivity implements AHBottomNavigation.OnTabSelectedListener{
 

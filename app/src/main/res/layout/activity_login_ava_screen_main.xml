@@ -42,7 +42,7 @@
         app:srcCompat="@drawable/loginava" />
 
     <EditText
-        android:text="ericka.psilva"
+        android:text=""
         android:id="@+id/edtTextAvaLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
         android:textColorHint="@color/lightGray" />
 
     <EditText
-        android:text="Anatomy2795*"
+        android:text=""
         android:id="@+id/edtTextAvaPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

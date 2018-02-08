@@ -14,7 +14,7 @@ import com.app.armetech.ajudae.R;
 import com.app.armetech.ajudae.classes.dao.SubjectDao;
 import com.app.armetech.ajudae.classes.domain.Subject;
 import com.app.armetech.ajudae.infra.DataHolder;
-import com.app.armetech.ajudae.infra.StudentExternalData;
+import com.app.armetech.ajudae.utils.StudentExternalData;
 import com.app.armetech.ajudae.infra.RequestHttp;
 import com.app.armetech.ajudae.user.domain.Session;
 import com.app.armetech.ajudae.user.domain.User;

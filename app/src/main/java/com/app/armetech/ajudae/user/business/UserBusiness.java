@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 
-import com.app.armetech.ajudae.infra.Cryptography;
+import com.app.armetech.ajudae.utils.Cryptography;
 import com.app.armetech.ajudae.user.domain.Session;
 import com.app.armetech.ajudae.user.dao.PersonDao;
 import com.app.armetech.ajudae.user.dao.SessionDao;

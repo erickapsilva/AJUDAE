@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.app.armetech.ajudae.infra.DataBaseHelper;
+import com.app.armetech.ajudae.utils.DataBaseHelper;
 import com.app.armetech.ajudae.user.domain.User;
 
 

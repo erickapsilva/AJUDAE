@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundFragment"
-    tools:context="com.app.armetech.ajudae.user.gui.AddQuestionActivity">
+    tools:context="com.app.armetech.ajudae.questions.gui.AddQuestionActivity">
 
     <ImageView
         android:id="@+id/imageView4"

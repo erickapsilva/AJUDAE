@@ -1,4 +1,4 @@
-package com.app.armetech.ajudae.infra;
+package com.app.armetech.ajudae.utils;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

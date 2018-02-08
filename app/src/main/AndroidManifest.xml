@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".user.gui.SplashActivity"
+            android:name=".navigation.SplashActivity"
             android:theme="@style/AppThemeNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +28,7 @@
             android:name=".user.gui.RegisterActivity"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
-            android:name=".user.gui.WelcomeActivity"
+            android:name=".navigation.WelcomeActivity"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".user.gui.LoginAvaActivity"
@@ -44,10 +44,10 @@
             android:name=".user.gui.InitialScreenActivity"
             android:label="@string/title_activity_initial_screen" />
         <activity
-            android:name=".user.gui.BottomTabActivity"
+            android:name=".navigation.BottomTabActivity"
             android:theme="@style/AppThemeNoActionBar"></activity>
         <activity
-            android:name=".user.gui.AddQuestionActivity"
+            android:name=".questions.gui.AddQuestionActivity"
             android:theme="@style/AppThemeNoActionBar"></activity>
     </application>
 

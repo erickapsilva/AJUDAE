@@ -1,4 +1,4 @@
-package com.app.armetech.ajudae.user.gui;
+package com.app.armetech.ajudae.questions.gui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +10,7 @@ import com.app.armetech.ajudae.R;
 import com.app.armetech.ajudae.questions.dao.QuestionDao;
 import com.app.armetech.ajudae.questions.domain.Question;
 import com.app.armetech.ajudae.user.domain.Session;
-import com.app.armetech.ajudae.user.domain.User;
+import com.app.armetech.ajudae.navigation.BottomTabActivity;
 
 public class AddQuestionActivity extends AppCompatActivity {
 

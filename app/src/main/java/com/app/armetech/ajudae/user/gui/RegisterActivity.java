@@ -11,9 +11,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.app.armetech.ajudae.infra.Mask;
+import com.app.armetech.ajudae.utils.Mask;
 import com.app.armetech.ajudae.R;
-import com.app.armetech.ajudae.infra.Validation;
+import com.app.armetech.ajudae.utils.Validation;
 import com.app.armetech.ajudae.user.domain.Person;
 import com.app.armetech.ajudae.user.domain.User;
 import com.app.armetech.ajudae.user.business.UserBusiness;

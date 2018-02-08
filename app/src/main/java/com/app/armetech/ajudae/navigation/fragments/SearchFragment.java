@@ -1,4 +1,4 @@
-package com.app.armetech.ajudae.user.gui.fragments;
+package com.app.armetech.ajudae.navigation.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

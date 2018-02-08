@@ -1,4 +1,4 @@
-package com.app.armetech.ajudae.user.gui.fragments;
+package com.app.armetech.ajudae.navigation.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,12 +10,11 @@ import android.view.ViewGroup;
 
 import com.app.armetech.ajudae.R;
 
-
-public class ProfileFragment extends Fragment {
+public class NotificationsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView=inflater.inflate(R.layout.fragment_profile,container,false);
+        View rootView=inflater.inflate(R.layout.fragment_notifications,container,false);
 
         return rootView;
     }

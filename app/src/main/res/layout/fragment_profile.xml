@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/backgroundFragment"
-    tools:context="com.app.armetech.ajudae.user.gui.fragments.ProfileFragment">
+    tools:context=".navigation.fragments.ProfileFragment">
 
 
     <RelativeLayout
