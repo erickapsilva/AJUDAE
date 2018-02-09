@@ -9,15 +9,15 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.app.armetech.ajudae.R;
+import com.app.armetech.ajudae.navigation.fragments.FaltasFragment;
+import com.app.armetech.ajudae.navigation.fragments.FeedFragment;
+import com.app.armetech.ajudae.navigation.fragments.NotificationsFragment;
+import com.app.armetech.ajudae.navigation.fragments.ProfileFragment;
+import com.app.armetech.ajudae.navigation.fragments.SearchFragment;
 import com.app.armetech.ajudae.questions.gui.AddQuestionActivity;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 
-import com.app.armetech.ajudae.navigation.fragments.FeedFragment;
-import com.app.armetech.ajudae.navigation.fragments.FaltasFragment;
-import com.app.armetech.ajudae.navigation.fragments.SearchFragment;
-import com.app.armetech.ajudae.navigation.fragments.NotificationsFragment;
-import com.app.armetech.ajudae.navigation.fragments.ProfileFragment;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 

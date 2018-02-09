@@ -69,6 +69,7 @@ public class ScheduleAvaActivity extends Activity {
         for(int i = 0; i < subjects.size(); i++) {
             Subject newSubject = new Subject();
             newSubject.setSubjectName(subjects.get(i));
+            newSubject.setCourseClass(courseClass.get(i));
             newSubject.setDepartment(courseClass.get(i));
             long newId = subjectDao.insertSubject(newSubject);
             newSubject.setId(newId);

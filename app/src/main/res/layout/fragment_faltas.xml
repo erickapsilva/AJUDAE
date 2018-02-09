@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundFragment"
-    tools:context=".navigation.fragments.FaltasFragment">
+    tools:context=".navigation.fragments.FaltasFragment"
+    >
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -16,7 +17,7 @@
         <TextView
             android:textColor="@color/colorPrimary"
             android:textSize="16dp"
-            android:id="@+id/txtNameUser"
+            android:id="@+id/txtUserNameProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -30,12 +31,12 @@
             android:id="@+id/txtGraduation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txtNameUser"
+            android:layout_below="@+id/txtUserNameProfile"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:text="Bacharelado em Sistemas de Informação" />
 
-        <android.support.v7.widget.CardView
+        <!--<android.support.v7.widget.CardView
             app:contentPaddingBottom="8dp"
             app:contentPaddingLeft="8dp"
             app:contentPaddingRight="8dp"
@@ -95,6 +96,14 @@
                     android:layout_toRightOf="@+id/imageView7"
                     android:text="Faltou: 14 dias" />
             </RelativeLayout>
-        </android.support.v7.widget.CardView>
+        </android.support.v7.widget.CardView> -->
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/my_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_below="@+id/txtGraduation"
+            android:scrollbars="vertical" />
     </RelativeLayout>
 </FrameLayout>

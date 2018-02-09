@@ -56,7 +56,7 @@ colocar o CardView junto (no mesmo XML) ao RecyclerView irá resultar em erro-->
             android:layout_centerVertical="true"
             android:fontFamily="@font/nunito_bold"
             android:text="@string/turma_si_1"
-            android:textColor="@color/darkBlue"
+            android:textColor="@color/colorPrimary"
             android:textStyle="bold" />
 
         <View
