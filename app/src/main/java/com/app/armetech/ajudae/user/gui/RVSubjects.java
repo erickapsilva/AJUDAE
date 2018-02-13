@@ -61,7 +61,7 @@ public class RVSubjects extends RecyclerView.Adapter<RVSubjects.SubjectViewHolde
     //Busca quais campos devem ser preenchidos e seta o texto a partir das informações resgatadas
     @Override
     public void onBindViewHolder(SubjectViewHolder personViewHolder, int i) {
-        personViewHolder.courseClass.setText(subjects.get(i).getCourseClass());
+        personViewHolder.courseClass.setText(subjects.get(i).getDepartment());
         personViewHolder.name.setText(subjects.get(i).getSubjectName());
 
         if(visibility == true) {

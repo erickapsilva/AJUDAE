@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -51,6 +52,7 @@ public class SelectHelpSubjectActivity extends AppCompatActivity {
         user = Session.getLoggedUser();
 
         listSubjects = new ArrayList<>();
+        listSubjects = subjectBusiness.getSubjects();
 
         GridLayoutManager glm = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(glm);
@@ -64,7 +66,7 @@ public class SelectHelpSubjectActivity extends AppCompatActivity {
     }
 
     public void addNewSubject() {
-        Subject newSubject = searchSubject(editGetSubject.getText().toString().toUpperCase());
+        Subject newSubject = searchSubject(editGetSubject.getText().toString());
         takenSubjects.add(newSubject);
         user.addSubjectHelper(newSubject);
         initializeUpdateAdapter();
@@ -112,7 +114,7 @@ public class SelectHelpSubjectActivity extends AppCompatActivity {
     private Subject searchSubject(String nameSubject){
         Subject subjectReturn = null;
         for(Subject subject: listSubjects){
-            if(subject.getSubjectName().toUpperCase().equals(nameSubject)){
+            if(subject.getSubjectName().equals(nameSubject)){
                 subjectReturn = subject;
                 subjectReturn.setSubjectName(subject.getSubjectName().toUpperCase());
                 break;

@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.app.armetech.ajudae.classes.dao.SubjectDao;
 import com.app.armetech.ajudae.classes.domain.Subject;
@@ -132,6 +133,7 @@ public class UserDao {
         //type = 1 (cadeiras a ajudar), type = 2 (cadeiras para ser ajudado)
 
         for(Subject subject : userSubjectsHelper) {
+            Log.i("SHOW: ", "NUM: " + subject.getId());
             values.put(userSubjectOwnerIdColumn, userId);
             values.put(userSubjectNameIdColumn, Long.toString(subject.getId()));
             values.put(userSubjectTypeColumn, Integer.toString(1));
@@ -139,6 +141,7 @@ public class UserDao {
         }
 
         for(Subject subject : userSubjectsHelped) {
+            Log.i("SHOW: ", "NUM: " + subject.getId());
             values.put(userSubjectOwnerIdColumn, userId);
             values.put(userSubjectNameIdColumn, Long.toString(subject.getId()));
             values.put(userSubjectTypeColumn, Integer.toString(2));

@@ -34,4 +34,9 @@ public class SubjectBusiness {
         }
         return  listSubjectsName;
     }
+
+    public ArrayList<Subject> getSubjects() {
+        ArrayList<Subject> subjectsDb = subjectDao.getSubjects();
+        return subjectsDb;
+    }
 }

@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.app.armetech.ajudae.utils.DataBaseHelper;
 import com.app.armetech.ajudae.classes.domain.Subject;
@@ -154,8 +155,10 @@ public class SubjectDao{
         cursor.close();
         db.close();
 
-        for(Integer i : subjectsId)
+        for(Integer i : subjectsId) {
             subjects.add(getSubjectById(i));
+            Log.i("SHOW: ", "ID: " + i);
+        }
 
         return subjects;
     }
@@ -175,6 +178,8 @@ public class SubjectDao{
 
         String subjectDept = subject.getDepartment();
         values.put(subjectDeptColumn, subjectDept);
+
+
 
         long id = db.insert(subjectTableColumn, null, values);
         return id;
