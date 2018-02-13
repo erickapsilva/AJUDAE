@@ -64,6 +64,17 @@ public class UserBusiness {
         return false;
     }
 
+    public int checkUserStage() {
+        User loggedUser = sessionDao.recoversSession();
+        if(loggedUser.getStage() == 1) {
+            return 1;
+        } else if(loggedUser.getStage() == 2) {
+            return 2;
+        } else {
+            return 3;
+        }
+    }
+
     public void logout(){
         sessionDao.finishSession();
         Session.finishSession();

@@ -6,13 +6,16 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.app.armetech.ajudae.R;
+import com.app.armetech.ajudae.classes.domain.Subject;
 import com.app.armetech.ajudae.questions.dao.QuestionDao;
 import com.app.armetech.ajudae.questions.domain.Question;
+import com.app.armetech.ajudae.user.domain.Session;
 import com.app.armetech.ajudae.user.gui.RVFeed;
 
 import java.util.ArrayList;
@@ -36,6 +39,13 @@ public class FeedFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         initializeData();
         recyclerView.setAdapter(new RVFeed(questions));
+
+        for(Subject subject : Session.getLoggedUser().getSubjectsHelped()) {
+            Log.i("MATERIA: ", "MATERIA: " + subject.getSubjectName());
+        }
+        for(Subject subject : Session.getLoggedUser().getSubjectsHelper()) {
+            Log.i("MATERIA: ", "MATERIA: " + subject.getSubjectName());
+        }
 
         return recyclerView;
 

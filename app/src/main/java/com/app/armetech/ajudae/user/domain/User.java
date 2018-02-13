@@ -16,6 +16,7 @@ public class User {
     private List<Subject> subjectsHelped;
     private List<Subject> subjectsHelper;
     private long id;
+    private int stage;
 
     public User() {
         this.subjectsHelped = new ArrayList<>();
@@ -98,5 +99,13 @@ public class User {
 
     public void setCourse(String course) {
         this.course = course;
+    }
+
+    public int getStage() {
+        return stage;
+    }
+
+    public void setStage(int stage) {
+        this.stage = stage;
     }
 }

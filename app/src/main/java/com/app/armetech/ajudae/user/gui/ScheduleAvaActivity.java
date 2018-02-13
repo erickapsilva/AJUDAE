@@ -14,6 +14,7 @@ import com.app.armetech.ajudae.R;
 import com.app.armetech.ajudae.classes.dao.SubjectDao;
 import com.app.armetech.ajudae.classes.domain.Subject;
 import com.app.armetech.ajudae.infra.DataHolder;
+import com.app.armetech.ajudae.user.dao.UserDao;
 import com.app.armetech.ajudae.utils.StudentExternalData;
 import com.app.armetech.ajudae.infra.RequestHttp;
 import com.app.armetech.ajudae.user.domain.Session;
@@ -38,6 +39,7 @@ public class ScheduleAvaActivity extends Activity {
     private String dept;
     private String fullname;
     private SubjectDao subjectDao;
+    private UserDao userDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +54,8 @@ public class ScheduleAvaActivity extends Activity {
         GridLayoutManager glm = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(glm);
         subjectDao = new SubjectDao(getApplicationContext());
+        userDao = new UserDao(getApplicationContext());
         User logUser = Session.getLoggedUser();
-        if(logUser.getSubjectsHelper().size() > 0)
-            Log.i("TESTE: ", "ALGO: " + logUser.getSubjectsHelper().get(0).getSubjectName());
         initializeData();
         initializeUpdateAdapter();
     }
@@ -82,7 +83,10 @@ public class ScheduleAvaActivity extends Activity {
         loggedUser.setCourse(dept);
     }
 
-    public void goToHelpSubjectsScreen(View view){
+    public void goToHelpSubjectsScreen(View view) {
+        userDao.insertUserSubjects();
+        Session.getLoggedUser().setStage(2);
+        userDao.updateUserStage();
         Intent helpSubject = new Intent(this, SelectHelpSubjectActivity.class);
         startActivity(helpSubject);
         finish();

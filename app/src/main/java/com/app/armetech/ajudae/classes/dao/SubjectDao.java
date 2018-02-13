@@ -199,7 +199,7 @@ public class SubjectDao{
         int indexColunaNome = cursor.getColumnIndex(colunaNome);
         String nome = cursor.getString(indexColunaNome);
 
-        Subject subject = new Subject("SI1", nome);
+        Subject subject = new Subject("SI1", nome.toUpperCase());
         subject.setId(id);
         subject.setDepartment(Dept);
 

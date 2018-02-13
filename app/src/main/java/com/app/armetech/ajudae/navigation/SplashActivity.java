@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.app.armetech.ajudae.R;
 import com.app.armetech.ajudae.user.business.UserBusiness;
 import com.app.armetech.ajudae.user.gui.LoginAvaActivity;
+import com.app.armetech.ajudae.user.gui.SelectHelpSubjectActivity;
 
 public class SplashActivity extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 1000;
@@ -17,7 +19,13 @@ public class SplashActivity extends AppCompatActivity {
 
         UserBusiness userBusiness = new UserBusiness(this);
         if (userBusiness.checkSession()){
-            goToLoginAva();
+            if(userBusiness.checkUserStage() == 3) {
+                goToFeed();
+            } else if(userBusiness.checkUserStage() == 2){
+                goToHelpSubjectsScreen();
+            } else {
+                goToLoginAva();
+            }
         } else {
             setContentView(R.layout.activity_splash_screen);
             new Handler().postDelayed(new Runnable() {
@@ -39,6 +47,18 @@ public class SplashActivity extends AppCompatActivity {
     public void goToLoginAva(){
         Intent startScreen = new Intent(this, LoginAvaActivity.class);
         startActivity(startScreen);
+        finish();
+    }
+
+    public void goToHelpSubjectsScreen(){
+        Intent helpSubject = new Intent(this, SelectHelpSubjectActivity.class);
+        startActivity(helpSubject);
+        finish();
+    }
+
+    public void goToFeed() {
+        Intent feedScreen = new Intent(this, BottomTabActivity.class);
+        startActivity(feedScreen);
         finish();
     }
 }

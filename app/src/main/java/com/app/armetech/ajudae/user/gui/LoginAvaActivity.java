@@ -11,7 +11,9 @@ import android.widget.Toast;
 
 import com.app.armetech.ajudae.R;
 import com.app.armetech.ajudae.infra.DataHolder;
+import com.app.armetech.ajudae.user.dao.UserDao;
 import com.app.armetech.ajudae.user.domain.Session;
+import com.app.armetech.ajudae.user.domain.User;
 import com.app.armetech.ajudae.utils.StudentExternalData;
 import com.app.armetech.ajudae.infra.RequestHttp;
 import com.app.armetech.ajudae.infra.ReturnRequest;
@@ -28,6 +30,8 @@ public class LoginAvaActivity extends AppCompatActivity {
     private EditText edtTextAvaLogin, edtTextAvaPass;
     private TextView txtViewName;
     private static String TAG;
+    private User user;
+    private UserDao userDao;
 
     static {
         TAG = LoginAvaActivity.class.getName();
@@ -38,6 +42,10 @@ public class LoginAvaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_ava_screen);
         createFields();
+        userDao = new UserDao(getApplicationContext());
+        user = Session.getLoggedUser();
+        user.setStage(1);
+        userDao.updateUserStage();
         requestHttp = RequestHttp.getInstance();
         requestHttp.initializeClient();
         dataHolder = DataHolder.getInstance();

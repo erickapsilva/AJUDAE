@@ -54,6 +54,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String USER_PASSWORD = "senha";
     private static final String USER_TOKEN = "token";
     private static final String USER_COURSE = "curso";
+    private static final String USER_STAGE = "user_stage";
 
     public static String getUserTable() {
         return USER_TABLE;
@@ -78,6 +79,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static String getUserCourse() {
         return USER_COURSE;
     }
+
+    public static String getUserStage() { return USER_STAGE; }
 
     //SESSAO DO USUARIO
     private static final String SESSION_TABLE = "sessao";
@@ -185,6 +188,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 USER_EMAIL + " TEXT NOT NULL, " +
                 USER_PASSWORD + " TEXT NOT NULL, " +
                 USER_COURSE + " TEXT, " +
+                USER_STAGE + " INTEGER, " +
                 USER_TOKEN + " TEXT);");
 
         sqLite.execSQL("CREATE TABLE " + PERSON_TABLE + " ("+

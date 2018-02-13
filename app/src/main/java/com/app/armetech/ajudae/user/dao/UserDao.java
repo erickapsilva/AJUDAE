@@ -28,6 +28,7 @@ public class UserDao {
     private String userSubjectOwnerIdColumn = DataBaseHelper.getUserSubjectOwnerId();
     private String userSubjectNameIdColumn = DataBaseHelper.getUserSubjectNameId();
     private String userSubjectTypeColumn = DataBaseHelper.getUserSubjectType();
+    private String userStageColumn = DataBaseHelper.getUserStage();
     private User user;
 
     public UserDao(Context context){
@@ -111,6 +112,9 @@ public class UserDao {
         List<Subject> subjectsHelper = subjectDao.getSubjectsHelperByUserId(id);
         List<Subject> subjectsHelped = subjectDao.getSubjectsHelpedByUserId(id);
 
+        int indexStageColumn = cursor.getColumnIndex(userStageColumn);
+        int stage = cursor.getInt(indexStageColumn);
+
         User user = new User();
         user.setId(id);
         user.setEmail(email);
@@ -118,7 +122,20 @@ public class UserDao {
         user.setCourse("BACHARELADO EM SISTEMAS DE INFORMAÇÃO");
         user.setSubjectsHelper(subjectsHelper);
         user.setSubjectsHelped(subjectsHelped);
+        user.setStage(stage);
         return user;
+    }
+
+    public void updateUserStage() {
+        user = Session.getLoggedUser();
+
+        database = dbHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        int stage = user.getStage();
+        values.put(userStageColumn, stage);
+
+        database.update(userTable, values, userIdColumn + "=" + user.getId(), null);
     }
 
     public void insertUserSubjects() {
@@ -131,23 +148,24 @@ public class UserDao {
         String userId = Long.toString(user.getId());
 
         //type = 1 (cadeiras a ajudar), type = 2 (cadeiras para ser ajudado)
-
-        for(Subject subject : userSubjectsHelper) {
-            Log.i("SHOW: ", "NUM: " + subject.getId());
-            values.put(userSubjectOwnerIdColumn, userId);
-            values.put(userSubjectNameIdColumn, Long.toString(subject.getId()));
-            values.put(userSubjectTypeColumn, Integer.toString(1));
-            database.insert(userSubjectTable, null, values);
+        if(user.getStage() == 2) {
+            for (Subject subject : userSubjectsHelper) {
+                Log.i("SHOW: ", "NUM: " + subject.getId());
+                values.put(userSubjectOwnerIdColumn, userId);
+                values.put(userSubjectNameIdColumn, Long.toString(subject.getId()));
+                values.put(userSubjectTypeColumn, Integer.toString(1));
+                database.insert(userSubjectTable, null, values);
+            }
         }
-
-        for(Subject subject : userSubjectsHelped) {
-            Log.i("SHOW: ", "NUM: " + subject.getId());
-            values.put(userSubjectOwnerIdColumn, userId);
-            values.put(userSubjectNameIdColumn, Long.toString(subject.getId()));
-            values.put(userSubjectTypeColumn, Integer.toString(2));
-            database.insert(userSubjectTable, null, values);
+        if(user.getStage() == 1) {
+            for (Subject subject : userSubjectsHelped) {
+                Log.i("SHOW: ", "NUM: " + subject.getId());
+                values.put(userSubjectOwnerIdColumn, userId);
+                values.put(userSubjectNameIdColumn, Long.toString(subject.getId()));
+                values.put(userSubjectTypeColumn, Integer.toString(2));
+                database.insert(userSubjectTable, null, values);
+            }
         }
-
     }
 
 

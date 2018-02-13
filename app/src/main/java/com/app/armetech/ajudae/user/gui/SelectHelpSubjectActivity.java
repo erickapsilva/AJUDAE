@@ -91,6 +91,8 @@ public class SelectHelpSubjectActivity extends AppCompatActivity {
 
     public void goToNewsFeedScreen(View view){
         userDao.insertUserSubjects();
+        user.setStage(3);
+        userDao.updateUserStage();
         Intent intent = new Intent(this, BottomTabActivity.class);
         startActivity(intent);
         finish();
