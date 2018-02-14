@@ -33,7 +33,7 @@
 
             <TextView
                 android:maxLines="1"
-                android:id="@+id/txtCadeiraFaltas"
+                android:id="@+id/txtProfileSubjects"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"

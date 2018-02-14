@@ -60,28 +60,87 @@
             android:layout_marginTop="7dp"
             android:text="Graduation" />
 
-        <TextView
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="6dp"
-            android:textColor="@color/colorPrimary"
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/imageView5"
-            android:layout_alignStart="@+id/imageView5"
-            android:layout_below="@+id/imageView5"
-            android:text="CADEIRAS CURSANDO" />
-
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/my_recycler_view"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView4"
-            android:layout_marginTop="16dp"
-            android:scrollbars="horizontal" />
+            android:layout_below="@+id/imageView5"
+            android:paddingBottom="42dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtCurrentSubjects"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/imageView5"
+                    android:layout_alignStart="@+id/imageView5"
+                    android:layout_below="@+id/imageView5"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="10dp"
+                    android:text="CADEIRAS CURSANDO"
+                    android:textColor="@color/colorPrimary" />
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/my_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/txtCurrentSubjects"
+                    android:layout_marginTop="16dp"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:scrollbars="horizontal" />
+
+
+                <TextView
+                    android:id="@+id/txtSubjectsHelping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/imageView5"
+                    android:layout_alignStart="@+id/imageView5"
+                    android:layout_below="@+id/imageView5"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="10dp"
+                    android:text="CADEIRAS AJUDANDO"
+                    android:textColor="@color/colorPrimary" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerViewHelpSubject"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/txtCurrentSubjects"
+                    android:layout_marginTop="16dp"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:scrollbars="horizontal" />
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ImageButton
+            android:background="@drawable/round_button_red"
+            android:id="@+id/goToEditProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/imageView5"
+            android:layout_alignRight="@+id/imageView5"
+            android:layout_alignTop="@+id/imgBackgroundAvatar"
+            android:layout_marginEnd="28dp"
+            android:layout_marginRight="28dp"
+            android:layout_marginTop="12dp"
+            android:src="@mipmap/ic_edit"
+             />
+
 
     </RelativeLayout>
 </FrameLayout>

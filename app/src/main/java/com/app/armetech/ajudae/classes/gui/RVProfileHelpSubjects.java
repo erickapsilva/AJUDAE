@@ -16,10 +16,10 @@ import java.util.ArrayList;
  * Created by erickapsilva on 08/02/2018.
  */
 
-public class RVAusences extends RecyclerView
-        .Adapter<RVAusences
+public class RVProfileHelpSubjects extends RecyclerView
+        .Adapter<RVProfileHelpSubjects
         .DataObjectHolder> {
-    private static String LOG_TAG = "RVAusences";
+    private static String LOG_TAG = "RVProfileHelpSubjects";
     private ArrayList<DataObjectAusences> mDataset;
     private static MyClickListener myClickListener;
 
@@ -27,14 +27,10 @@ public class RVAusences extends RecyclerView
             implements View
             .OnClickListener {
         TextView cadeira;
-        TextView podeFaltar;
-        TextView faltou;
 
         public DataObjectHolder(View itemView) {
             super(itemView);
             cadeira = (TextView) itemView.findViewById(R.id.txtProfileSubjects);
-            faltou = (TextView) itemView.findViewById(R.id.txtFaltou);
-            podeFaltar = (TextView) itemView.findViewById(R.id.txtPodeFaltar);
             Log.i(LOG_TAG, "Adding Listener");
             itemView.setOnClickListener(this);
         }
@@ -49,7 +45,7 @@ public class RVAusences extends RecyclerView
         this.myClickListener = myClickListener;
     }
 
-    public RVAusences(ArrayList<DataObjectAusences> myDataset) {
+    public RVProfileHelpSubjects(ArrayList<DataObjectAusences> myDataset) {
         mDataset = myDataset;
     }
 
@@ -57,7 +53,7 @@ public class RVAusences extends RecyclerView
     public DataObjectHolder onCreateViewHolder(ViewGroup parent,
                                                int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.card_faltas, parent, false);
+                .inflate(R.layout.card_subjects_profile, parent, false);
 
         DataObjectHolder dataObjectHolder = new DataObjectHolder(view);
         return dataObjectHolder;
@@ -66,8 +62,6 @@ public class RVAusences extends RecyclerView
     @Override
     public void onBindViewHolder(DataObjectHolder holder, int position) {
         holder.cadeira.setText(mDataset.get(position).getCadeira());
-        holder.faltou.setText(mDataset.get(position).getFaltou());
-        holder.podeFaltar.setText(mDataset.get(position).getPodeFaltar());
 
     }
 

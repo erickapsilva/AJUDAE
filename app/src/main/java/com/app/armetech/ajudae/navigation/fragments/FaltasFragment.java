@@ -69,8 +69,10 @@ public class FaltasFragment extends Fragment {
 
     private ArrayList<DataObjectAusences> getDataSet() {
         ArrayList results = new ArrayList<DataObjectAusences>();
-        for (int index = 0; index < 4; index++) {
-            DataObjectAusences obj = new DataObjectAusences("Cadeira " + index,"Pode Faltar " + index, "Faltou: " + index);
+
+        for (int index = 0; index < Session.getLoggedUser().getSubjectsHelped().size(); index++) {
+            DataObjectAusences obj = new DataObjectAusences(""+Session.getLoggedUser().getSubjectsHelped().get(index).getSubjectName(),
+                    "Pode Faltar " + 7 +" dias", "Faltou: " + index + " dias");
             results.add(index, obj);
         }
         return results;

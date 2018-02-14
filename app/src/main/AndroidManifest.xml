@@ -39,16 +39,17 @@
         <activity
             android:name=".user.gui.SelectHelpSubjectActivity"
             android:theme="@style/AppThemeNoActionBar" />
-        <activity android:name=".perguntas.gui.NewsFeed" />
-        <activity
-            android:name=".user.gui.InitialScreenActivity"
-            android:label="@string/title_activity_initial_screen" />
         <activity
             android:name=".navigation.BottomTabActivity"
-            android:theme="@style/AppThemeNoActionBar"></activity>
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".questions.gui.AddQuestionActivity"
-            android:theme="@style/AppThemeNoActionBar"></activity>
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".user.gui.EditProfileActivity"
+            android:theme="@style/AppThemeNoActionBar">
+
+        </activity>
     </application>
 
 </manifest>
